@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-05-21T07:52:16+09:00",
-  "sourceDiscovery": "/Volumes/app/equity-research-copilot/runs/discovery/discovery_20260520T211915Z.csv",
+  "generatedAt": "2026-05-21T08:09:53+09:00",
+  "sourceDiscovery": "/Volumes/app/equity-research-copilot/runs/discovery/discovery_20260520T230239Z.csv",
   "reportTitle": "Equity Research Copilot",
   "reportSubtitle": "뉴스 촉매, 테마 강도, 차트 구조를 한 화면에서 검증하는 정적 리서치 노트",
   "researchOnly": true,
   "summary": {
     "candidateCount": 12,
-    "avgScore": 1.006,
-    "directNewsCount": 12,
+    "avgScore": 0.929,
+    "directNewsCount": 11,
     "partialNewsCount": 0,
     "themeNewsCount": 0,
-    "weakNewsCount": 0,
+    "weakNewsCount": 1,
     "highQualitySetupCount": 11,
-    "actionableSetupCount": 11,
+    "actionableSetupCount": 12,
     "chaseRiskCount": 0,
     "availableSeriesCount": 4,
     "sentiment": {
-      "positive": 38,
-      "negative": 7,
-      "mixed": 16
+      "positive": 23,
+      "negative": 11,
+      "mixed": 20
     }
   },
   "themes": [
     {
       "name": "실적 / 가이던스",
-      "score": 9.126,
+      "score": 7.795,
       "heat": 100,
       "tickers": [
         "ARCO",
@@ -32,63 +32,73 @@
         "EVR",
         "HMY",
         "IREN",
-        "KLIC",
         "KURA",
         "MT",
         "VNO"
       ],
       "sentiment": {
-        "positive": 31,
-        "negative": 6,
-        "mixed": 13
+        "positive": 19,
+        "negative": 9,
+        "mixed": 15
       }
     },
     {
       "name": "자동차 / 전동화",
-      "score": 5.109,
-      "heat": 56,
+      "score": 3.968,
+      "heat": 51,
       "tickers": [
         "ARCO",
         "EVR",
-        "IREN",
         "KURA",
         "VNO"
       ],
       "sentiment": {
-        "positive": 16,
-        "negative": 5,
-        "mixed": 5
+        "positive": 5,
+        "negative": 7,
+        "mixed": 9
       }
     },
     {
       "name": "AI / 반도체",
-      "score": 4.909,
-      "heat": 54,
+      "score": 3.706,
+      "heat": 48,
       "tickers": [
         "DELL",
         "IREN",
-        "KLIC",
         "SA",
         "VNO"
       ],
       "sentiment": {
-        "positive": 19,
-        "negative": 2,
-        "mixed": 5
+        "positive": 14,
+        "negative": 4,
+        "mixed": 1
       }
     },
     {
       "name": "개별 종목 뉴스",
-      "score": 0.984,
+      "score": 0.875,
       "heat": 11,
       "tickers": [
         "CIEN",
-        "INSW"
+        "GS"
       ],
       "sentiment": {
         "positive": 1,
-        "negative": 1,
-        "mixed": 3
+        "negative": 0,
+        "mixed": 4
+      }
+    },
+    {
+      "name": "ETF / 수급",
+      "score": 0.487,
+      "heat": 6,
+      "tickers": [
+        "AAL"
+      ],
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "mixed": 0
       }
     }
   ],
@@ -103,7 +113,7 @@
         "gainers",
         "undervalued_growth"
       ],
-      "score": 1.091,
+      "score": 1.071,
       "agentView": "news_first_watch",
       "stance": "뉴스 우선 감시",
       "price": {
@@ -143,59 +153,81 @@
         "warnings": []
       },
       "marketReaction": {
-        "abnormalReturn1d": null,
-        "abnormalReturn5d": null,
-        "abnormalReturn20d": null,
-        "volumeZscore": null,
-        "volumeRatio": null,
-        "gapReturn": null,
-        "reactionScore": null
+        "abnormalReturn1d": 0.12515,
+        "abnormalReturn5d": 0.06698,
+        "abnormalReturn20d": -0.04017,
+        "volumeZscore": 6.58964,
+        "volumeRatio": 2.72188,
+        "gapReturn": 0.07559,
+        "reactionScore": 0.767
       },
       "news": {
-        "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'Arcos Dorados (ARCO) Tops Q1 Earnings and Revenue Estimates'이며, 차트 신호와 함께 감시할 만하다.",
-        "positive": 4,
+        "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'Arcos Dorados Shares Rise After Earnings Beat Despite Revenue Miss (ARCO)'이며, 차트 신호와 함께 감시할 만하다.",
+        "positive": 1,
         "negative": 1,
-        "mixed": 1,
+        "mixed": 4,
         "headlines": [
           {
-            "stance": "mixed",
+            "stance": "positive",
             "title": "A Look At Arcos Dorados Holdings (NYSE:ARCO) Valuation After Recent Share Price Softness",
             "source": "Simply Wall St."
           },
           {
-            "stance": "positive",
+            "stance": "mixed",
             "title": "Arcos Dorados (ARCO) Tops Q1 Earnings and Revenue Estimates",
             "source": "Zacks"
           },
           {
-            "stance": "negative",
+            "stance": "mixed",
             "title": "Arcos Dorados Shares Rise After Earnings Beat Despite Revenue Miss (ARCO)",
             "source": "InvestorsHub"
           },
           {
-            "stance": "positive",
+            "stance": "negative",
             "title": "Arcos Dorados Q1 Earnings Call Highlights",
             "source": "MarketBeat"
           },
           {
-            "stance": "positive",
+            "stance": "mixed",
             "title": "Arcos Dorados Holdings Inc. Q1 2026 Earnings Call Summary",
             "source": "Moby"
           },
           {
-            "stance": "positive",
+            "stance": "mixed",
             "title": "Arcos Dorados (ARCO) Q1 2026 Earnings Transcript",
             "source": "Motley Fool"
           }
         ],
         "rawItems": [
           {
+            "title": "Should You Buy, Sell or Hold DPZ Stock Before the Q1 Earnings Release?",
+            "source": "Zacks",
+            "published_at": "2026-04-22 12:38:00+00:00",
+            "url": "https://finance.yahoo.com/markets/stocks/articles/buy-sell-hold-dpz-stock-123800146.html",
+            "summary": "Domino's heads into Q1 earnings with revenues seen up 5.4% on carryout, loyalty and DoorDash. Yet, costs and weather pose risks.",
+            "kind": "news",
+            "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/buy-sell-hold-dpz-stock-123800146.html",
+            "body": "Domino's Pizza, Inc. DPZ is scheduled to release first-quarter fiscal 2026 results on April 27.\nThe Zacks Consensus Estimate for DPZ’s fiscal first-quarter earnings per share (EPS) is pegged at $4.29, suggesting a 0.9% decline from $4.33 reported in the prior-year quarter. The consensus mark for earnings has decreased by 1.8% in the past 60 days.\nDPZ Earnings Estimate Trend\nImage Source: Zacks Investment Research\nThe consensus mark for fiscal first-quarter revenues is pegged at $1.17 billion, indicating growth of 5.4% from the year-ago quarter’s reported figure.\nDomino's has a modest earnings surprise history in the trailing four quarters. Its earnings beat the Zacks Consensus Estimate in two of the trailing four quarters and lagged twice, the average surprise being 1.1%. In the last reported quarter, the company reported a negative earnings surprise of 0.6%.\nDPZ Earnings Surprise History\nImage Source: Zacks Investment Research\nQ1 Earnings Whispers for DPZ Stock\nOur proven model does not conclusively predict an earnings beat for Domino's this time around. A stock needs to have a positive Earnings ESP and a Zacks Rank #1 (Strong Buy), 2 (Buy) or 3 (Hold) to beat on earnings. But that's not the case here.\nDPZ’s Earnings ESP: Domino's has an Earnings ESP of -0.43%. You can uncover the best stocks to buy or sell before they’re reported with our Earnings ESP Filter.\nDomino's Zacks Rank: The company carries a Zacks Rank #3 at present. You can see the complete list of today’s Zacks #1 Rank stocks here.\nFactors Likely to Influence DPZ’s Q1 Results\nDomino’s fiscal first-quarter performance is likely to have benefited from strength in carryout and delivery businesses, continued momentum in value-led initiatives and ongoing product innovation. Growth in order counts across U.S. and international markets, supported by platforms such as Best Deal Ever and Parmesan Stuffed Crust, is likely to have driven system sales in the to-be-reported quarter.\nEmphasis on carryout expansion and digital engagement is likely to have aided the company’s performance in the fiscal first quarter. Continued scaling of the carryout business, supported by strong value positioning, along with growth in the loyalty program and incremental contribution from aggregator platforms, particularly DoorDash, is expected to have supported order volumes and customer frequency.\nUnit expansion and strong franchisee economics are likely to have supported the company’s top line in the fiscal first quarter. Continued net store additions across domestic and international markets, coupled with robust franchisee profitability and favorable unit-level economics, are expected to have supported systemwide growth and reinvestment activity. Our model predicts fiscal first-quarter revenues from U.S. Franchise Royalties and Fees to rise 4.1% year over year to $157.2 million. We expect revenues from International Franchise Royalties and Fees to rise 7.8% year over year to $81.5 million.\nHowever, macroeconomic headwinds are likely to have weighed on performance. Weather-related disruptions in January impacted store operations and early-quarter trends. Our model predicts fiscal first-quarter U.S. same-store sales to decline 0.5% year over year.\nIncreases in insurance and other operating expenses remain areas to monitor. Our model predicts the total cost of sales for the first quarter of fiscal 2026 to rise 7.9% year over year to $721.6 million, which could have implications for margin trends. Our model forecasts fiscal first-quarter gross margin at 38.4%, indicating a decline of 140 basis points from 39.8% reported in the prior-year quarter.\nDPZ’s Stock Price Performance & Valuation\nDomino’s shares have lost 10.3% in the past three months, underperforming the Zacks Retail - Restaurants industry’s drop of 0.9% and the S&P 500’s rise of 2.7%. The company’s peers, including Dutch Bros Inc. BROS and BJ's Restaurants, Inc. BJRI, have declined 12% each, while Arcos Dorados Holdings Inc. ARCO has gained 21.7% in the same time frame.\nDPZ Three-Month Price Performance\nImage Source: Zacks Investment Research\nFrom a valuation perspective, Domino’s stock is currently trading at a discount. It is currently trading at a forward 12-month price-to-sales (P/S) multiple of 2.32, well below the industry average of 3.55.\nDPZ’s P/S Ratio (Forward 12-Month) vs. Industry\nImage Source: Zacks Investment Research\nOther industry players, such as Dutch Bros, BJ's Restaurants and Arcos Dorados, have a P/S of 4.05, 0.56 and 0.38, respectively.\nInvestment Considerations for DPZ Stock\nDomino’s emphasized that its growth algorithm is underpinned by initiatives that extend beyond a single year, with management noting the business is “not a one-and-done company” and that recently launched drivers remain embedded in the base. Key contributors such as Best Deal Ever, Parmesan Stuffed Crust and DoorDash integration continue to scale alongside sustained momentum in carryout, loyalty and aggregator channels. The company stated that it has not yet reached its “fair share” on aggregator platforms, indicating further participation as awareness and marketing efforts build. Carryout remains a central growth driver, having reached meaningful scale while continuing to expand, supported by increased engagement through the loyalty program. Collectively, these factors, along with ongoing product innovation and operational execution, are expected to support DPZ’s same-store sales framework within the pizza category.\nHowever, near-term pressures, including an uncertain macro environment and the impact of outsized insurance costs on corporate store margins, remain relevant considerations in the current environment.\nHow to Play Domino’s Stock Now?\nDomino’s near-term setup appears balanced, supporting a more measured stance. The company continues to benefit from structural growth drivers such as carryout expansion, loyalty engagement and increasing participation on aggregator platforms. However, a still-pressured macro environment and elevated operating costs remain key overhangs that could temper near-term operating momentum.\nFrom a market standpoint, the stock’s recent trajectory underscores a cautious investor stance, with shares lagging both the broader market and industry peers over the past three months. While the stock is currently trading at a discount to the industry on a forward price-to-sales basis, this valuation gap appears justified given the near-term margin headwinds and lack of a clear earnings catalyst.\nGiven this backdrop, a hold stance appears appropriate. Existing investors may benefit from staying invested to participate in the company’s long-term growth framework. However, the combination of near-term cost pressures, modest earnings visibility and lack of immediate upside triggers suggests that fresh buying may be deferred.\nWant the latest recommendations from Zacks Investment Research? Today, you can download 7 Best Stocks for the Next 30 Days. Click to get this free report",
+            "language": "",
+            "author": "Mrithunjoy Kaushik",
+            "site_name": "",
+            "content_hash": "525a40177d7127b9b042853368c18d96bb253c727370cca8642bb14fa8c17566",
+            "extraction_status": "ok"
+          },
+          {
             "title": "A Look At Arcos Dorados Holdings (NYSE:ARCO) Valuation After Recent Share Price Softness",
             "source": "Simply Wall St.",
             "published_at": "2026-05-04 06:08:20+00:00",
             "url": "https://finance.yahoo.com/markets/stocks/articles/look-arcos-dorados-holdings-nyse-060820817.html",
             "summary": "Why Arcos Dorados Holdings (NYSE:ARCO) is on investors’ radar Arcos Dorados Holdings (NYSE:ARCO), the largest McDonald’s franchisee in Latin America and the Caribbean, has drawn attention recently as investors reassess its US$1.85b market value and regional restaurant footprint. See our latest analysis for Arcos Dorados Holdings. The share price has eased back 1.6% over the last day and 4.9% across the week, yet a 20.4% year to date share price return and 18.1% one year total shareholder...",
-            "kind": "news"
+            "kind": "news",
+            "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/look-arcos-dorados-holdings-nyse-060820817.html",
+            "body": "Track your investments for FREE with Simply Wall St, the portfolio command center trusted by over 7 million individual investors worldwide.\nWhy Arcos Dorados Holdings (NYSE:ARCO) is on investors’ radar\nArcos Dorados Holdings (NYSE:ARCO), the largest McDonald’s franchisee in Latin America and the Caribbean, has drawn attention recently as investors reassess its US$1.85b market value and regional restaurant footprint.\nSee our latest analysis for Arcos Dorados Holdings.\nThe share price has eased back 1.6% over the last day and 4.9% across the week, yet a 20.4% year to date share price return and 18.1% one year total shareholder return suggest momentum has been resilient rather than fading.\nIf this kind of regional consumer story has your attention, it can be useful to see what else is moving and compare it against 17 top founder-led companies\nWith a US$1.85b market value, modest annual revenue and net income growth, and some discount indications against analyst targets and intrinsic value, the key question is whether ARCO is still cheap or if the market already prices in future growth.\nMost Popular Narrative: 11.4% Undervalued\nWith Arcos Dorados last closing at $8.78 against a narrative fair value of $9.91, the widely followed view sees meaningful upside grounded in execution on growth drivers.\nContinued digital adoption, including loyalty program rollouts, app engagement, and digital ordering, are driving higher visit frequency, stronger customer retention, and higher identified sales, which is likely to support future revenue growth and improve gross margins as digital channels scale.\nWant to see what happens when growing digital traffic, margin shifts, and a higher future earnings multiple all meet in one model? The core assumptions behind this fair value bring together measured revenue growth, a different profit margin profile, and a higher valuation multiple than today. Curious which of those levers does the heavy lifting?\nResult: Fair Value of $9.91 (UNDERVALUED)\nHave a read of the narrative in full and understand what's behind the forecasts.\nHowever, that upside story could be challenged if weaker consumer demand in core markets and rising input costs compress margins faster than current assumptions allow for.\nFind out about the key risks to this Arcos Dorados Holdings narrative.\nNext Steps\nWith both risks and rewards on the table, it can be helpful to look beyond the headline and into the details yourself, then weigh what matters most for your portfolio using 4 key rewards and 2 important warning signs",
+            "language": "",
+            "author": "Simply Wall St",
+            "site_name": "",
+            "content_hash": "271913e006dcd3fd990cdd7c3284577537bc300d05a934dd7bd7febe633b7b6a",
+            "extraction_status": "ok"
           },
           {
             "title": "Arcos Dorados (ARCO) Tops Q1 Earnings and Revenue Estimates",
@@ -203,7 +235,14 @@
             "published_at": "2026-05-20 12:25:02+00:00",
             "url": "https://finance.yahoo.com/markets/stocks/articles/arcos-dorados-arco-tops-q1-122502572.html",
             "summary": "Arcos Dorados (ARCO) delivered earnings and revenue surprises of +54.55% and +2.20%, respectively, for the quarter ended March 2026. Do the numbers hold clues to what lies ahead for the stock?",
-            "kind": "news"
+            "kind": "news",
+            "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/arcos-dorados-arco-tops-q1-122502572.html",
+            "body": "",
+            "language": "",
+            "author": "",
+            "site_name": "",
+            "content_hash": "6198f71f6383ee0478e0e3b6c3c947da72ba0555f7b8601596bd7c5b71fa3ba3",
+            "extraction_status": "not_attempted"
           },
           {
             "title": "Arcos Dorados Shares Rise After Earnings Beat Despite Revenue Miss (ARCO)",
@@ -211,7 +250,14 @@
             "published_at": "2026-05-20 13:58:07+00:00",
             "url": "https://finance.yahoo.com/markets/stocks/articles/arcos-dorados-shares-rise-earnings-135807981.html",
             "summary": "Arcos Dorados Holdings Inc. (NYSE:ARCO) reported first-quarter results on Wednesday that exceeded earnings expectations, although revenue came in slightly below Wall Street forecasts.",
-            "kind": "news"
+            "kind": "news",
+            "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/arcos-dorados-shares-rise-earnings-135807981.html",
+            "body": "",
+            "language": "",
+            "author": "",
+            "site_name": "",
+            "content_hash": "945b907350918891b52f1114ee6f36e3f6f1b6eead1c9339170072a8ac1d910b",
+            "extraction_status": "not_attempted"
           },
           {
             "title": "Arcos Dorados Q1 Earnings Call Highlights",
@@ -219,7 +265,14 @@
             "published_at": "2026-05-20 16:05:18+00:00",
             "url": "https://finance.yahoo.com/markets/stocks/articles/arcos-dorados-q1-earnings-call-160518153.html",
             "summary": "Arcos Dorados (NYSE:ARCO) reported a stronger first quarter of 2026, with management saying revenue, adjusted EBITDA and cash flow improved despite a challenging consumer environment in parts of Latin America. Chief Executive Officer Luis Raganato said total revenue rose about 13% and exceeded $1.2",
-            "kind": "news"
+            "kind": "news",
+            "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/arcos-dorados-q1-earnings-call-160518153.html",
+            "body": "",
+            "language": "",
+            "author": "",
+            "site_name": "",
+            "content_hash": "9d9a82facff587d325ab8e58444d5d24d3ed3af5a543f7a66c9f2db42eb81383",
+            "extraction_status": "not_attempted"
           },
           {
             "title": "Arcos Dorados Holdings Inc. Q1 2026 Earnings Call Summary",
@@ -227,7 +280,14 @@
             "published_at": "2026-05-20 16:43:22+00:00",
             "url": "https://finance.yahoo.com/markets/stocks/articles/arcos-dorados-holdings-inc-q1-164322545.html",
             "summary": "Moby summary of Arcos Dorados Holdings Inc.'s Q1 2026 earnings call",
-            "kind": "news"
+            "kind": "news",
+            "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/arcos-dorados-holdings-inc-q1-164322545.html",
+            "body": "",
+            "language": "",
+            "author": "",
+            "site_name": "",
+            "content_hash": "0ac2741f9081832d211d7f2d0e8bd6fc63543f32b41d020e899726a316f88296",
+            "extraction_status": "not_attempted"
           },
           {
             "title": "Arcos Dorados (ARCO) Q1 2026 Earnings Transcript",
@@ -235,7 +295,14 @@
             "published_at": "2026-05-20 17:49:25+00:00",
             "url": "https://finance.yahoo.com/markets/stocks/articles/arcos-dorados-arco-q1-2026-174925504.html",
             "summary": "Luis Raganato: Over the last several years, we consistently added to our dominant market share position, and elevated brand attributes to historical highs, across Arcos Dorados, operating footprint.  Not all markets are in the same phase of the economic cycle.",
-            "kind": "news"
+            "kind": "news",
+            "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/arcos-dorados-arco-q1-2026-174925504.html",
+            "body": "",
+            "language": "",
+            "author": "",
+            "site_name": "",
+            "content_hash": "ba2e1c62b9ab8794c91c97bbee049befba921949c6123a8b820de57114088396",
+            "extraction_status": "not_attempted"
           }
         ],
         "relevance": {
@@ -246,113 +313,539 @@
         }
       },
       "catalyst": {
-        "count": 6,
-        "score": 0.86,
-        "qualityScore": 0.86,
-        "claim": "Arcos Dorados (ARCO) Tops Q1 Earnings and Revenue Estimates",
-        "type": "earnings",
+        "count": 7,
+        "score": 0.81,
+        "qualityScore": 0.81,
+        "claim": "Arcos Dorados Shares Rise After Earnings Beat Despite Revenue Miss (ARCO)",
+        "type": "guidance",
         "events": [
+          {
+            "ticker": "ARCO",
+            "event_type": "guidance",
+            "claim": "Arcos Dorados Shares Rise After Earnings Beat Despite Revenue Miss (ARCO)",
+            "affected_driver": "Revenue / margin / guidance",
+            "direction": "mixed",
+            "horizon": "20d",
+            "materiality_score": 0.95,
+            "novelty_score": 1.0,
+            "priced_in_risk": "high",
+            "evidence_sources": [
+              "https://finance.yahoo.com/markets/stocks/articles/arcos-dorados-shares-rise-earnings-135807981.html"
+            ],
+            "counter_evidence": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/buy-sell-hold-dpz-stock-123800146.html",
+                "title": "Should You Buy, Sell or Hold DPZ Stock Before the Q1 Earnings Release?",
+                "source": "Zacks",
+                "published_at": "2026-04-22 12:38:00+00:00",
+                "quote": "The Zacks Consensus Estimate for DPZ’s fiscal first-quarter earnings per share (EPS) is pegged at $4.29, suggesting a 0.9% decline from $4.33 reported in the prior-year quarter.",
+                "char_start": 96,
+                "char_end": 273,
+                "source_tier": "tier3"
+              },
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/look-arcos-dorados-holdings-nyse-060820817.html",
+                "title": "A Look At Arcos Dorados Holdings (NYSE:ARCO) Valuation After Recent Share Price Softness",
+                "source": "Simply Wall St.",
+                "published_at": "2026-05-04 06:08:20+00:00",
+                "quote": "With Arcos Dorados last closing at $8.78 against a narrative fair value of $9.91, the widely followed view sees meaningful upside grounded in execution on growth drivers.",
+                "char_start": 1142,
+                "char_end": 1312,
+                "source_tier": "tier3"
+              }
+            ],
+            "company_name": "Arcos Dorados Holdings Inc.",
+            "event_subtype": "unknown",
+            "entities": [
+              "ARCO",
+              "Arcos Dorados Holdings Inc.",
+              "Arcos Dorados Shares",
+              "Rise After Earnings",
+              "Beat Despite Revenue",
+              "Miss",
+              "Arcos Dorados Holdings",
+              "Inc"
+            ],
+            "metrics": [],
+            "evidence_spans": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/arcos-dorados-shares-rise-earnings-135807981.html",
+                "title": "Arcos Dorados Shares Rise After Earnings Beat Despite Revenue Miss (ARCO)",
+                "source": "InvestorsHub",
+                "published_at": "2026-05-20 13:58:07+00:00",
+                "quote": "(NYSE:ARCO) reported first-quarter results on Wednesday that exceeded earnings expectations, although revenue came in slightly below Wall Street forecasts.",
+                "char_start": 28,
+                "char_end": 183,
+                "source_tier": "tier1"
+              }
+            ],
+            "source_quality_score": 0.95,
+            "market_reaction_score": 0.77,
+            "score": 0.81,
+            "published_at": "2026-05-20 13:58:07+00:00"
+          },
+          {
+            "ticker": "ARCO",
+            "event_type": "guidance",
+            "claim": "Should You Buy, Sell or Hold DPZ Stock Before the Q1 Earnings Release?",
+            "affected_driver": "Revenue / margin / guidance",
+            "direction": "positive",
+            "horizon": "20d",
+            "materiality_score": 1.0,
+            "novelty_score": 1.0,
+            "priced_in_risk": "high",
+            "evidence_sources": [
+              "https://finance.yahoo.com/markets/stocks/articles/buy-sell-hold-dpz-stock-123800146.html"
+            ],
+            "counter_evidence": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/look-arcos-dorados-holdings-nyse-060820817.html",
+                "title": "A Look At Arcos Dorados Holdings (NYSE:ARCO) Valuation After Recent Share Price Softness",
+                "source": "Simply Wall St.",
+                "published_at": "2026-05-04 06:08:20+00:00",
+                "quote": "Track your investments for FREE with Simply Wall St, the portfolio command center trusted by over 7 million individual investors worldwide.",
+                "char_start": 0,
+                "char_end": 139,
+                "source_tier": "tier3"
+              },
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/arcos-dorados-shares-rise-earnings-135807981.html",
+                "title": "Arcos Dorados Shares Rise After Earnings Beat Despite Revenue Miss (ARCO)",
+                "source": "InvestorsHub",
+                "published_at": "2026-05-20 13:58:07+00:00",
+                "quote": "(NYSE:ARCO) reported first-quarter results on Wednesday that exceeded earnings expectations, although revenue came in slightly below Wall Street forecasts.",
+                "char_start": 28,
+                "char_end": 183,
+                "source_tier": "tier1"
+              }
+            ],
+            "company_name": "Arcos Dorados Holdings Inc.",
+            "event_subtype": "unknown",
+            "entities": [
+              "ARCO",
+              "Arcos Dorados Holdings Inc.",
+              "Should You Buy",
+              "Sell",
+              "Hold DPZ Stock",
+              "Before",
+              "Earnings Release",
+              "Domino"
+            ],
+            "metrics": [
+              {
+                "name": "revenue",
+                "value": "5.4%",
+                "unit": "%",
+                "context": "to Q1 earnings with revenues seen up 5.4% on carryout, loyalty and DoorDash."
+              },
+              {
+                "name": "metric",
+                "value": "0.9%",
+                "unit": "%",
+                "context": "PS) is pegged at $4.29, suggesting a 0.9% decline from $4.33 reported in the"
+              },
+              {
+                "name": "metric",
+                "value": "1.8%",
+                "unit": "%",
+                "context": "s mark for earnings has decreased by 1.8% in the past 60 days. DPZ Earnings E"
+              },
+              {
+                "name": "revenue",
+                "value": "$1.17 billion",
+                "unit": "billion",
+                "context": "first-quarter revenues is pegged at $1.17 billion, indicating growth of 5.4% from the"
+              },
+              {
+                "name": "metric",
+                "value": "1.1%",
+                "unit": "%",
+                "context": "ed twice, the average surprise being 1.1%. In the last reported quarter, the"
+              }
+            ],
+            "evidence_spans": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/buy-sell-hold-dpz-stock-123800146.html",
+                "title": "Should You Buy, Sell or Hold DPZ Stock Before the Q1 Earnings Release?",
+                "source": "Zacks",
+                "published_at": "2026-04-22 12:38:00+00:00",
+                "quote": "Our model forecasts fiscal first-quarter gross margin at 38.4%, indicating a decline of 140 basis points from 39.8% reported in the prior-year quarter.",
+                "char_start": 3492,
+                "char_end": 3643,
+                "source_tier": "tier3"
+              }
+            ],
+            "source_quality_score": 0.68,
+            "market_reaction_score": 0.77,
+            "score": 0.77,
+            "published_at": "2026-04-22 12:38:00+00:00"
+          },
+          {
+            "ticker": "ARCO",
+            "event_type": "guidance",
+            "claim": "A Look At Arcos Dorados Holdings (NYSE:ARCO) Valuation After Recent Share Price Softness",
+            "affected_driver": "Revenue / margin / guidance",
+            "direction": "positive",
+            "horizon": "20d",
+            "materiality_score": 1.0,
+            "novelty_score": 1.0,
+            "priced_in_risk": "high",
+            "evidence_sources": [
+              "https://finance.yahoo.com/markets/stocks/articles/look-arcos-dorados-holdings-nyse-060820817.html"
+            ],
+            "counter_evidence": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/buy-sell-hold-dpz-stock-123800146.html",
+                "title": "Should You Buy, Sell or Hold DPZ Stock Before the Q1 Earnings Release?",
+                "source": "Zacks",
+                "published_at": "2026-04-22 12:38:00+00:00",
+                "quote": "The Zacks Consensus Estimate for DPZ’s fiscal first-quarter earnings per share (EPS) is pegged at $4.29, suggesting a 0.9% decline from $4.33 reported in the prior-year quarter.",
+                "char_start": 96,
+                "char_end": 273,
+                "source_tier": "tier3"
+              },
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/arcos-dorados-shares-rise-earnings-135807981.html",
+                "title": "Arcos Dorados Shares Rise After Earnings Beat Despite Revenue Miss (ARCO)",
+                "source": "InvestorsHub",
+                "published_at": "2026-05-20 13:58:07+00:00",
+                "quote": "(NYSE:ARCO) reported first-quarter results on Wednesday that exceeded earnings expectations, although revenue came in slightly below Wall Street forecasts.",
+                "char_start": 28,
+                "char_end": 183,
+                "source_tier": "tier1"
+              }
+            ],
+            "company_name": "Arcos Dorados Holdings Inc.",
+            "event_subtype": "unknown",
+            "entities": [
+              "ARCO",
+              "Arcos Dorados Holdings Inc.",
+              "Look",
+              "Arcos Dorados Holdings",
+              "NYSE",
+              "Valuation After Recent",
+              "Share Price Softness",
+              "Why Arcos Dorados"
+            ],
+            "metrics": [
+              {
+                "name": "metric",
+                "value": "1.6%",
+                "unit": "%",
+                "context": "ings. The share price has eased back 1.6% over the last day and 4.9% across t"
+              },
+              {
+                "name": "metric",
+                "value": "4%",
+                "unit": "%",
+                "context": "he week, yet a 20.4% year to date share price return and"
+              },
+              {
+                "name": "metric",
+                "value": "1%",
+                "unit": "%",
+                "context": "18.1% one year total shareholder... Track"
+              },
+              {
+                "name": "metric",
+                "value": "7 million",
+                "unit": "million",
+                "context": "folio command center trusted by over 7 million individual investors worldwide. Why"
+              },
+              {
+                "name": "metric",
+                "value": "11.4%",
+                "unit": "%",
+                "context": "ture growth. Most Popular Narrative: 11.4% Undervalued With Arcos Dorados last"
+              }
+            ],
+            "evidence_spans": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/look-arcos-dorados-holdings-nyse-060820817.html",
+                "title": "A Look At Arcos Dorados Holdings (NYSE:ARCO) Valuation After Recent Share Price Softness",
+                "source": "Simply Wall St.",
+                "published_at": "2026-05-04 06:08:20+00:00",
+                "quote": "With Arcos Dorados last closing at $8.78 against a narrative fair value of $9.91, the widely followed view sees meaningful upside grounded in execution on growth drivers.",
+                "char_start": 1142,
+                "char_end": 1312,
+                "source_tier": "tier3"
+              }
+            ],
+            "source_quality_score": 0.68,
+            "market_reaction_score": 0.77,
+            "score": 0.77,
+            "published_at": "2026-05-04 06:08:20+00:00"
+          },
           {
             "ticker": "ARCO",
             "event_type": "earnings",
             "claim": "Arcos Dorados (ARCO) Tops Q1 Earnings and Revenue Estimates",
-            "affected_driver": "Revenue / margin / guidance",
+            "affected_driver": "Revenue / margin / earnings quality",
             "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.9,
+            "horizon": "5d",
+            "materiality_score": 0.94,
             "novelty_score": 1.0,
-            "priced_in_risk": "low",
+            "priced_in_risk": "high",
             "evidence_sources": [
               "https://finance.yahoo.com/markets/stocks/articles/arcos-dorados-arco-tops-q1-122502572.html"
             ],
-            "counter_evidence": [],
-            "score": 0.86,
+            "counter_evidence": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/buy-sell-hold-dpz-stock-123800146.html",
+                "title": "Should You Buy, Sell or Hold DPZ Stock Before the Q1 Earnings Release?",
+                "source": "Zacks",
+                "published_at": "2026-04-22 12:38:00+00:00",
+                "quote": "The Zacks Consensus Estimate for DPZ’s fiscal first-quarter earnings per share (EPS) is pegged at $4.29, suggesting a 0.9% decline from $4.33 reported in the prior-year quarter.",
+                "char_start": 96,
+                "char_end": 273,
+                "source_tier": "tier3"
+              },
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/look-arcos-dorados-holdings-nyse-060820817.html",
+                "title": "A Look At Arcos Dorados Holdings (NYSE:ARCO) Valuation After Recent Share Price Softness",
+                "source": "Simply Wall St.",
+                "published_at": "2026-05-04 06:08:20+00:00",
+                "quote": "With Arcos Dorados last closing at $8.78 against a narrative fair value of $9.91, the widely followed view sees meaningful upside grounded in execution on growth drivers.",
+                "char_start": 1142,
+                "char_end": 1312,
+                "source_tier": "tier3"
+              }
+            ],
+            "company_name": "Arcos Dorados Holdings Inc.",
+            "event_subtype": "beat_miss",
+            "entities": [
+              "ARCO",
+              "Arcos Dorados Holdings Inc.",
+              "Arcos Dorados",
+              "Tops",
+              "Earnings",
+              "Revenue Estimates Arcos",
+              "Dorados",
+              "March"
+            ],
+            "metrics": [
+              {
+                "name": "revenue",
+                "value": "54.55%",
+                "unit": "%",
+                "context": "earnings and revenue surprises of +54.55% and +2.20%, respectively, for the q"
+              }
+            ],
+            "evidence_spans": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/arcos-dorados-arco-tops-q1-122502572.html",
+                "title": "Arcos Dorados (ARCO) Tops Q1 Earnings and Revenue Estimates",
+                "source": "Zacks",
+                "published_at": "2026-05-20 12:25:02+00:00",
+                "quote": "Arcos Dorados (ARCO) delivered earnings and revenue surprises of +54.55% and +2.20%, respectively, for the quarter ended March 2026.",
+                "char_start": 0,
+                "char_end": 132,
+                "source_tier": "tier3"
+              }
+            ],
+            "source_quality_score": 0.68,
+            "market_reaction_score": 0.77,
+            "score": 0.75,
             "published_at": "2026-05-20 12:25:02+00:00"
           },
           {
             "ticker": "ARCO",
             "event_type": "earnings",
-            "claim": "Arcos Dorados Shares Rise After Earnings Beat Despite Revenue Miss (ARCO)",
-            "affected_driver": "Revenue / margin / guidance",
-            "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.9,
-            "novelty_score": 1.0,
-            "priced_in_risk": "low",
-            "evidence_sources": [
-              "https://finance.yahoo.com/markets/stocks/articles/arcos-dorados-shares-rise-earnings-135807981.html"
-            ],
-            "counter_evidence": [],
-            "score": 0.86,
-            "published_at": "2026-05-20 13:58:07+00:00"
-          },
-          {
-            "ticker": "ARCO",
-            "event_type": "earnings",
             "claim": "Arcos Dorados Q1 Earnings Call Highlights",
-            "affected_driver": "Revenue / margin / guidance",
-            "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.9,
+            "affected_driver": "Revenue / margin / earnings quality",
+            "direction": "negative",
+            "horizon": "5d",
+            "materiality_score": 0.94,
             "novelty_score": 1.0,
-            "priced_in_risk": "low",
+            "priced_in_risk": "high",
             "evidence_sources": [
               "https://finance.yahoo.com/markets/stocks/articles/arcos-dorados-q1-earnings-call-160518153.html"
             ],
-            "counter_evidence": [],
-            "score": 0.86,
+            "counter_evidence": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/buy-sell-hold-dpz-stock-123800146.html",
+                "title": "Should You Buy, Sell or Hold DPZ Stock Before the Q1 Earnings Release?",
+                "source": "Zacks",
+                "published_at": "2026-04-22 12:38:00+00:00",
+                "quote": "The consensus mark for fiscal first-quarter revenues is pegged at $1.17 billion, indicating growth of 5.4% from the year-ago quarter’s reported figure.",
+                "char_start": 417,
+                "char_end": 568,
+                "source_tier": "tier3"
+              },
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/look-arcos-dorados-holdings-nyse-060820817.html",
+                "title": "A Look At Arcos Dorados Holdings (NYSE:ARCO) Valuation After Recent Share Price Softness",
+                "source": "Simply Wall St.",
+                "published_at": "2026-05-04 06:08:20+00:00",
+                "quote": "Continued digital adoption, including loyalty program rollouts, app engagement, and digital ordering, are driving higher visit frequency, stronger customer retention, and higher identified sales, which is likely to support future revenue growth and improve gross margins as digital channels scale.",
+                "char_start": 1313,
+                "char_end": 1610,
+                "source_tier": "tier3"
+              }
+            ],
+            "company_name": "Arcos Dorados Holdings Inc.",
+            "event_subtype": "beat_miss",
+            "entities": [
+              "ARCO",
+              "Arcos Dorados Holdings Inc.",
+              "Arcos Dorados",
+              "Earnings Call Highlights",
+              "NYSE",
+              "EBITDA",
+              "Latin America. Chief",
+              "Executive Officer Luis"
+            ],
+            "metrics": [
+              {
+                "name": "revenue",
+                "value": "13%",
+                "unit": "%",
+                "context": "ganato said total revenue rose about 13% and exceeded $1.2"
+              }
+            ],
+            "evidence_spans": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/arcos-dorados-q1-earnings-call-160518153.html",
+                "title": "Arcos Dorados Q1 Earnings Call Highlights",
+                "source": "MarketBeat",
+                "published_at": "2026-05-20 16:05:18+00:00",
+                "quote": "Chief Executive Officer Luis Raganato said total revenue rose about 13% and exceeded $1.2",
+                "char_start": 210,
+                "char_end": 299,
+                "source_tier": "tier3"
+              }
+            ],
+            "source_quality_score": 0.68,
+            "market_reaction_score": 0.77,
+            "score": 0.75,
             "published_at": "2026-05-20 16:05:18+00:00"
           },
           {
             "ticker": "ARCO",
             "event_type": "earnings",
             "claim": "Arcos Dorados Holdings Inc. Q1 2026 Earnings Call Summary",
-            "affected_driver": "Revenue / margin / guidance",
+            "affected_driver": "Revenue / margin / earnings quality",
             "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.9,
+            "horizon": "5d",
+            "materiality_score": 0.86,
             "novelty_score": 1.0,
-            "priced_in_risk": "low",
+            "priced_in_risk": "high",
             "evidence_sources": [
               "https://finance.yahoo.com/markets/stocks/articles/arcos-dorados-holdings-inc-q1-164322545.html"
             ],
-            "counter_evidence": [],
-            "score": 0.86,
+            "counter_evidence": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/buy-sell-hold-dpz-stock-123800146.html",
+                "title": "Should You Buy, Sell or Hold DPZ Stock Before the Q1 Earnings Release?",
+                "source": "Zacks",
+                "published_at": "2026-04-22 12:38:00+00:00",
+                "quote": "The Zacks Consensus Estimate for DPZ’s fiscal first-quarter earnings per share (EPS) is pegged at $4.29, suggesting a 0.9% decline from $4.33 reported in the prior-year quarter.",
+                "char_start": 96,
+                "char_end": 273,
+                "source_tier": "tier3"
+              },
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/look-arcos-dorados-holdings-nyse-060820817.html",
+                "title": "A Look At Arcos Dorados Holdings (NYSE:ARCO) Valuation After Recent Share Price Softness",
+                "source": "Simply Wall St.",
+                "published_at": "2026-05-04 06:08:20+00:00",
+                "quote": "With Arcos Dorados last closing at $8.78 against a narrative fair value of $9.91, the widely followed view sees meaningful upside grounded in execution on growth drivers.",
+                "char_start": 1142,
+                "char_end": 1312,
+                "source_tier": "tier3"
+              }
+            ],
+            "company_name": "Arcos Dorados Holdings Inc.",
+            "event_subtype": "beat_miss",
+            "entities": [
+              "ARCO",
+              "Arcos Dorados Holdings Inc.",
+              "Arcos Dorados Holdings",
+              "Inc",
+              "Earnings Call Summary",
+              "Moby"
+            ],
+            "metrics": [],
+            "evidence_spans": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/arcos-dorados-holdings-inc-q1-164322545.html",
+                "title": "Arcos Dorados Holdings Inc. Q1 2026 Earnings Call Summary",
+                "source": "Moby",
+                "published_at": "2026-05-20 16:43:22+00:00",
+                "quote": "Moby summary of Arcos Dorados Holdings Inc.'s Q1 2026 earnings call",
+                "char_start": 0,
+                "char_end": 67,
+                "source_tier": "tier3"
+              }
+            ],
+            "source_quality_score": 0.68,
+            "market_reaction_score": 0.77,
+            "score": 0.72,
             "published_at": "2026-05-20 16:43:22+00:00"
           },
           {
             "ticker": "ARCO",
             "event_type": "earnings",
             "claim": "Arcos Dorados (ARCO) Q1 2026 Earnings Transcript",
-            "affected_driver": "Revenue / margin / guidance",
+            "affected_driver": "Revenue / margin / earnings quality",
             "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.9,
+            "horizon": "5d",
+            "materiality_score": 0.86,
             "novelty_score": 1.0,
-            "priced_in_risk": "low",
+            "priced_in_risk": "high",
             "evidence_sources": [
               "https://finance.yahoo.com/markets/stocks/articles/arcos-dorados-arco-q1-2026-174925504.html"
             ],
-            "counter_evidence": [],
-            "score": 0.86,
-            "published_at": "2026-05-20 17:49:25+00:00"
-          },
-          {
-            "ticker": "ARCO",
-            "event_type": "general_news",
-            "claim": "A Look At Arcos Dorados Holdings (NYSE:ARCO) Valuation After Recent Share Price Softness",
-            "affected_driver": "Narrative / sentiment",
-            "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.45,
-            "novelty_score": 1.0,
-            "priced_in_risk": "low",
-            "evidence_sources": [
-              "https://finance.yahoo.com/markets/stocks/articles/look-arcos-dorados-holdings-nyse-060820817.html"
+            "counter_evidence": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/buy-sell-hold-dpz-stock-123800146.html",
+                "title": "Should You Buy, Sell or Hold DPZ Stock Before the Q1 Earnings Release?",
+                "source": "Zacks",
+                "published_at": "2026-04-22 12:38:00+00:00",
+                "quote": "The Zacks Consensus Estimate for DPZ’s fiscal first-quarter earnings per share (EPS) is pegged at $4.29, suggesting a 0.9% decline from $4.33 reported in the prior-year quarter.",
+                "char_start": 96,
+                "char_end": 273,
+                "source_tier": "tier3"
+              },
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/look-arcos-dorados-holdings-nyse-060820817.html",
+                "title": "A Look At Arcos Dorados Holdings (NYSE:ARCO) Valuation After Recent Share Price Softness",
+                "source": "Simply Wall St.",
+                "published_at": "2026-05-04 06:08:20+00:00",
+                "quote": "With Arcos Dorados last closing at $8.78 against a narrative fair value of $9.91, the widely followed view sees meaningful upside grounded in execution on growth drivers.",
+                "char_start": 1142,
+                "char_end": 1312,
+                "source_tier": "tier3"
+              }
             ],
-            "counter_evidence": [],
-            "score": 0.66,
-            "published_at": "2026-05-04 06:08:20+00:00"
+            "company_name": "Arcos Dorados Holdings Inc.",
+            "event_subtype": "beat_miss",
+            "entities": [
+              "ARCO",
+              "Arcos Dorados Holdings Inc.",
+              "Arcos Dorados",
+              "Earnings Transcript Luis",
+              "Raganato",
+              "Over",
+              "Not"
+            ],
+            "metrics": [],
+            "evidence_spans": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/arcos-dorados-arco-q1-2026-174925504.html",
+                "title": "Arcos Dorados (ARCO) Q1 2026 Earnings Transcript",
+                "source": "Motley Fool",
+                "published_at": "2026-05-20 17:49:25+00:00",
+                "quote": "Luis Raganato: Over the last several years, we consistently added to our dominant market share position, and elevated brand attributes to historical highs, across Arcos Dorados, operating footprint.",
+                "char_start": 0,
+                "char_end": 198,
+                "source_tier": "tier3"
+              }
+            ],
+            "source_quality_score": 0.68,
+            "market_reaction_score": 0.77,
+            "score": 0.72,
+            "published_at": "2026-05-20 17:49:25+00:00"
           }
         ]
       },
@@ -2324,7 +2817,7 @@
       "sources": [
         "undervalued_growth"
       ],
-      "score": 1.081,
+      "score": 1.045,
       "agentView": "news_first_watch",
       "stance": "뉴스 우선 감시",
       "price": {
@@ -2364,27 +2857,27 @@
         "warnings": []
       },
       "marketReaction": {
-        "abnormalReturn1d": null,
-        "abnormalReturn5d": null,
-        "abnormalReturn20d": null,
-        "volumeZscore": null,
-        "volumeRatio": null,
-        "gapReturn": null,
-        "reactionScore": null
+        "abnormalReturn1d": 0.06475,
+        "abnormalReturn5d": -0.00684,
+        "abnormalReturn20d": 0.0193,
+        "volumeZscore": 1.68628,
+        "volumeRatio": 1.5598,
+        "gapReturn": 0.04032,
+        "reactionScore": 0.529
       },
       "news": {
-        "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'Harmony Gold Mining Co Ltd (HMY) (Half Year 2026) Earnings Call Highlights: Strong Financial ...'이며, 차트 신호와 함께 감시할 만하다.",
-        "positive": 5,
+        "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'Harmony Gold Mining Q2 Earnings Call Highlights'이며, 차트 신호와 함께 감시할 만하다.",
+        "positive": 3,
         "negative": 0,
-        "mixed": 3,
+        "mixed": 5,
         "headlines": [
           {
-            "stance": "positive",
+            "stance": "mixed",
             "title": "Harmony Gold Mining Q2 Earnings Call Highlights",
             "source": "MarketBeat"
           },
           {
-            "stance": "positive",
+            "stance": "mixed",
             "title": "Harmony Gold Mining H1 Earnings Call Highlights",
             "source": "MarketBeat"
           },
@@ -2426,7 +2919,14 @@
             "published_at": "2026-03-11 09:44:04+00:00",
             "url": "https://finance.yahoo.com/news/harmony-gold-mining-q2-earnings-094404519.html",
             "summary": "Harmony Gold Mining (NYSE:HMY) executives used the company’s half-year results presentation to outline a strategy centered on maintaining a cash-generative gold base while deliberately scaling copper to improve resilience through commodity cycles. CEO Beyers Nel and Financial Director Boipelo Lekubo",
-            "kind": "news"
+            "kind": "news",
+            "canonical_url": "https://finance.yahoo.com/news/harmony-gold-mining-q2-earnings-094404519.html",
+            "body": "Key Points\n-\nHarmony is keeping gold as its core while deliberately scaling copper as a \"strategic growth lever,\" targeting about 100,000 tonnes per annum of copper from CSA and Eva within three to five years and planning for roughly 40% of production to be copper by FY35 once Wafi‑Golpu, Eva and CSA ramp.\n-\nResults showed materially stronger profitability and balance‑sheet strength—EBITDA up 39% to ZAR 18 billion, operating cash up 36% and net debt/EBITDA at 0.18x—and the company declared a record interim dividend of ZAR 5.30/share (ZAR 3.4 billion) alongside a revised dividend policy allowing up to 50% of net free cash to be returned.\n-\nOperationally Harmony produced 724,000 ounces but faced short‑term headwinds (an industry‑wide cyanide shortage, lower plant recoveries and a mill motor failure), lifting group AISC to ZAR 1.18 million/kg ($2,115/oz), while project timelines include Eva first production before end‑2028 (c.65,000 tpa initial) and FY26 CSA copper guidance of 17,500–18,500 tonnes.\n-\nInterested in Harmony Gold Mining Company Limited? Here are five stocks we like better.\nHarmony Gold Mining (NYSE:HMY) executives used the company’s half-year results presentation to outline a strategy centered on maintaining a cash-generative gold base while deliberately scaling copper to improve resilience through commodity cycles. CEO Beyers Nel and Financial Director Boipelo Lekubo highlighted stronger profitability and cash generation in the period, alongside operational disruptions that management said have largely normalized.\nStrategy: gold stability with planned copper growth\nNel said Harmony’s approach is guided by four strategic pillars—responsible stewardship, operational excellence, cash certainty, and capital allocation—with an emphasis on “value over volume.” He described Harmony as a geographically diversified producer with operations in South Africa, Papua New Guinea, and Australia, underpinned by approximately 136 million ounces of mineral resources and about 37 million ounces of mineral reserves.\n→ Microsoft Positioned to Win AI Race With Dual-Model Strategy\nGold remains the company’s “core,” while copper is positioned as a “strategic growth lever.” Nel said Harmony plans to bring about 100,000 tonnes per annum of copper online from CSA and Eva within three to five years to help address the production gap anticipated at Mponeng and to smooth cash flows. He said Harmony is not targeting a fixed copper-to-gold ratio, describing decisions as driven by fundamentals, economic value, and reserve strength.\nNel also pointed to Wafi-Golpu in Papua New Guinea as a “generational asset” that is not yet permitted and could move the company toward first-quartile costs once in production. He noted that by “FY35,” current plans suggest that roughly 40% of production may be copper from Eva, CSA, and Wafi-Golpu, complementing South Africa’s gold base.\nOperational performance: production impacted by shortages and plant issues\n→ Why This Defense ETF Could Keep Rallying as the Iran Conflict Escalates\nHarmony reported 724,000 ounces of gold production for the reporting period. Nel attributed the performance to short-term headwinds, including an industry-wide cyanide shortage and lower plant recoveries in South Africa. Underground recovered grades decreased 11% to 5.7 g/t, though management said face grades mined were in line with plans and plant recoveries have “now normalized.”\nAt Hidden Valley, production was affected by a tectonic-related mill motor failure and gold shipping delays, which reduced the amount of gold sold during the period, according to Nel.\n→ FuelCell Energy Is Burning Cash Faster Than It’s Building Momentum\nOn costs, Harmony said group all-in sustaining costs rose to ZAR 1.18 million per kilogram, or $2,115 per ounce, driven by lower volumes and higher royalties. Nel said he remained confident the company would meet full-year production, cost, and grade guidance.\nSafety remained a central theme. Nel said the lost time injury frequency rate reached an all-time low of 4.23 and has stayed below 5 for three consecutive quarters, though the company reported a fatality in the second quarter. Management said it has linked remuneration to both leading and lagging safety indicators.\nFinancial results and notable line items\nLekubo said the first half of fiscal 2026 benefited from a higher realized gold price and operational discipline. Gold revenue (including gold hedges) increased 20% to ZAR 44 billion. She said Harmony hedges up to 30% of gold production over a rolling 36 months to protect margins and maintain flexibility during elevated capital cycles.\nKey financial metrics shared on the call included:\n-\nEBITDA up 39% to ZAR 18 billion\n-\nCash generated by operating activities up 36% to ZAR 14 billion\n-\nOperating profit up 61% to ZAR 16 billion\n-\nNet profit up 24% to ZAR 10 billion\n-\nBasic earnings up 24% to ZAR 15.63 per share (as cited by Nel)\n-\nNet debt to EBITDA at 0.18x, below the company’s 1.0x threshold following the MAC acquisition\nLekubo outlined several items affecting earnings, including a ZAR 4.5 billion realized gold hedge loss (included in revenue), a ZAR 1 billion silver derivative loss at Hidden Valley, and a ZAR 700 million foreign exchange translation gain from a stronger rand. She also cited a ZAR 1.1 billion impairment reversal at Tshepong North included in operating profit. Profit before tax was impacted by ZAR 1.4 billion in once-off acquisition costs related to the MAC acquisition (mostly stamp duty in Australia), a ZAR 900 million non-cash fair value adjustment for CSA silver and copper streams, and ZAR 700 million in borrowing costs. Current taxation increased 86%, reducing net profit by ZAR 3.6 billion, she said.\nOn the cost structure, Lekubo said more than 90% of the cost base is rand-denominated. Total cash costs (excluding CSA) rose 10% to ZAR 22 billion, with labor representing roughly 55% of group costs and increasing about 6% in line with a five-year wage agreement. Electricity and water represented 24% of costs, with electricity up 14% year-over-year. South African royalties increased 60% on higher revenue and profitability.\nLekubo said Harmony had around ZAR 15 billion (about $900 million) in cash and undrawn facilities and expects to return to a net cash position by fiscal year-end, even after paying for the CSA acquisition.\nDividend policy revised; interim dividend increased\nManagement announced a revised dividend policy designed to increase shareholder participation while maintaining leverage guardrails. Lekubo said the company amended the policy to allow up to 50% of net free cash to be returned to shareholders, subject to board discretion and net debt-to-EBITDA levels. The base payout was increased from 20% to 30% of net free cash (after all capital, including major capital), with potential for an additional performance-related payout of up to 20% when leverage improves. If leverage is at or above 0.5x and below 1.0x, only the base dividend is payable, she said.\nHarmony declared an interim dividend of ZAR 5.30 ($0.32) per share, a record ZAR 3.4 billion ($204 million) payout, representing 43% of net free cash for the period and a rolling twelve-month dividend yield of 2.2%, according to Lekubo.\nProject updates: Eva Copper, CSA integration, and Wafi-Golpu permitting\nOn growth projects, Nel said the “first rand or dollar” goes to safety and sustaining operations, with growth capital allocated only where risk-adjusted returns meet hurdle rates.\nEva Copper (Australia) was described as a large greenfield copper-gold project with “full construction now underway.” Management said ramp-up to first production is expected before the end of calendar 2028. Harmony said the project is planned to produce approximately 65,000 tonnes of copper per annum for the first five years and an average of 60,000 tonnes per annum over a mine life of at least 15 years, with processing capacity scaled to 18 million tonnes per annum. Total capital was reiterated at $1.55 billion to $1.75 billion over three years (20/40/40 split), with an indicated capital intensity of about $26,000 to $29,000 per tonne of copper. C1 cash costs for the first five years were cited at about $2.07/lb on base assumptions.\nCSA, acquired through the MAC transaction, was presented as immediate copper production with potential for life-of-mine extension. Management said CSA is Australia’s highest-grade copper mine with a reserve grade above 3.4% and more than 12 years of reserve life. Nel said integration steps included aligning employees to Harmony’s culture, conducting a seven-day safety stoppage to upgrade secondary egress, prioritizing geotechnical sequencing, decline development, and ventilation projects, and removing roughly ZAR 300 million in costs since acquisition (mainly corporate overhead and financing). The development of the Upper Meran mine has been paused pending further drilling to improve orebody confidence.\nHarmony expects FY2026 copper production at CSA of 17,500 to 18,500 tonnes at a recovered grade above 3.5%, despite a planned one-month stoppage related to shaft steelwork upgrades. Planned capital spend at CSA this fiscal year is ZAR 1.1 billion, and C1 cash costs are expected to be $2.65 to $2.80 per pound. Nel said longer-term guidance for CSA would be provided in August.\nOn constraints at CSA, Nel said the main bottleneck is underground—particularly the ventilation circuit—and described optimization as a sequential debottlenecking process expected to take 18 to 24 months. He said the processing plant has about 1.8 million tonnes of throughput capacity and that the constraint is not the plant, but the underground mining system.\nRegarding Wafi-Golpu, Nel said the next key step is permitting, noting the importance of concluding negotiations for the Special Mining Lease and Mine Development Contract. He described a recent development in Papua New Guinea: the Prime Minister appointed a Peer Review Team to evaluate why negotiations have not produced an outcome, which Nel characterized as a positive intervention that is nearing completion.\nIn closing remarks, Nel said Harmony reaffirmed annual gold production, grade, and cost guidance, and noted that gold capex guidance was reduced by ZAR 1 billion, while total capex guidance now includes Eva and CSA for the year.\nAbout Harmony Gold Mining (NYSE:HMY)\nHarmony Gold Mining Company Limited is a South Africa–based precious metals producer primarily engaged in the exploration, mining and processing of gold. The company operates a portfolio of underground and surface mining operations, targeting both reef-hosted and alluvial deposits. In addition to gold, Harmony’s activities encompass the extraction of copper as a byproduct at its Papua New Guinea operations.\nIn South Africa, Harmony’s mining footprint includes deep-level underground operations in the Witwatersrand Basin, where it employs a combination of conventional and mechanized mining methods.\nThe article \"Harmony Gold Mining Q2 Earnings Call Highlights\" was originally published by MarketBeat.",
+            "language": "",
+            "author": "MarketBeat",
+            "site_name": "",
+            "content_hash": "0a968e66ce7395bf0708e6368d7cde7992cf351281c3f86597973548ac7a4aa0",
+            "extraction_status": "ok"
           },
           {
             "title": "Harmony Gold Mining H1 Earnings Call Highlights",
@@ -2434,7 +2934,14 @@
             "published_at": "2026-03-11 10:48:00+00:00",
             "url": "https://finance.yahoo.com/news/harmony-gold-mining-h1-earnings-104800245.html",
             "summary": "Harmony Gold Mining (NYSE:HMY) executives used the company’s media call on results for the six months ended Dec. 31, 2025 to emphasize progress toward what CEO Beyers Nel described as a “higher quality, lower risk global producer of copper and gold,” while highlighting stronger cash generation and a",
-            "kind": "news"
+            "kind": "news",
+            "canonical_url": "https://finance.yahoo.com/news/harmony-gold-mining-h1-earnings-104800245.html",
+            "body": "Key Points\n-\nDividend policy revised: Harmony introduced a base dividend plus an “upside participation” model tied to pre-dividend net debt-to-EBITDA and declared an interim dividend of ZAR 5.30 ($0.32) per share — a record ZAR 3.4bn payout (43% of net free cash flow) and a rolling 12‑month yield of 2.2%.\n-\nEva Copper FID and capex update: The company has moved Eva to full construction after a final investment decision, raised group FY2026 capex to ZAR 18.5bn (including Eva ZAR 5.6bn and CSA ZAR 1.1bn), and expects Eva total project costs of $1.55–1.75bn with first production targeted late 2028.\n-\nOperational and production guidance: Harmony reiterated FY2026 gold guidance of 1.4–1.5Moz and provided CSA copper guidance of 17,500–18,500t, said supply issues (cyanide) have normalized, and expects to return to a net cash position by year‑end despite the $1bn CSA acquisition.\n-\nInterested in Harmony Gold Mining Company Limited? Here are five stocks we like better.\nHarmony Gold Mining (NYSE:HMY) executives used the company’s media call on results for the six months ended Dec. 31, 2025 to emphasize progress toward what CEO Beyers Nel described as a “higher quality, lower risk global producer of copper and gold,” while highlighting stronger cash generation and an updated dividend framework intended to give shareholders greater participation during favorable commodity-price conditions.\nStrategy focus: safety first, selective growth, balance sheet discipline\nNel said Harmony continues to pursue “selective, sequentially, and affordably” growth, with capital allocation priorities starting with safety and sustaining the existing business, followed by organic projects and expansion where risk-adjusted returns meet company hurdles. He added that each initiative competes internally on “risk, margin, and cash conversion,” and that management intends to preserve balance sheet strength to support “disciplines and consistent through the cycle dividends.”\n→ Microsoft Positioned to Win AI Race With Dual-Model Strategy\nManagement said operations remain on track to meet full-year production, cost, and grade guidance, and noted that the “exceptional gold price environment” supported what it characterized as another strong financial performance in the half.\nDividend policy revised; interim payout doubled\nHarmony announced a revision to its dividend policy, introducing a base dividend plus an “upside participation model” linked to pre-dividend net debt-to-EBITDA levels. Under the new framework, the company declared an interim dividend of ZAR 5.30 (or $0.32) per share, which management said equates to a rolling 12-month dividend yield of 2.2%.\n→ FuelCell Energy Is Burning Cash Faster Than It’s Building Momentum\nNel said the interim dividend payout doubled to a record ZAR 3.4 billion (or $204 million), representing 43% of net free cash flow for the period.\nFY2026 guidance reiterated for gold; copper guidance provided for CSA\nFor fiscal 2026, Harmony reiterated prior guidance for its gold operations:\n-\nGold production: 1.4 million to 1.5 million ounces\n-\nUnderground recovered grades: above 5.8 grams per tonne\n-\nAll-in sustaining costs (AISC): ZAR 1.15 million to ZAR 1.22 million per kilogram\n→ Why This Defense ETF Could Keep Rallying as the Iran Conflict Escalates\nOn copper, the company said its production guidance only includes the CSA mine for FY2026, with targets of:\n-\nCopper production: 17,500 to 18,500 tons\n-\nC1 cash costs: $2.65 to $2.80 per pound\n-\nRecovered grades: above 3.5%\nNel said longer-term guidance for the CSA mine would be provided at the company’s full-year results release.\nCapex updated; Eva construction underway with first production targeted for late 2028\nGroup capital expenditure guidance for FY2026 was updated to ZAR 18.5 billion, now including capital spending for both CSA and the Eva Copper project. The company said gold operations capex has been reduced by ZAR 1 billion to ZAR 11.8 billion. CSA capex was guided at ZAR 1.1 billion (or $65 million), while Eva Copper capex is projected at ZAR 5.6 billion (around $302 million) for the current financial year.\nOn Eva, Nel told journalists that Harmony announced a final investment decision in November 2025. He said early works have largely been completed and the project has ramped up to “full construction.” The company is targeting first production toward the end of calendar 2028 and guided total project capital of $1.55 billion to $1.75 billion over a three-year construction period, using an estimated 20/40/40 spend split across those years.\nNel also addressed why the company is investing in Australia, saying Harmony has operated an Australian regional hub for more than 20 years, supporting its Papua New Guinea operations from Brisbane, and that Australia is a “natural extension” of its capabilities in the region.\nOperational topics: supply chain normalization, CSA stoppages, and drivers of lower gold output\nDuring Q&A, executives said an earlier industry-wide force majeure affecting cyanide supply has now normalized. Management also said Harmony is working to reduce dependence on external liquid cyanide supply by increasing internal distribution capacity, including the ability to dissolve cyanide briquettes as a contingency measure.\nOn cost inflation, management noted that South African costs are relatively predictable because labor makes up about 55% of the cost basket and is governed by five-year wage agreements. They added that when water and electricity are included, more than 70% of the cost base is “quite predictable,” and said the group’s diesel exposure is muted due to the labor-intensive nature of its underground operations, though some assets—including Hidden Valley, Target, the CSA mine, and the Eva development—have more diesel reliance.\nResponding to questions about CSA copper volumes versus historical expectations, Nel said current guidance incorporates one-off stoppages, including a seven-day safety stoppage to address secondary egress systems and a planned 30-day stoppage in the third quarter to complete steel work and rehabilitation in the shaft to ensure safety. He said Harmony remains “very happy with the ore body” and pointed to drill intercepts outside the current mine shell, while emphasizing work to position CSA for long-term value through improved ventilation and operational standards.\nManagement also discussed factors behind lower gold production during the half, citing a tectonic-related mill motor failure at Hidden Valley following an earthquake, which damaged plant civils and contributed to gold shipping delays. In South Africa, the prior cyanide supply disruption affected recoveries, particularly in surface operations that consume more sodium cyanide. The company also referenced lower grades and metallurgical recoveries that were below expectations, noting recoveries were “almost always” normalized in the third quarter.\nOn silver exposure, executives said Hidden Valley produces “quite a bit” of silver and that silver revenue decreased 27% to ZAR 740 million from ZAR 1 billion in the prior period, which they attributed to reduced Hidden Valley silver production linked to the mill motor issue, partially offset by pricing. Management said the company hedges silver but has not added hedges recently given price levels, and said the financials include a loss on silver derivatives.\nAddressing capital structure and leverage, management said they expect to return to a net cash position by the end of the financial year, despite having paid $1 billion for the CSA asset. Executives said the balance sheet includes debt under current liabilities related to a bridge loan used for the CSA acquisition and that the company is evaluating options to refinance near-term maturities, with plans to be communicated once finalized.\nNel closed by saying Harmony is “intentionally transitioning into a significant global gold and copper producer,” emphasizing that the effort is grounded in “mining with purpose” and aimed at creating value for stakeholders across its operating regions.\nAbout Harmony Gold Mining (NYSE:HMY)\nHarmony Gold Mining Company Limited is a South Africa–based precious metals producer primarily engaged in the exploration, mining and processing of gold. The company operates a portfolio of underground and surface mining operations, targeting both reef-hosted and alluvial deposits. In addition to gold, Harmony’s activities encompass the extraction of copper as a byproduct at its Papua New Guinea operations.\nIn South Africa, Harmony’s mining footprint includes deep-level underground operations in the Witwatersrand Basin, where it employs a combination of conventional and mechanized mining methods.\nThe article \"Harmony Gold Mining H1 Earnings Call Highlights\" was originally published by MarketBeat.",
+            "language": "",
+            "author": "MarketBeat",
+            "site_name": "",
+            "content_hash": "7d2728fb2fe64e993eb985b508f13959415273e8288dbfb6fc2e6ce4b58366d9",
+            "extraction_status": "ok"
           },
           {
             "title": "Harmony Gold Mining Co Ltd (HMY) (Half Year 2026) Earnings Call Highlights: Strong Financial ...",
@@ -2442,7 +2949,14 @@
             "published_at": "2026-03-18 01:00:41+00:00",
             "url": "https://finance.yahoo.com/news/harmony-gold-mining-co-ltd-010041336.html",
             "summary": "Harmony Gold Mining Co Ltd (HMY) reports significant profit growth and a revised dividend policy, despite facing production hurdles.",
-            "kind": "news"
+            "kind": "news",
+            "canonical_url": "https://finance.yahoo.com/news/harmony-gold-mining-co-ltd-010041336.html",
+            "body": "",
+            "language": "",
+            "author": "",
+            "site_name": "",
+            "content_hash": "63f0bf0a94b5d32e06c9d38689a7fbf0bdedd7ac970d8657f36d1977f695564a",
+            "extraction_status": "not_attempted"
           },
           {
             "title": "AngloGold Ashanti vs. Harmony Gold: Which Gold Stock Shines More?",
@@ -2450,7 +2964,14 @@
             "published_at": "2026-03-18 16:16:00+00:00",
             "url": "https://finance.yahoo.com/news/anglogold-ashanti-vs-harmony-gold-161600995.html",
             "summary": "AU and HMY gain from surging gold prices, but differences in growth, costs, and performance shape the investment debate.",
-            "kind": "news"
+            "kind": "news",
+            "canonical_url": "https://finance.yahoo.com/news/anglogold-ashanti-vs-harmony-gold-161600995.html",
+            "body": "",
+            "language": "",
+            "author": "",
+            "site_name": "",
+            "content_hash": "4df0e457ceae7bbb35f17d05ab21323d699a3982ab64b16768d5c3de5fb8e49d",
+            "extraction_status": "not_attempted"
           },
           {
             "title": "Harmony Gold Mining (HMY) Releases Interim Six Months Results",
@@ -2458,7 +2979,14 @@
             "published_at": "2026-03-27 07:30:58+00:00",
             "url": "https://finance.yahoo.com/markets/stocks/articles/harmony-gold-mining-hmy-releases-073058432.html",
             "summary": "Harmony Gold Mining Company Limited (NYSE:HMY) is one of the Best Mid Cap Value Stocks to Buy in 2026. On March 11, Harmony Gold Mining Company Limited (NYSE:HMY) released its interim results for the six-month period that ended December 31, 2025. ​During the first half of fiscal 2026, the company grew its group revenue by […]",
-            "kind": "news"
+            "kind": "news",
+            "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/harmony-gold-mining-hmy-releases-073058432.html",
+            "body": "",
+            "language": "",
+            "author": "",
+            "site_name": "",
+            "content_hash": "0cc7cd34724906b67d70a8b63e9a399cf81907f99092761c78d92c409c4a0b74",
+            "extraction_status": "not_attempted"
           },
           {
             "title": "If EPS Growth Is Important To You, Harmony Gold Mining (JSE:HAR) Presents An Opportunity",
@@ -2466,7 +2994,14 @@
             "published_at": "2026-04-16 04:57:26+00:00",
             "url": "https://finance.yahoo.com/markets/stocks/articles/eps-growth-important-harmony-gold-045726324.html",
             "summary": "It's common for many investors, especially those who are inexperienced, to buy shares in companies with a good story...",
-            "kind": "news"
+            "kind": "news",
+            "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/eps-growth-important-harmony-gold-045726324.html",
+            "body": "",
+            "language": "",
+            "author": "",
+            "site_name": "",
+            "content_hash": "1cc434e7ec61ffdc800b52ea5aaf88bf97d0e2d4e2892854b57d1dfc651e1ce4",
+            "extraction_status": "not_attempted"
           },
           {
             "title": "Morgan Stanley Upgrades Harmony Gold (HMY) to Overweight",
@@ -2474,7 +3009,14 @@
             "published_at": "2026-04-24 18:31:13+00:00",
             "url": "https://finance.yahoo.com/markets/stocks/articles/morgan-stanley-upgrades-harmony-gold-183113250.html",
             "summary": "Harmony Gold Mining Company Limited (NYSE:HMY) is one of the 10 Best Gold Stocks to Buy for the Long Term. On April 15, 2026, Morgan Stanley analyst Christopher Nicholson upgraded Harmony Gold Mining Company Limited (NYSE:HMY) to Overweight from Equal Weight and raised the price target to ZAR 34,000 from ZAR 30,000 previously. Christopher Nicholson […]",
-            "kind": "news"
+            "kind": "news",
+            "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/morgan-stanley-upgrades-harmony-gold-183113250.html",
+            "body": "",
+            "language": "",
+            "author": "",
+            "site_name": "",
+            "content_hash": "d562e0b571ebae6a038193853f0b102884302414a897d8deadfbccf59ed20653",
+            "extraction_status": "not_attempted"
           },
           {
             "title": "MSCI Upgrades Harmony Gold Mining Company’s (HMY) ESG Rating From ‘BB’ to ‘A’",
@@ -2482,7 +3024,14 @@
             "published_at": "2026-05-07 16:40:04+00:00",
             "url": "https://finance.yahoo.com/markets/stocks/articles/msci-upgrades-harmony-gold-mining-164004783.html",
             "summary": "Harmony Gold Mining Company Limited (NYSE:HMY) is one of the top cheap stocks to buy with the biggest upside potential. Harmony Gold Mining Company Limited (NYSE:HMY) announced on April 29 that the MSCI upgraded the company’s environmental, social, and governance (ESG) rating from ‘BB’ to ‘A’ after its most recent assessment in March 2026. Management […]",
-            "kind": "news"
+            "kind": "news",
+            "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/msci-upgrades-harmony-gold-mining-164004783.html",
+            "body": "",
+            "language": "",
+            "author": "",
+            "site_name": "",
+            "content_hash": "77592027c96a3619cff94baa613be64e90e249964c52f0709665ef680d6b039f",
+            "extraction_status": "not_attempted"
           }
         ],
         "relevance": {
@@ -2494,60 +3043,395 @@
       },
       "catalyst": {
         "count": 8,
-        "score": 0.85,
-        "qualityScore": 0.85,
-        "claim": "Harmony Gold Mining Co Ltd (HMY) (Half Year 2026) Earnings Call Highlights: Strong Financial ...",
-        "type": "earnings",
+        "score": 0.76,
+        "qualityScore": 0.76,
+        "claim": "Harmony Gold Mining Q2 Earnings Call Highlights",
+        "type": "guidance",
         "events": [
+          {
+            "ticker": "HMY",
+            "event_type": "guidance",
+            "claim": "Harmony Gold Mining Q2 Earnings Call Highlights",
+            "affected_driver": "Revenue / margin / guidance",
+            "direction": "mixed",
+            "horizon": "20d",
+            "materiality_score": 1.0,
+            "novelty_score": 1.0,
+            "priced_in_risk": "medium",
+            "evidence_sources": [
+              "https://finance.yahoo.com/news/harmony-gold-mining-q2-earnings-094404519.html"
+            ],
+            "counter_evidence": [
+              {
+                "url": "https://finance.yahoo.com/news/harmony-gold-mining-h1-earnings-104800245.html",
+                "title": "Harmony Gold Mining H1 Earnings Call Highlights",
+                "source": "MarketBeat",
+                "published_at": "2026-03-11 10:48:00+00:00",
+                "quote": "On silver exposure, executives said Hidden Valley produces “quite a bit” of silver and that silver revenue decreased 27% to ZAR 740 million from ZAR 1 billion in the prior period, which they attributed to reduced Hidden Valley silver production linked to the mill motor issue, partially offset by pricing.",
+                "char_start": 6920,
+                "char_end": 7225,
+                "source_tier": "tier3"
+              },
+              {
+                "url": "https://finance.yahoo.com/news/harmony-gold-mining-co-ltd-010041336.html",
+                "title": "Harmony Gold Mining Co Ltd (HMY) (Half Year 2026) Earnings Call Highlights: Strong Financial ...",
+                "source": "GuruFocus.com",
+                "published_at": "2026-03-18 01:00:41+00:00",
+                "quote": "Harmony Gold Mining Co Ltd (HMY) reports significant profit growth and a revised dividend policy, despite facing production hurdles.",
+                "char_start": 0,
+                "char_end": 132,
+                "source_tier": "tier3"
+              }
+            ],
+            "company_name": "Harmony Gold Mining Company Lim",
+            "event_subtype": "unknown",
+            "entities": [
+              "HMY",
+              "Harmony Gold Mining Company Lim",
+              "Harmony Gold Mining",
+              "Earnings Call Highlights",
+              "NYSE",
+              "CEO Beyers Nel",
+              "Financial Director Boipelo",
+              "Lekubo Key Points"
+            ],
+            "metrics": [
+              {
+                "name": "metric",
+                "value": "40%",
+                "unit": "%",
+                "context": "five years and planning for roughly 40% of production to be copper by FY35"
+              },
+              {
+                "name": "metric",
+                "value": "39%",
+                "unit": "%",
+                "context": "and balance‑sheet strength—EBITDA up 39% to ZAR 18 billion, operating cash u"
+              },
+              {
+                "name": "metric",
+                "value": "8x",
+                "unit": "x",
+                "context": "p 36% and net debt/EBITDA at 0.18x—and the company declared a record i"
+              },
+              {
+                "name": "metric",
+                "value": "3.4 billion",
+                "unit": "billion",
+                "context": "erim dividend of ZAR 5.30/share (ZAR 3.4 billion) alongside a revised dividend polic"
+              },
+              {
+                "name": "metric",
+                "value": "0%",
+                "unit": "%",
+                "context": "y allowing up to 50% of net free cash to be returned. -"
+              }
+            ],
+            "evidence_spans": [
+              {
+                "url": "https://finance.yahoo.com/news/harmony-gold-mining-q2-earnings-094404519.html",
+                "title": "Harmony Gold Mining Q2 Earnings Call Highlights",
+                "source": "MarketBeat",
+                "published_at": "2026-03-11 09:44:04+00:00",
+                "quote": "Harmony is keeping gold as its core while deliberately scaling copper as a \"strategic growth lever,\" targeting about 100,000 tonnes per annum of copper from CSA and Eva within three to five years and planning for roughly 40% of production to be copper by FY35 once Wafi‑Golpu, Eva and CSA ramp.",
+                "char_start": 13,
+                "char_end": 307,
+                "source_tier": "tier3"
+              }
+            ],
+            "source_quality_score": 0.68,
+            "market_reaction_score": 0.53,
+            "score": 0.76,
+            "published_at": "2026-03-11 09:44:04+00:00"
+          },
+          {
+            "ticker": "HMY",
+            "event_type": "guidance",
+            "claim": "Harmony Gold Mining H1 Earnings Call Highlights",
+            "affected_driver": "Revenue / margin / guidance",
+            "direction": "mixed",
+            "horizon": "20d",
+            "materiality_score": 1.0,
+            "novelty_score": 1.0,
+            "priced_in_risk": "medium",
+            "evidence_sources": [
+              "https://finance.yahoo.com/news/harmony-gold-mining-h1-earnings-104800245.html"
+            ],
+            "counter_evidence": [
+              {
+                "url": "https://finance.yahoo.com/news/harmony-gold-mining-q2-earnings-094404519.html",
+                "title": "Harmony Gold Mining Q2 Earnings Call Highlights",
+                "source": "MarketBeat",
+                "published_at": "2026-03-11 09:44:04+00:00",
+                "quote": "Harmony is keeping gold as its core while deliberately scaling copper as a \"strategic growth lever,\" targeting about 100,000 tonnes per annum of copper from CSA and Eva within three to five years and planning for roughly 40% of production to be copper by FY35 once Wafi‑Golpu, Eva and CSA ramp.",
+                "char_start": 13,
+                "char_end": 307,
+                "source_tier": "tier3"
+              },
+              {
+                "url": "https://finance.yahoo.com/news/harmony-gold-mining-co-ltd-010041336.html",
+                "title": "Harmony Gold Mining Co Ltd (HMY) (Half Year 2026) Earnings Call Highlights: Strong Financial ...",
+                "source": "GuruFocus.com",
+                "published_at": "2026-03-18 01:00:41+00:00",
+                "quote": "Harmony Gold Mining Co Ltd (HMY) reports significant profit growth and a revised dividend policy, despite facing production hurdles.",
+                "char_start": 0,
+                "char_end": 132,
+                "source_tier": "tier3"
+              }
+            ],
+            "company_name": "Harmony Gold Mining Company Lim",
+            "event_subtype": "unknown",
+            "entities": [
+              "HMY",
+              "Harmony Gold Mining Company Lim",
+              "Harmony Gold Mining",
+              "Earnings Call Highlights",
+              "NYSE",
+              "Dec",
+              "CEO Beyers Nel",
+              "Key Points"
+            ],
+            "metrics": [
+              {
+                "name": "metric",
+                "value": "3.4bn",
+                "unit": "bn",
+                "context": ".30 ($0.32) per share — a record ZAR 3.4bn payout (43% of net free cash flow)"
+              },
+              {
+                "name": "capex",
+                "value": "2%",
+                "unit": "%",
+                "context": "and a rolling 12‑month yield of 2.2%. - Eva Copper FID and capex update:"
+              },
+              {
+                "name": "capex",
+                "value": "18.5bn",
+                "unit": "bn",
+                "context": "on, raised group FY2026 capex to ZAR 18.5bn (including Eva ZAR 5.6bn and CSA ZA"
+              },
+              {
+                "name": "metric",
+                "value": "1bn",
+                "unit": "bn",
+                "context": "R 1.1bn), and expects Eva total project cos"
+              },
+              {
+                "name": "metric",
+                "value": "5bn",
+                "unit": "bn",
+                "context": "ts of $1.55–1.75bn with first production targeted late"
+              }
+            ],
+            "evidence_spans": [
+              {
+                "url": "https://finance.yahoo.com/news/harmony-gold-mining-h1-earnings-104800245.html",
+                "title": "Harmony Gold Mining H1 Earnings Call Highlights",
+                "source": "MarketBeat",
+                "published_at": "2026-03-11 10:48:00+00:00",
+                "quote": "Group capital expenditure guidance for FY2026 was updated to ZAR 18.5 billion, now including capital spending for both CSA and the Eva Copper project.",
+                "char_start": 3715,
+                "char_end": 3865,
+                "source_tier": "tier3"
+              }
+            ],
+            "source_quality_score": 0.68,
+            "market_reaction_score": 0.53,
+            "score": 0.76,
+            "published_at": "2026-03-11 10:48:00+00:00"
+          },
           {
             "ticker": "HMY",
             "event_type": "earnings",
             "claim": "Harmony Gold Mining Co Ltd (HMY) (Half Year 2026) Earnings Call Highlights: Strong Financial ...",
-            "affected_driver": "Revenue / margin / guidance",
-            "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.9,
+            "affected_driver": "Revenue / margin / earnings quality",
+            "direction": "positive",
+            "horizon": "5d",
+            "materiality_score": 0.86,
             "novelty_score": 1.0,
-            "priced_in_risk": "low",
+            "priced_in_risk": "medium",
             "evidence_sources": [
               "https://finance.yahoo.com/news/harmony-gold-mining-co-ltd-010041336.html"
             ],
-            "counter_evidence": [],
-            "score": 0.85,
+            "counter_evidence": [
+              {
+                "url": "https://finance.yahoo.com/news/harmony-gold-mining-q2-earnings-094404519.html",
+                "title": "Harmony Gold Mining Q2 Earnings Call Highlights",
+                "source": "MarketBeat",
+                "published_at": "2026-03-11 09:44:04+00:00",
+                "quote": "Lekubo outlined several items affecting earnings, including a ZAR 4.5 billion realized gold hedge loss (included in revenue), a ZAR 1 billion silver derivative loss at Hidden Valley, and a ZAR 700 million foreign exchange translation gain from a stronger rand.",
+                "char_start": 5035,
+                "char_end": 5295,
+                "source_tier": "tier3"
+              },
+              {
+                "url": "https://finance.yahoo.com/news/harmony-gold-mining-h1-earnings-104800245.html",
+                "title": "Harmony Gold Mining H1 Earnings Call Highlights",
+                "source": "MarketBeat",
+                "published_at": "2026-03-11 10:48:00+00:00",
+                "quote": "On silver exposure, executives said Hidden Valley produces “quite a bit” of silver and that silver revenue decreased 27% to ZAR 740 million from ZAR 1 billion in the prior period, which they attributed to reduced Hidden Valley silver production linked to the mill motor issue, partially offset by pricing.",
+                "char_start": 6920,
+                "char_end": 7225,
+                "source_tier": "tier3"
+              }
+            ],
+            "company_name": "Harmony Gold Mining Company Lim",
+            "event_subtype": "beat_miss",
+            "entities": [
+              "HMY",
+              "Harmony Gold Mining Company Lim",
+              "Harmony Gold Mining",
+              "Ltd",
+              "Half Year",
+              "Earnings Call Highlights",
+              "Strong Financial"
+            ],
+            "metrics": [],
+            "evidence_spans": [
+              {
+                "url": "https://finance.yahoo.com/news/harmony-gold-mining-co-ltd-010041336.html",
+                "title": "Harmony Gold Mining Co Ltd (HMY) (Half Year 2026) Earnings Call Highlights: Strong Financial ...",
+                "source": "GuruFocus.com",
+                "published_at": "2026-03-18 01:00:41+00:00",
+                "quote": "Harmony Gold Mining Co Ltd (HMY) reports significant profit growth and a revised dividend policy, despite facing production hurdles.",
+                "char_start": 0,
+                "char_end": 132,
+                "source_tier": "tier3"
+              }
+            ],
+            "source_quality_score": 0.68,
+            "market_reaction_score": 0.53,
+            "score": 0.7,
             "published_at": "2026-03-18 01:00:41+00:00"
           },
           {
             "ticker": "HMY",
             "event_type": "earnings",
             "claim": "Harmony Gold Mining (HMY) Releases Interim Six Months Results",
-            "affected_driver": "Revenue / margin / guidance",
+            "affected_driver": "Revenue / margin / earnings quality",
             "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.9,
+            "horizon": "5d",
+            "materiality_score": 0.86,
             "novelty_score": 1.0,
-            "priced_in_risk": "low",
+            "priced_in_risk": "medium",
             "evidence_sources": [
               "https://finance.yahoo.com/markets/stocks/articles/harmony-gold-mining-hmy-releases-073058432.html"
             ],
-            "counter_evidence": [],
-            "score": 0.85,
+            "counter_evidence": [
+              {
+                "url": "https://finance.yahoo.com/news/harmony-gold-mining-q2-earnings-094404519.html",
+                "title": "Harmony Gold Mining Q2 Earnings Call Highlights",
+                "source": "MarketBeat",
+                "published_at": "2026-03-11 09:44:04+00:00",
+                "quote": "Harmony is keeping gold as its core while deliberately scaling copper as a \"strategic growth lever,\" targeting about 100,000 tonnes per annum of copper from CSA and Eva within three to five years and planning for roughly 40% of production to be copper by FY35 once Wafi‑Golpu, Eva and CSA ramp.",
+                "char_start": 13,
+                "char_end": 307,
+                "source_tier": "tier3"
+              },
+              {
+                "url": "https://finance.yahoo.com/news/harmony-gold-mining-h1-earnings-104800245.html",
+                "title": "Harmony Gold Mining H1 Earnings Call Highlights",
+                "source": "MarketBeat",
+                "published_at": "2026-03-11 10:48:00+00:00",
+                "quote": "On silver exposure, executives said Hidden Valley produces “quite a bit” of silver and that silver revenue decreased 27% to ZAR 740 million from ZAR 1 billion in the prior period, which they attributed to reduced Hidden Valley silver production linked to the mill motor issue, partially offset by pricing.",
+                "char_start": 6920,
+                "char_end": 7225,
+                "source_tier": "tier3"
+              }
+            ],
+            "company_name": "Harmony Gold Mining Company Lim",
+            "event_subtype": "beat_miss",
+            "entities": [
+              "HMY",
+              "Harmony Gold Mining Company Lim",
+              "Harmony Gold Mining",
+              "Releases Interim Six",
+              "Months Results Harmony",
+              "Gold Mining Company",
+              "Limited",
+              "NYSE"
+            ],
+            "metrics": [],
+            "evidence_spans": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/harmony-gold-mining-hmy-releases-073058432.html",
+                "title": "Harmony Gold Mining (HMY) Releases Interim Six Months Results",
+                "source": "Insider Monkey",
+                "published_at": "2026-03-27 07:30:58+00:00",
+                "quote": "​During the first half of fiscal 2026, the company grew its group revenue by […]",
+                "char_start": 247,
+                "char_end": 327,
+                "source_tier": "tier3"
+              }
+            ],
+            "source_quality_score": 0.68,
+            "market_reaction_score": 0.53,
+            "score": 0.7,
             "published_at": "2026-03-27 07:30:58+00:00"
           },
           {
             "ticker": "HMY",
             "event_type": "earnings",
             "claim": "If EPS Growth Is Important To You, Harmony Gold Mining (JSE:HAR) Presents An Opportunity",
-            "affected_driver": "Revenue / margin / guidance",
-            "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.9,
+            "affected_driver": "Revenue / margin / earnings quality",
+            "direction": "positive",
+            "horizon": "5d",
+            "materiality_score": 0.86,
             "novelty_score": 1.0,
-            "priced_in_risk": "low",
+            "priced_in_risk": "medium",
             "evidence_sources": [
               "https://finance.yahoo.com/markets/stocks/articles/eps-growth-important-harmony-gold-045726324.html"
             ],
-            "counter_evidence": [],
-            "score": 0.85,
+            "counter_evidence": [
+              {
+                "url": "https://finance.yahoo.com/news/harmony-gold-mining-q2-earnings-094404519.html",
+                "title": "Harmony Gold Mining Q2 Earnings Call Highlights",
+                "source": "MarketBeat",
+                "published_at": "2026-03-11 09:44:04+00:00",
+                "quote": "Lekubo outlined several items affecting earnings, including a ZAR 4.5 billion realized gold hedge loss (included in revenue), a ZAR 1 billion silver derivative loss at Hidden Valley, and a ZAR 700 million foreign exchange translation gain from a stronger rand.",
+                "char_start": 5035,
+                "char_end": 5295,
+                "source_tier": "tier3"
+              },
+              {
+                "url": "https://finance.yahoo.com/news/harmony-gold-mining-h1-earnings-104800245.html",
+                "title": "Harmony Gold Mining H1 Earnings Call Highlights",
+                "source": "MarketBeat",
+                "published_at": "2026-03-11 10:48:00+00:00",
+                "quote": "On silver exposure, executives said Hidden Valley produces “quite a bit” of silver and that silver revenue decreased 27% to ZAR 740 million from ZAR 1 billion in the prior period, which they attributed to reduced Hidden Valley silver production linked to the mill motor issue, partially offset by pricing.",
+                "char_start": 6920,
+                "char_end": 7225,
+                "source_tier": "tier3"
+              }
+            ],
+            "company_name": "Harmony Gold Mining Company Lim",
+            "event_subtype": "beat_miss",
+            "entities": [
+              "HMY",
+              "Harmony Gold Mining Company Lim",
+              "EPS Growth",
+              "Important",
+              "You",
+              "Harmony Gold Mining",
+              "JSE",
+              "HAR"
+            ],
+            "metrics": [],
+            "evidence_spans": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/eps-growth-important-harmony-gold-045726324.html",
+                "title": "If EPS Growth Is Important To You, Harmony Gold Mining (JSE:HAR) Presents An Opportunity",
+                "source": "Simply Wall St.",
+                "published_at": "2026-04-16 04:57:26+00:00",
+                "quote": "It's common for many investors, especially those who are inexperienced, to buy shares in companies with a good story...",
+                "char_start": 0,
+                "char_end": 119,
+                "source_tier": "tier3"
+              }
+            ],
+            "source_quality_score": 0.68,
+            "market_reaction_score": 0.53,
+            "score": 0.7,
             "published_at": "2026-04-16 04:57:26+00:00"
           },
           {
@@ -2557,32 +3441,61 @@
             "affected_driver": "AI infrastructure demand",
             "direction": "positive",
             "horizon": "5d-20d",
-            "materiality_score": 0.78,
+            "materiality_score": 0.76,
             "novelty_score": 1.0,
-            "priced_in_risk": "low",
+            "priced_in_risk": "medium",
             "evidence_sources": [
               "https://finance.yahoo.com/news/anglogold-ashanti-vs-harmony-gold-161600995.html"
             ],
-            "counter_evidence": [],
-            "score": 0.79,
-            "published_at": "2026-03-18 16:16:00+00:00"
-          },
-          {
-            "ticker": "HMY",
-            "event_type": "ai_infrastructure",
-            "claim": "Morgan Stanley Upgrades Harmony Gold (HMY) to Overweight",
-            "affected_driver": "AI infrastructure demand",
-            "direction": "positive",
-            "horizon": "5d-20d",
-            "materiality_score": 0.78,
-            "novelty_score": 1.0,
-            "priced_in_risk": "low",
-            "evidence_sources": [
-              "https://finance.yahoo.com/markets/stocks/articles/morgan-stanley-upgrades-harmony-gold-183113250.html"
+            "counter_evidence": [
+              {
+                "url": "https://finance.yahoo.com/news/harmony-gold-mining-q2-earnings-094404519.html",
+                "title": "Harmony Gold Mining Q2 Earnings Call Highlights",
+                "source": "MarketBeat",
+                "published_at": "2026-03-11 09:44:04+00:00",
+                "quote": "Lekubo outlined several items affecting earnings, including a ZAR 4.5 billion realized gold hedge loss (included in revenue), a ZAR 1 billion silver derivative loss at Hidden Valley, and a ZAR 700 million foreign exchange translation gain from a stronger rand.",
+                "char_start": 5035,
+                "char_end": 5295,
+                "source_tier": "tier3"
+              },
+              {
+                "url": "https://finance.yahoo.com/news/harmony-gold-mining-h1-earnings-104800245.html",
+                "title": "Harmony Gold Mining H1 Earnings Call Highlights",
+                "source": "MarketBeat",
+                "published_at": "2026-03-11 10:48:00+00:00",
+                "quote": "On silver exposure, executives said Hidden Valley produces “quite a bit” of silver and that silver revenue decreased 27% to ZAR 740 million from ZAR 1 billion in the prior period, which they attributed to reduced Hidden Valley silver production linked to the mill motor issue, partially offset by pricing.",
+                "char_start": 6920,
+                "char_end": 7225,
+                "source_tier": "tier3"
+              }
             ],
-            "counter_evidence": [],
-            "score": 0.79,
-            "published_at": "2026-04-24 18:31:13+00:00"
+            "company_name": "Harmony Gold Mining Company Lim",
+            "event_subtype": "segment_growth",
+            "entities": [
+              "HMY",
+              "Harmony Gold Mining Company Lim",
+              "AngloGold Ashanti",
+              "Harmony Gold",
+              "Which Gold Stock",
+              "Shines More"
+            ],
+            "metrics": [],
+            "evidence_spans": [
+              {
+                "url": "https://finance.yahoo.com/news/anglogold-ashanti-vs-harmony-gold-161600995.html",
+                "title": "AngloGold Ashanti vs. Harmony Gold: Which Gold Stock Shines More?",
+                "source": "Zacks",
+                "published_at": "2026-03-18 16:16:00+00:00",
+                "quote": "AU and HMY gain from surging gold prices, but differences in growth, costs, and performance shape the investment debate.",
+                "char_start": 0,
+                "char_end": 120,
+                "source_tier": "tier3"
+              }
+            ],
+            "source_quality_score": 0.68,
+            "market_reaction_score": 0.53,
+            "score": 0.66,
+            "published_at": "2026-03-18 16:16:00+00:00"
           },
           {
             "ticker": "HMY",
@@ -2591,50 +3504,128 @@
             "affected_driver": "AI infrastructure demand",
             "direction": "positive",
             "horizon": "5d-20d",
-            "materiality_score": 0.78,
+            "materiality_score": 0.76,
             "novelty_score": 1.0,
-            "priced_in_risk": "low",
+            "priced_in_risk": "medium",
             "evidence_sources": [
               "https://finance.yahoo.com/markets/stocks/articles/invested-1000-harmony-gold-10-123002285.html"
             ],
-            "counter_evidence": [],
-            "score": 0.79,
+            "counter_evidence": [
+              {
+                "url": "https://finance.yahoo.com/news/harmony-gold-mining-q2-earnings-094404519.html",
+                "title": "Harmony Gold Mining Q2 Earnings Call Highlights",
+                "source": "MarketBeat",
+                "published_at": "2026-03-11 09:44:04+00:00",
+                "quote": "Lekubo outlined several items affecting earnings, including a ZAR 4.5 billion realized gold hedge loss (included in revenue), a ZAR 1 billion silver derivative loss at Hidden Valley, and a ZAR 700 million foreign exchange translation gain from a stronger rand.",
+                "char_start": 5035,
+                "char_end": 5295,
+                "source_tier": "tier3"
+              },
+              {
+                "url": "https://finance.yahoo.com/news/harmony-gold-mining-h1-earnings-104800245.html",
+                "title": "Harmony Gold Mining H1 Earnings Call Highlights",
+                "source": "MarketBeat",
+                "published_at": "2026-03-11 10:48:00+00:00",
+                "quote": "On silver exposure, executives said Hidden Valley produces “quite a bit” of silver and that silver revenue decreased 27% to ZAR 740 million from ZAR 1 billion in the prior period, which they attributed to reduced Hidden Valley silver production linked to the mill motor issue, partially offset by pricing.",
+                "char_start": 6920,
+                "char_end": 7225,
+                "source_tier": "tier3"
+              }
+            ],
+            "company_name": "Harmony Gold Mining Company Lim",
+            "event_subtype": "segment_growth",
+            "entities": [
+              "HMY",
+              "Harmony Gold Mining Company Lim",
+              "You Invested",
+              "Harmony Gold",
+              "Years Ago",
+              "This",
+              "How Much You",
+              "Have Now Investing"
+            ],
+            "metrics": [],
+            "evidence_spans": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/invested-1000-harmony-gold-10-123002285.html",
+                "title": "If You Invested $1000 in Harmony Gold 10 Years Ago, This Is How Much You'd Have Now",
+                "source": "Zacks",
+                "published_at": "2026-05-12 12:30:02+00:00",
+                "quote": "Investing in certain stocks can pay off in the long run, especially if you hold on for a decade or more.",
+                "char_start": 0,
+                "char_end": 104,
+                "source_tier": "tier3"
+              }
+            ],
+            "source_quality_score": 0.68,
+            "market_reaction_score": 0.53,
+            "score": 0.66,
             "published_at": "2026-05-12 12:30:02+00:00"
           },
           {
             "ticker": "HMY",
-            "event_type": "earnings",
-            "claim": "Harmony Gold Mining H1 Earnings Call Highlights",
-            "affected_driver": "Revenue / margin / guidance",
-            "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.9,
-            "novelty_score": 0.5,
-            "priced_in_risk": "low",
-            "evidence_sources": [
-              "https://finance.yahoo.com/news/harmony-gold-mining-q2-earnings-094404519.html",
-              "https://finance.yahoo.com/news/harmony-gold-mining-h1-earnings-104800245.html"
-            ],
-            "counter_evidence": [],
-            "score": 0.7,
-            "published_at": "2026-03-11 10:48:00+00:00"
-          },
-          {
-            "ticker": "HMY",
             "event_type": "analyst_revision",
-            "claim": "MSCI Upgrades Harmony Gold Mining Company’s (HMY) ESG Rating From ‘BB’ to ‘A’",
+            "claim": "Morgan Stanley Upgrades Harmony Gold (HMY) to Overweight",
             "affected_driver": "Market expectations",
-            "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.55,
+            "direction": "positive",
+            "horizon": "5d",
+            "materiality_score": 0.6,
             "novelty_score": 1.0,
-            "priced_in_risk": "low",
+            "priced_in_risk": "medium",
             "evidence_sources": [
-              "https://finance.yahoo.com/markets/stocks/articles/msci-upgrades-harmony-gold-mining-164004783.html"
+              "https://finance.yahoo.com/markets/stocks/articles/morgan-stanley-upgrades-harmony-gold-183113250.html"
             ],
-            "counter_evidence": [],
-            "score": 0.69,
-            "published_at": "2026-05-07 16:40:04+00:00"
+            "counter_evidence": [
+              {
+                "url": "https://finance.yahoo.com/news/harmony-gold-mining-q2-earnings-094404519.html",
+                "title": "Harmony Gold Mining Q2 Earnings Call Highlights",
+                "source": "MarketBeat",
+                "published_at": "2026-03-11 09:44:04+00:00",
+                "quote": "Lekubo outlined several items affecting earnings, including a ZAR 4.5 billion realized gold hedge loss (included in revenue), a ZAR 1 billion silver derivative loss at Hidden Valley, and a ZAR 700 million foreign exchange translation gain from a stronger rand.",
+                "char_start": 5035,
+                "char_end": 5295,
+                "source_tier": "tier3"
+              },
+              {
+                "url": "https://finance.yahoo.com/news/harmony-gold-mining-h1-earnings-104800245.html",
+                "title": "Harmony Gold Mining H1 Earnings Call Highlights",
+                "source": "MarketBeat",
+                "published_at": "2026-03-11 10:48:00+00:00",
+                "quote": "On silver exposure, executives said Hidden Valley produces “quite a bit” of silver and that silver revenue decreased 27% to ZAR 740 million from ZAR 1 billion in the prior period, which they attributed to reduced Hidden Valley silver production linked to the mill motor issue, partially offset by pricing.",
+                "char_start": 6920,
+                "char_end": 7225,
+                "source_tier": "tier3"
+              }
+            ],
+            "company_name": "Harmony Gold Mining Company Lim",
+            "event_subtype": "analyst_upgrade",
+            "entities": [
+              "HMY",
+              "Harmony Gold Mining Company Lim",
+              "Morgan Stanley Upgrades",
+              "Harmony Gold",
+              "Overweight Harmony Gold",
+              "Mining Company Limited",
+              "NYSE",
+              "Best Gold Stocks"
+            ],
+            "metrics": [],
+            "evidence_spans": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/morgan-stanley-upgrades-harmony-gold-183113250.html",
+                "title": "Morgan Stanley Upgrades Harmony Gold (HMY) to Overweight",
+                "source": "Insider Monkey",
+                "published_at": "2026-04-24 18:31:13+00:00",
+                "quote": "On April 15, 2026, Morgan Stanley analyst Christopher Nicholson upgraded Harmony Gold Mining Company Limited (NYSE:HMY) to Overweight from Equal Weight and raised the price target to ZAR 34,000 from ZAR 30,000 previously.",
+                "char_start": 107,
+                "char_end": 328,
+                "source_tier": "tier3"
+              }
+            ],
+            "source_quality_score": 0.68,
+            "market_reaction_score": 0.53,
+            "score": 0.6,
+            "published_at": "2026-04-24 18:31:13+00:00"
           }
         ]
       },
@@ -4606,7 +5597,7 @@
       "sources": [
         "gainers"
       ],
-      "score": 1.057,
+      "score": 1.025,
       "agentView": "news_first_watch",
       "stance": "뉴스 우선 감시",
       "price": {
@@ -4646,27 +5637,27 @@
         "warnings": []
       },
       "marketReaction": {
-        "abnormalReturn1d": null,
-        "abnormalReturn5d": null,
-        "abnormalReturn20d": null,
-        "volumeZscore": null,
-        "volumeRatio": null,
-        "gapReturn": null,
-        "reactionScore": null
+        "abnormalReturn1d": 0.15402,
+        "abnormalReturn5d": 0.09072,
+        "abnormalReturn20d": 0.08499,
+        "volumeZscore": 9.66108,
+        "volumeRatio": 4.30518,
+        "gapReturn": 0.00223,
+        "reactionScore": 0.774
       },
       "news": {
-        "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'Kura Oncology (KURA) Expected to Beat Earnings Estimates: What to Know Ahead of Q1 Release'이며, 차트 신호와 함께 감시할 만하다.",
-        "positive": 4,
-        "negative": 2,
-        "mixed": 2,
+        "read": "부정/리스크성 뉴스가 우세해 차트가 좋아도 추격보다 리스크 확인이 먼저다.",
+        "positive": 0,
+        "negative": 4,
+        "mixed": 4,
         "headlines": [
           {
-            "stance": "positive",
+            "stance": "negative",
             "title": "Kura Oncology (KURA) Expected to Beat Earnings Estimates: What to Know Ahead of Q1 Release",
             "source": "Zacks"
           },
           {
-            "stance": "positive",
+            "stance": "negative",
             "title": "How The Kura Oncology (KURA) Story Is Evolving After Komzifti Launch And Q4 Reassessment",
             "source": "Simply Wall St."
           },
@@ -4676,7 +5667,7 @@
             "source": "Zacks"
           },
           {
-            "stance": "positive",
+            "stance": "mixed",
             "title": "Kura Oncology Q1 Earnings Call Highlights",
             "source": "MarketBeat"
           },
@@ -4686,7 +5677,7 @@
             "source": "GuruFocus.com"
           },
           {
-            "stance": "positive",
+            "stance": "mixed",
             "title": "Kura Oncology, Inc. Q1 2026 Earnings Call Summary",
             "source": "Moby"
           },
@@ -4708,7 +5699,14 @@
             "published_at": "2026-04-30 14:00:05+00:00",
             "url": "https://finance.yahoo.com/markets/stocks/articles/kura-oncology-kura-expected-beat-140005958.html",
             "summary": "Kura Oncology (KURA) possesses the right combination of the two key ingredients for a likely earnings beat in its upcoming report. Get prepared with the key expectations.",
-            "kind": "news"
+            "kind": "news",
+            "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/kura-oncology-kura-expected-beat-140005958.html",
+            "body": "Kura Oncology (KURA) is expected to deliver a year-over-year decline in earnings on higher revenues when it reports results for the quarter ended March 2026. This widely-known consensus outlook gives a good sense of the company's earnings picture, but how the actual results compare to these estimates is a powerful factor that could impact its near-term stock price.\nThe stock might move higher if these key numbers top expectations in the upcoming earnings report. On the other hand, if they miss, the stock may move lower.\nWhile management's discussion of business conditions on the earnings call will mostly determine the sustainability of the immediate price change and future earnings expectations, it's worth having a handicapping insight into the odds of a positive EPS surprise.\nZacks Consensus Estimate\nThis biopharmaceutical company is expected to post quarterly loss of $0.88 per share in its upcoming report, which represents a year-over-year change of -33.3%.\nRevenues are expected to be $15.06 million, up 6.7% from the year-ago quarter.\nEstimate Revisions Trend\nThe consensus EPS estimate for the quarter has been revised 2.82% lower over the last 30 days to the current level. This is essentially a reflection of how the covering analysts have collectively reassessed their initial estimates over this period.\nInvestors should keep in mind that the direction of estimate revisions by each of the covering analysts may not always get reflected in the aggregate change.\nPrice, Consensus and EPS Surprise\nEarnings Whisper\nEstimate revisions ahead of a company's earnings release offer clues to the business conditions for the period whose results are coming out. Our proprietary surprise prediction model -- the Zacks Earnings ESP (Expected Surprise Prediction) -- has this insight at its core.\nThe Zacks Earnings ESP compares the Most Accurate Estimate to the Zacks Consensus Estimate for the quarter; the Most Accurate Estimate is a more recent version of the Zacks Consensus EPS estimate. The idea here is that analysts revising their estimates right before an earnings release have the latest information, which could potentially be more accurate than what they and others contributing to the consensus had predicted earlier.\nThus, a positive or negative Earnings ESP reading theoretically indicates the likely deviation of the actual earnings from the consensus estimate. However, the model's predictive power is significant for positive ESP readings only.\nA positive Earnings ESP is a strong predictor of an earnings beat, particularly when combined with a Zacks Rank #1 (Strong Buy), 2 (Buy) or 3 (Hold). Our research shows that stocks with this combination produce a positive surprise nearly 70% of the time, and a solid Zacks Rank actually increases the predictive power of Earnings ESP.\nPlease note that a negative Earnings ESP reading is not indicative of an earnings miss. Our research shows that it is difficult to predict an earnings beat with any degree of confidence for stocks with negative Earnings ESP readings and/or Zacks Rank of 4 (Sell) or 5 (Strong Sell).\nHow Have the Numbers Shaped Up for Kura Oncology?\nFor Kura Oncology, the Most Accurate Estimate is higher than the Zacks Consensus Estimate, suggesting that analysts have recently become bullish on the company's earnings prospects. This has resulted in an Earnings ESP of +14.45%.\nOn the other hand, the stock currently carries a Zacks Rank of #3.\nSo, this combination indicates that Kura Oncology will most likely beat the consensus EPS estimate.\nDoes Earnings Surprise History Hold Any Clue?\nWhile calculating estimates for a company's future earnings, analysts often consider to what extent it has been able to match past consensus estimates. So, it's worth taking a look at the surprise history for gauging its influence on the upcoming number.\nFor the last reported quarter, it was expected that Kura Oncology would post a loss of$0.72 per share when it actually produced a loss of -$0.92, delivering a surprise of -27.78%.\nThe company has not been able to beat consensus EPS estimates in any of the last four quarters.\nBottom Line\nAn earnings beat or miss may not be the sole basis for a stock moving higher or lower. Many stocks end up losing ground despite an earnings beat due to other factors that disappoint investors. Similarly, unforeseen catalysts help a number of stocks gain despite an earnings miss.\nThat said, betting on stocks that are expected to beat earnings expectations does increase the odds of success. This is why it's worth checking a company's Earnings ESP and Zacks Rank ahead of its quarterly release. Make sure to utilize our Earnings ESP Filter to uncover the best stocks to buy or sell before they've reported.\nKura Oncology appears a compelling earnings-beat candidate. However, investors should pay attention to other factors too for betting on this stock or staying away from it ahead of its earnings release.\nExpected Results of an Industry Player\nAmong the stocks in the Zacks Medical - Biomedical and Genetics industry, Novavax (NVAX), is soon expected to post loss of $0.25 per share for the quarter ended March 2026. This estimate indicates a year-over-year change of -108.5%. This quarter's revenue is expected to be $60.39 million, down 90.9% from the year-ago quarter.\nOver the last 30 days, the consensus EPS estimate for Novavax has been revised 10% down to the current level. Nevertheless, the company now has an Earnings ESP of +39.19%, reflecting a higher Most Accurate Estimate.\nWhen combined with a Zacks Rank of #3 (Hold), this Earnings ESP indicates that Novavax will most likely beat the consensus EPS estimate. The company beat consensus EPS estimates in each of the trailing four quarters.\nStay on top of upcoming earnings announcements with the Zacks Earnings Calendar.\nWant the latest recommendations from Zacks Investment Research? Today, you can download 7 Best Stocks for the Next 30 Days. Click to get this free report",
+            "language": "",
+            "author": "Zacks Equity Research",
+            "site_name": "",
+            "content_hash": "93a94914b491fde623751b7e82d295a2ec348c9fd07f6fa4257325fa0d0b8b46",
+            "extraction_status": "ok"
           },
           {
             "title": "How The Kura Oncology (KURA) Story Is Evolving After Komzifti Launch And Q4 Reassessment",
@@ -4716,7 +5714,14 @@
             "published_at": "2026-05-04 23:14:12+00:00",
             "url": "https://finance.yahoo.com/markets/stocks/articles/kura-oncology-kura-story-evolving-231412737.html",
             "summary": "Kura Oncology’s fair value estimate has been adjusted slightly higher, from US$31.08 to US$31.17 per share, reflecting a modest refresh to the analyst model. This fine tuning comes as analysts weigh early Komzifti launch feedback, Q4 results, and differing views on how much market share the treatment can capture in the r/r NPM1m setting, leading some to lift targets and others to trim. Read on to see what is driving these shifts and how you can track the evolving narrative around Kura...",
-            "kind": "news"
+            "kind": "news",
+            "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/kura-oncology-kura-story-evolving-231412737.html",
+            "body": "Find your next quality investment with Simply Wall St's easy and powerful screener, trusted by over 7 million individual investors worldwide.\nKura Oncology’s fair value estimate has been adjusted slightly higher, from US$31.08 to US$31.17 per share, reflecting a modest refresh to the analyst model. This fine tuning comes as analysts weigh early Komzifti launch feedback, Q4 results, and differing views on how much market share the treatment can capture in the r/r NPM1m setting, leading some to lift targets and others to trim. Read on to see what is driving these shifts and how you can track the evolving narrative around Kura Oncology’s stock.\nStay updated as the Fair Value for Kura Oncology shifts by adding it to your watchlist or portfolio. Alternatively, explore our Community to discover new perspectives on Kura Oncology.\nWhat Wall Street Has Been Saying\n🐂 Bullish Takeaways\n-\nBofA lifted its Kura Oncology price target to US$30 from US$29 after Q4 updates, highlighting feedback on Komzifti’s launch and pointing to safety, convenience, and combinability as factors that, in its view, support the story.\n-\nWedbush trimmed its target to US$36 from US$38 but kept an Outperform rating, pointing to US$2.1m in Komzifti Q4 sales and reiterating confidence in the drug’s profile and potential share in the r/r NPM1m setting.\n-\nUBS maintained a Buy rating while adjusting its target to US$15 from US$16, signaling that, despite a lower target, the firm still sees upside relative to its updated valuation work.\n-\nLake Street recently initiated coverage with a bullish stance, adding another supportive voice to the research mix on Kura Oncology.\n🐻 Bearish Takeaways\n-\nBofA’s earlier US$1 cut to its Kura Oncology target in February and Wedbush’s US$2 reduction in March reflect some recalibration around Q4 results and Komzifti’s early trajectory, even as both firms remain constructive on the stock.\n-\nBofA also flagged that, while there was a lot to like in early Komzifti feedback, some investors appeared to be looking for more, which can weigh on sentiment if expectations stay ahead of reported updates.\nDo your thoughts align with the Bull or Bear Analysts? Perhaps you think there's more to the story. Head to the Simply Wall St Community to discover more perspectives!\nWe've flagged 1 risk for Kura Oncology. See which could impact your investment.\nWhat's in the News\n-\nKyowa Kirin and Kura Oncology have begun a Japanese Phase 2 registrational trial of ziftomenib in adults with relapsed or refractory NPM1 mutated acute myeloid leukemia. Kyowa Kirin plans to seek regulatory approval in Japan after completion.\n-\nThe Japanese Phase 2 study is a multicenter, single arm, open label trial that will use composite complete remission rate, combining complete remission and complete remission with partial hematologic recovery, as its primary efficacy endpoint.\n-\nThe current Komzifti label and safety information highlight risks such as differentiation syndrome and QTc prolongation, with recommendations for treatment interruption, corticosteroid use, ECG monitoring, and management of electrolyte abnormalities.\n-\nKura reported preliminary FIT-001 data in clear cell renal cell carcinoma, where darlifarnib plus cabozantinib in cabozantinib pretreated patients showed a 44% objective response rate and 94% disease control rate in 16 patients. The study has now moved into Phase 1b dose expansion.",
+            "language": "",
+            "author": "Simply Wall St",
+            "site_name": "",
+            "content_hash": "6eb730320b164e4ce08d99f1e0c0ca7a4a96aed67e0447a13526ca70f3162433",
+            "extraction_status": "ok"
           },
           {
             "title": "Kura Oncology (KURA) Reports Q1 Loss, Tops Revenue Estimates",
@@ -4724,7 +5729,14 @@
             "published_at": "2026-05-12 21:15:01+00:00",
             "url": "https://finance.yahoo.com/news/kura-oncology-kura-reports-q1-211501582.html",
             "summary": "Kura Oncology (KURA) delivered earnings and revenue surprises of +5.33% and +21.30%, respectively, for the quarter ended March 2026. Do the numbers hold clues to what lies ahead for the stock?",
-            "kind": "news"
+            "kind": "news",
+            "canonical_url": "https://finance.yahoo.com/news/kura-oncology-kura-reports-q1-211501582.html",
+            "body": "",
+            "language": "",
+            "author": "",
+            "site_name": "",
+            "content_hash": "94c71a982b4b0610c64cc54a567f5bf4b61dbcedb3bb735be3994f3992b33fe4",
+            "extraction_status": "not_attempted"
           },
           {
             "title": "Kura Oncology Q1 Earnings Call Highlights",
@@ -4732,7 +5744,14 @@
             "published_at": "2026-05-13 01:09:07+00:00",
             "url": "https://finance.yahoo.com/news/kura-oncology-q1-earnings-call-010907284.html",
             "summary": "Kura Oncology (NASDAQ:KURA) reported $5.8 million in first-quarter net product revenue from KOMZIFTI, its first commercial product, and said the launch is showing early signs of physician uptake, broad payer coverage and use in combination regimens, according to management’s earnings call for the fi",
-            "kind": "news"
+            "kind": "news",
+            "canonical_url": "https://finance.yahoo.com/news/kura-oncology-q1-earnings-call-010907284.html",
+            "body": "",
+            "language": "",
+            "author": "",
+            "site_name": "",
+            "content_hash": "a11d20d6aa3c1d2118370b061d8ecce4d0cdcb322425cc47efdc4a01ccbfd742",
+            "extraction_status": "not_attempted"
           },
           {
             "title": "Kura Oncology Inc (KURA) Q1 2026 Earnings Call Highlights: Strong KOMZIFTI Launch Amid Rising ...",
@@ -4740,7 +5759,14 @@
             "published_at": "2026-05-13 05:02:19+00:00",
             "url": "https://finance.yahoo.com/news/kura-oncology-inc-kura-q1-050219775.html",
             "summary": "Kura Oncology Inc (KURA) reports promising revenue from KOMZIFTI's debut, despite increased R&D and administrative costs impacting net loss.",
-            "kind": "news"
+            "kind": "news",
+            "canonical_url": "https://finance.yahoo.com/news/kura-oncology-inc-kura-q1-050219775.html",
+            "body": "",
+            "language": "",
+            "author": "",
+            "site_name": "",
+            "content_hash": "fb926daba534df60552ccc61a751f75b8da4b7c93dfe13905be8cefbf08441f3",
+            "extraction_status": "not_attempted"
           },
           {
             "title": "Kura Oncology, Inc. Q1 2026 Earnings Call Summary",
@@ -4748,7 +5774,14 @@
             "published_at": "2026-05-13 12:30:00+00:00",
             "url": "https://finance.yahoo.com/news/kura-oncology-inc-q1-2026-123000077.html",
             "summary": "Moby summary of Kura Oncology, Inc.'s Q1 2026 earnings call",
-            "kind": "news"
+            "kind": "news",
+            "canonical_url": "https://finance.yahoo.com/news/kura-oncology-inc-q1-2026-123000077.html",
+            "body": "",
+            "language": "",
+            "author": "",
+            "site_name": "",
+            "content_hash": "4cbf61c53452fdab9342c5d3ca318289c4df88b9ccc0e30afb461167c00fee65",
+            "extraction_status": "not_attempted"
           },
           {
             "title": "Earnings Update: Kura Oncology, Inc. (NASDAQ:KURA) Just Reported And Analysts Are Trimming Their Forecasts",
@@ -4756,7 +5789,14 @@
             "published_at": "2026-05-15 13:10:30+00:00",
             "url": "https://finance.yahoo.com/markets/stocks/articles/earnings-kura-oncology-inc-nasdaq-131030983.html",
             "summary": "It's been a good week for Kura Oncology, Inc. ( NASDAQ:KURA ) shareholders, because the company has just released its...",
-            "kind": "news"
+            "kind": "news",
+            "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/earnings-kura-oncology-inc-nasdaq-131030983.html",
+            "body": "",
+            "language": "",
+            "author": "",
+            "site_name": "",
+            "content_hash": "71d3704131eb61392f06896198bf4c38db7c8ce97873e0b068860119c49e8011",
+            "extraction_status": "not_attempted"
           },
           {
             "title": "Some Analysts Just Cut Their Kura Oncology, Inc. (NASDAQ:KURA) Estimates",
@@ -4764,7 +5804,14 @@
             "published_at": "2026-05-17 13:22:33+00:00",
             "url": "https://finance.yahoo.com/markets/stocks/articles/analysts-just-cut-kura-oncology-132233802.html",
             "summary": "One thing we could say about the analysts on Kura Oncology, Inc. ( NASDAQ:KURA ) - they aren't optimistic, having just...",
-            "kind": "news"
+            "kind": "news",
+            "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/analysts-just-cut-kura-oncology-132233802.html",
+            "body": "",
+            "language": "",
+            "author": "",
+            "site_name": "",
+            "content_hash": "7b74ddaa3a624733befb9d27db296c2b9c797d1dd34ada09c5ab7ee833702ca7",
+            "extraction_status": "not_attempted"
           }
         ],
         "relevance": {
@@ -4776,145 +5823,562 @@
       },
       "catalyst": {
         "count": 8,
-        "score": 0.78,
-        "qualityScore": 0.78,
+        "score": 0.7,
+        "qualityScore": 0.7,
         "claim": "Kura Oncology (KURA) Expected to Beat Earnings Estimates: What to Know Ahead of Q1 Release",
-        "type": "earnings",
+        "type": "guidance",
         "events": [
           {
             "ticker": "KURA",
-            "event_type": "earnings",
+            "event_type": "guidance",
             "claim": "Kura Oncology (KURA) Expected to Beat Earnings Estimates: What to Know Ahead of Q1 Release",
             "affected_driver": "Revenue / margin / guidance",
-            "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.9,
+            "direction": "negative",
+            "horizon": "20d",
+            "materiality_score": 1.0,
             "novelty_score": 1.0,
-            "priced_in_risk": "medium",
+            "priced_in_risk": "high",
             "evidence_sources": [
               "https://finance.yahoo.com/markets/stocks/articles/kura-oncology-kura-expected-beat-140005958.html"
             ],
-            "counter_evidence": [],
-            "score": 0.78,
+            "counter_evidence": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/kura-oncology-kura-story-evolving-231412737.html",
+                "title": "How The Kura Oncology (KURA) Story Is Evolving After Komzifti Launch And Q4 Reassessment",
+                "source": "Simply Wall St.",
+                "published_at": "2026-05-04 23:14:12+00:00",
+                "quote": "Find your next quality investment with Simply Wall St's easy and powerful screener, trusted by over 7 million individual investors worldwide.",
+                "char_start": 0,
+                "char_end": 141,
+                "source_tier": "tier3"
+              }
+            ],
+            "company_name": "Kura Oncology, Inc.",
+            "event_subtype": "unknown",
+            "entities": [
+              "KURA",
+              "Kura Oncology, Inc.",
+              "Kura Oncology",
+              "Expected",
+              "Beat Earnings Estimates",
+              "What",
+              "Know Ahead",
+              "Release Kura Oncology"
+            ],
+            "metrics": [
+              {
+                "name": "revenue",
+                "value": "33.3%",
+                "unit": "%",
+                "context": "resents a year-over-year change of -33.3%. Revenues are expected to be $15.06"
+              },
+              {
+                "name": "metric",
+                "value": "7%",
+                "unit": "%",
+                "context": "million, up 6.7% from the year-ago quarter. Estimate"
+              },
+              {
+                "name": "metric",
+                "value": "2.82%",
+                "unit": "%",
+                "context": "ate for the quarter has been revised 2.82% lower over the last 30 days to the"
+              },
+              {
+                "name": "metric",
+                "value": "70%",
+                "unit": "%",
+                "context": "n produce a positive surprise nearly 70% of the time, and a solid Zacks Rank"
+              },
+              {
+                "name": "metric",
+                "value": "14.45%",
+                "unit": "%",
+                "context": "has resulted in an Earnings ESP of +14.45%. On the other hand, the stock curre"
+              }
+            ],
+            "evidence_spans": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/kura-oncology-kura-expected-beat-140005958.html",
+                "title": "Kura Oncology (KURA) Expected to Beat Earnings Estimates: What to Know Ahead of Q1 Release",
+                "source": "Zacks",
+                "published_at": "2026-04-30 14:00:05+00:00",
+                "quote": "This biopharmaceutical company is expected to post quarterly loss of $0.88 per share in its upcoming report, which represents a year-over-year change of -33.3%.",
+                "char_start": 813,
+                "char_end": 973,
+                "source_tier": "tier3"
+              }
+            ],
+            "source_quality_score": 0.68,
+            "market_reaction_score": 0.77,
+            "score": 0.7,
             "published_at": "2026-04-30 14:00:05+00:00"
           },
           {
             "ticker": "KURA",
             "event_type": "earnings",
             "claim": "Kura Oncology (KURA) Reports Q1 Loss, Tops Revenue Estimates",
-            "affected_driver": "Revenue / margin / guidance",
-            "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.9,
+            "affected_driver": "Revenue / margin / earnings quality",
+            "direction": "negative",
+            "horizon": "5d",
+            "materiality_score": 0.94,
             "novelty_score": 1.0,
-            "priced_in_risk": "medium",
+            "priced_in_risk": "high",
             "evidence_sources": [
               "https://finance.yahoo.com/news/kura-oncology-kura-reports-q1-211501582.html"
             ],
-            "counter_evidence": [],
-            "score": 0.78,
+            "counter_evidence": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/kura-oncology-kura-expected-beat-140005958.html",
+                "title": "Kura Oncology (KURA) Expected to Beat Earnings Estimates: What to Know Ahead of Q1 Release",
+                "source": "Zacks",
+                "published_at": "2026-04-30 14:00:05+00:00",
+                "quote": "This biopharmaceutical company is expected to post quarterly loss of $0.88 per share in its upcoming report, which represents a year-over-year change of -33.3%.",
+                "char_start": 813,
+                "char_end": 973,
+                "source_tier": "tier3"
+              },
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/kura-oncology-kura-story-evolving-231412737.html",
+                "title": "How The Kura Oncology (KURA) Story Is Evolving After Komzifti Launch And Q4 Reassessment",
+                "source": "Simply Wall St.",
+                "published_at": "2026-05-04 23:14:12+00:00",
+                "quote": "Find your next quality investment with Simply Wall St's easy and powerful screener, trusted by over 7 million individual investors worldwide.",
+                "char_start": 0,
+                "char_end": 141,
+                "source_tier": "tier3"
+              }
+            ],
+            "company_name": "Kura Oncology, Inc.",
+            "event_subtype": "beat_miss",
+            "entities": [
+              "KURA",
+              "Kura Oncology, Inc.",
+              "Kura Oncology",
+              "Reports",
+              "Loss",
+              "Tops Revenue Estimates",
+              "March"
+            ],
+            "metrics": [
+              {
+                "name": "revenue",
+                "value": "5.33%",
+                "unit": "%",
+                "context": "earnings and revenue surprises of +5.33% and +21.30%, respectively, for the"
+              }
+            ],
+            "evidence_spans": [
+              {
+                "url": "https://finance.yahoo.com/news/kura-oncology-kura-reports-q1-211501582.html",
+                "title": "Kura Oncology (KURA) Reports Q1 Loss, Tops Revenue Estimates",
+                "source": "Zacks",
+                "published_at": "2026-05-12 21:15:01+00:00",
+                "quote": "Kura Oncology (KURA) delivered earnings and revenue surprises of +5.33% and +21.30%, respectively, for the quarter ended March 2026.",
+                "char_start": 0,
+                "char_end": 132,
+                "source_tier": "tier3"
+              }
+            ],
+            "source_quality_score": 0.68,
+            "market_reaction_score": 0.77,
+            "score": 0.68,
             "published_at": "2026-05-12 21:15:01+00:00"
           },
           {
             "ticker": "KURA",
             "event_type": "earnings",
             "claim": "Kura Oncology Q1 Earnings Call Highlights",
-            "affected_driver": "Revenue / margin / guidance",
+            "affected_driver": "Revenue / margin / earnings quality",
             "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.9,
+            "horizon": "5d",
+            "materiality_score": 0.94,
             "novelty_score": 1.0,
-            "priced_in_risk": "medium",
+            "priced_in_risk": "high",
             "evidence_sources": [
               "https://finance.yahoo.com/news/kura-oncology-q1-earnings-call-010907284.html"
             ],
-            "counter_evidence": [],
-            "score": 0.78,
+            "counter_evidence": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/kura-oncology-kura-expected-beat-140005958.html",
+                "title": "Kura Oncology (KURA) Expected to Beat Earnings Estimates: What to Know Ahead of Q1 Release",
+                "source": "Zacks",
+                "published_at": "2026-04-30 14:00:05+00:00",
+                "quote": "This biopharmaceutical company is expected to post quarterly loss of $0.88 per share in its upcoming report, which represents a year-over-year change of -33.3%.",
+                "char_start": 813,
+                "char_end": 973,
+                "source_tier": "tier3"
+              },
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/kura-oncology-kura-story-evolving-231412737.html",
+                "title": "How The Kura Oncology (KURA) Story Is Evolving After Komzifti Launch And Q4 Reassessment",
+                "source": "Simply Wall St.",
+                "published_at": "2026-05-04 23:14:12+00:00",
+                "quote": "Find your next quality investment with Simply Wall St's easy and powerful screener, trusted by over 7 million individual investors worldwide.",
+                "char_start": 0,
+                "char_end": 141,
+                "source_tier": "tier3"
+              }
+            ],
+            "company_name": "Kura Oncology, Inc.",
+            "event_subtype": "beat_miss",
+            "entities": [
+              "KURA",
+              "Kura Oncology, Inc.",
+              "Kura Oncology",
+              "Earnings Call Highlights",
+              "NASDAQ",
+              "KOMZIFTI"
+            ],
+            "metrics": [
+              {
+                "name": "metric",
+                "value": "$5.8 million",
+                "unit": "million",
+                "context": "ura Oncology (NASDAQ:KURA) reported $5.8 million in first-quarter net product revenu"
+              }
+            ],
+            "evidence_spans": [
+              {
+                "url": "https://finance.yahoo.com/news/kura-oncology-q1-earnings-call-010907284.html",
+                "title": "Kura Oncology Q1 Earnings Call Highlights",
+                "source": "MarketBeat",
+                "published_at": "2026-05-13 01:09:07+00:00",
+                "quote": "Kura Oncology (NASDAQ:KURA) reported $5.8 million in first-quarter net product revenue from KOMZIFTI, its first commercial product, and said the launch is showing early signs of physician uptake, broad payer coverage and use in combination regimens, according to management’s earnings call for the fi",
+                "char_start": 0,
+                "char_end": 300,
+                "source_tier": "tier3"
+              }
+            ],
+            "source_quality_score": 0.68,
+            "market_reaction_score": 0.77,
+            "score": 0.68,
             "published_at": "2026-05-13 01:09:07+00:00"
+          },
+          {
+            "ticker": "KURA",
+            "event_type": "legal_regulatory",
+            "claim": "How The Kura Oncology (KURA) Story Is Evolving After Komzifti Launch And Q4 Reassessment",
+            "affected_driver": "Regulatory approval / market access",
+            "direction": "negative",
+            "horizon": "20d",
+            "materiality_score": 0.9,
+            "novelty_score": 1.0,
+            "priced_in_risk": "high",
+            "evidence_sources": [
+              "https://finance.yahoo.com/markets/stocks/articles/kura-oncology-kura-story-evolving-231412737.html"
+            ],
+            "counter_evidence": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/kura-oncology-kura-expected-beat-140005958.html",
+                "title": "Kura Oncology (KURA) Expected to Beat Earnings Estimates: What to Know Ahead of Q1 Release",
+                "source": "Zacks",
+                "published_at": "2026-04-30 14:00:05+00:00",
+                "quote": "This biopharmaceutical company is expected to post quarterly loss of $0.88 per share in its upcoming report, which represents a year-over-year change of -33.3%.",
+                "char_start": 813,
+                "char_end": 973,
+                "source_tier": "tier3"
+              }
+            ],
+            "company_name": "Kura Oncology, Inc.",
+            "event_subtype": "approval",
+            "entities": [
+              "KURA",
+              "Kura Oncology, Inc.",
+              "How The Kura",
+              "Oncology",
+              "Story",
+              "Evolving After Komzifti",
+              "Launch And",
+              "Reassessment Kura Oncology"
+            ],
+            "metrics": [
+              {
+                "name": "metric",
+                "value": "7 million",
+                "unit": "million",
+                "context": "d powerful screener, trusted by over 7 million individual investors worldwide. Kur"
+              },
+              {
+                "name": "metric",
+                "value": "44%",
+                "unit": "%",
+                "context": "antinib pretreated patients showed a 44% objective response rate and 94% dis"
+              }
+            ],
+            "evidence_spans": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/kura-oncology-kura-story-evolving-231412737.html",
+                "title": "How The Kura Oncology (KURA) Story Is Evolving After Komzifti Launch And Q4 Reassessment",
+                "source": "Simply Wall St.",
+                "published_at": "2026-05-04 23:14:12+00:00",
+                "quote": "Kyowa Kirin plans to seek regulatory approval in Japan after completion.",
+                "char_start": 2557,
+                "char_end": 2629,
+                "source_tier": "tier3"
+              }
+            ],
+            "source_quality_score": 0.68,
+            "market_reaction_score": 0.77,
+            "score": 0.66,
+            "published_at": "2026-05-04 23:14:12+00:00"
+          },
+          {
+            "ticker": "KURA",
+            "event_type": "guidance",
+            "claim": "Earnings Update: Kura Oncology, Inc. (NASDAQ:KURA) Just Reported And Analysts Are Trimming Their Forecasts",
+            "affected_driver": "Revenue / margin / guidance",
+            "direction": "mixed",
+            "horizon": "20d",
+            "materiality_score": 0.9,
+            "novelty_score": 1.0,
+            "priced_in_risk": "high",
+            "evidence_sources": [
+              "https://finance.yahoo.com/markets/stocks/articles/earnings-kura-oncology-inc-nasdaq-131030983.html"
+            ],
+            "counter_evidence": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/kura-oncology-kura-expected-beat-140005958.html",
+                "title": "Kura Oncology (KURA) Expected to Beat Earnings Estimates: What to Know Ahead of Q1 Release",
+                "source": "Zacks",
+                "published_at": "2026-04-30 14:00:05+00:00",
+                "quote": "This biopharmaceutical company is expected to post quarterly loss of $0.88 per share in its upcoming report, which represents a year-over-year change of -33.3%.",
+                "char_start": 813,
+                "char_end": 973,
+                "source_tier": "tier3"
+              },
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/kura-oncology-kura-story-evolving-231412737.html",
+                "title": "How The Kura Oncology (KURA) Story Is Evolving After Komzifti Launch And Q4 Reassessment",
+                "source": "Simply Wall St.",
+                "published_at": "2026-05-04 23:14:12+00:00",
+                "quote": "Find your next quality investment with Simply Wall St's easy and powerful screener, trusted by over 7 million individual investors worldwide.",
+                "char_start": 0,
+                "char_end": 141,
+                "source_tier": "tier3"
+              }
+            ],
+            "company_name": "Kura Oncology, Inc.",
+            "event_subtype": "unknown",
+            "entities": [
+              "KURA",
+              "Kura Oncology, Inc.",
+              "Earnings Update",
+              "Kura Oncology",
+              "Inc",
+              "NASDAQ",
+              "Just Reported And",
+              "Analysts Are Trimming"
+            ],
+            "metrics": [],
+            "evidence_spans": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/earnings-kura-oncology-inc-nasdaq-131030983.html",
+                "title": "Earnings Update: Kura Oncology, Inc. (NASDAQ:KURA) Just Reported And Analysts Are Trimming Their Forecasts",
+                "source": "Simply Wall St.",
+                "published_at": "2026-05-15 13:10:30+00:00",
+                "quote": "It's been a good week for Kura Oncology, Inc.",
+                "char_start": 0,
+                "char_end": 45,
+                "source_tier": "tier3"
+              }
+            ],
+            "source_quality_score": 0.68,
+            "market_reaction_score": 0.77,
+            "score": 0.66,
+            "published_at": "2026-05-15 13:10:30+00:00"
           },
           {
             "ticker": "KURA",
             "event_type": "earnings",
             "claim": "Kura Oncology Inc (KURA) Q1 2026 Earnings Call Highlights: Strong KOMZIFTI Launch Amid Rising ...",
-            "affected_driver": "Revenue / margin / guidance",
-            "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.9,
+            "affected_driver": "Revenue / margin / earnings quality",
+            "direction": "negative",
+            "horizon": "5d",
+            "materiality_score": 0.86,
             "novelty_score": 1.0,
-            "priced_in_risk": "medium",
+            "priced_in_risk": "high",
             "evidence_sources": [
               "https://finance.yahoo.com/news/kura-oncology-inc-kura-q1-050219775.html"
             ],
-            "counter_evidence": [],
-            "score": 0.78,
+            "counter_evidence": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/kura-oncology-kura-expected-beat-140005958.html",
+                "title": "Kura Oncology (KURA) Expected to Beat Earnings Estimates: What to Know Ahead of Q1 Release",
+                "source": "Zacks",
+                "published_at": "2026-04-30 14:00:05+00:00",
+                "quote": "This biopharmaceutical company is expected to post quarterly loss of $0.88 per share in its upcoming report, which represents a year-over-year change of -33.3%.",
+                "char_start": 813,
+                "char_end": 973,
+                "source_tier": "tier3"
+              },
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/kura-oncology-kura-story-evolving-231412737.html",
+                "title": "How The Kura Oncology (KURA) Story Is Evolving After Komzifti Launch And Q4 Reassessment",
+                "source": "Simply Wall St.",
+                "published_at": "2026-05-04 23:14:12+00:00",
+                "quote": "Find your next quality investment with Simply Wall St's easy and powerful screener, trusted by over 7 million individual investors worldwide.",
+                "char_start": 0,
+                "char_end": 141,
+                "source_tier": "tier3"
+              }
+            ],
+            "company_name": "Kura Oncology, Inc.",
+            "event_subtype": "beat_miss",
+            "entities": [
+              "KURA",
+              "Kura Oncology, Inc.",
+              "Kura Oncology Inc",
+              "Earnings Call Highlights",
+              "Strong KOMZIFTI Launch",
+              "Amid Rising",
+              "KOMZIFTI",
+              "R&D"
+            ],
+            "metrics": [],
+            "evidence_spans": [
+              {
+                "url": "https://finance.yahoo.com/news/kura-oncology-inc-kura-q1-050219775.html",
+                "title": "Kura Oncology Inc (KURA) Q1 2026 Earnings Call Highlights: Strong KOMZIFTI Launch Amid Rising ...",
+                "source": "GuruFocus.com",
+                "published_at": "2026-05-13 05:02:19+00:00",
+                "quote": "Kura Oncology Inc (KURA) reports promising revenue from KOMZIFTI's debut, despite increased R&D and administrative costs impacting net loss.",
+                "char_start": 0,
+                "char_end": 140,
+                "source_tier": "tier3"
+              }
+            ],
+            "source_quality_score": 0.68,
+            "market_reaction_score": 0.77,
+            "score": 0.64,
             "published_at": "2026-05-13 05:02:19+00:00"
           },
           {
             "ticker": "KURA",
             "event_type": "earnings",
             "claim": "Kura Oncology, Inc. Q1 2026 Earnings Call Summary",
-            "affected_driver": "Revenue / margin / guidance",
+            "affected_driver": "Revenue / margin / earnings quality",
             "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.9,
+            "horizon": "5d",
+            "materiality_score": 0.86,
             "novelty_score": 1.0,
-            "priced_in_risk": "medium",
+            "priced_in_risk": "high",
             "evidence_sources": [
               "https://finance.yahoo.com/news/kura-oncology-inc-q1-2026-123000077.html"
             ],
-            "counter_evidence": [],
-            "score": 0.78,
+            "counter_evidence": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/kura-oncology-kura-expected-beat-140005958.html",
+                "title": "Kura Oncology (KURA) Expected to Beat Earnings Estimates: What to Know Ahead of Q1 Release",
+                "source": "Zacks",
+                "published_at": "2026-04-30 14:00:05+00:00",
+                "quote": "This biopharmaceutical company is expected to post quarterly loss of $0.88 per share in its upcoming report, which represents a year-over-year change of -33.3%.",
+                "char_start": 813,
+                "char_end": 973,
+                "source_tier": "tier3"
+              },
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/kura-oncology-kura-story-evolving-231412737.html",
+                "title": "How The Kura Oncology (KURA) Story Is Evolving After Komzifti Launch And Q4 Reassessment",
+                "source": "Simply Wall St.",
+                "published_at": "2026-05-04 23:14:12+00:00",
+                "quote": "Find your next quality investment with Simply Wall St's easy and powerful screener, trusted by over 7 million individual investors worldwide.",
+                "char_start": 0,
+                "char_end": 141,
+                "source_tier": "tier3"
+              }
+            ],
+            "company_name": "Kura Oncology, Inc.",
+            "event_subtype": "beat_miss",
+            "entities": [
+              "KURA",
+              "Kura Oncology, Inc.",
+              "Kura Oncology",
+              "Inc",
+              "Earnings Call Summary",
+              "Moby"
+            ],
+            "metrics": [],
+            "evidence_spans": [
+              {
+                "url": "https://finance.yahoo.com/news/kura-oncology-inc-q1-2026-123000077.html",
+                "title": "Kura Oncology, Inc. Q1 2026 Earnings Call Summary",
+                "source": "Moby",
+                "published_at": "2026-05-13 12:30:00+00:00",
+                "quote": "Moby summary of Kura Oncology, Inc.'s Q1 2026 earnings call",
+                "char_start": 0,
+                "char_end": 59,
+                "source_tier": "tier3"
+              }
+            ],
+            "source_quality_score": 0.68,
+            "market_reaction_score": 0.77,
+            "score": 0.64,
             "published_at": "2026-05-13 12:30:00+00:00"
           },
           {
             "ticker": "KURA",
-            "event_type": "earnings",
-            "claim": "Earnings Update: Kura Oncology, Inc. (NASDAQ:KURA) Just Reported And Analysts Are Trimming Their Forecasts",
-            "affected_driver": "Revenue / margin / guidance",
-            "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.9,
-            "novelty_score": 1.0,
-            "priced_in_risk": "medium",
-            "evidence_sources": [
-              "https://finance.yahoo.com/markets/stocks/articles/earnings-kura-oncology-inc-nasdaq-131030983.html"
-            ],
-            "counter_evidence": [],
-            "score": 0.78,
-            "published_at": "2026-05-15 13:10:30+00:00"
-          },
-          {
-            "ticker": "KURA",
-            "event_type": "ai_infrastructure",
-            "claim": "How The Kura Oncology (KURA) Story Is Evolving After Komzifti Launch And Q4 Reassessment",
-            "affected_driver": "AI infrastructure demand",
-            "direction": "positive",
-            "horizon": "5d-20d",
-            "materiality_score": 0.78,
-            "novelty_score": 1.0,
-            "priced_in_risk": "medium",
-            "evidence_sources": [
-              "https://finance.yahoo.com/markets/stocks/articles/kura-oncology-kura-story-evolving-231412737.html"
-            ],
-            "counter_evidence": [],
-            "score": 0.73,
-            "published_at": "2026-05-04 23:14:12+00:00"
-          },
-          {
-            "ticker": "KURA",
-            "event_type": "analyst_revision",
+            "event_type": "general_news",
             "claim": "Some Analysts Just Cut Their Kura Oncology, Inc. (NASDAQ:KURA) Estimates",
-            "affected_driver": "Market expectations",
-            "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.55,
+            "affected_driver": "Narrative / sentiment",
+            "direction": "negative",
+            "horizon": "unknown",
+            "materiality_score": 0.43,
             "novelty_score": 1.0,
-            "priced_in_risk": "medium",
+            "priced_in_risk": "high",
             "evidence_sources": [
               "https://finance.yahoo.com/markets/stocks/articles/analysts-just-cut-kura-oncology-132233802.html"
             ],
-            "counter_evidence": [],
-            "score": 0.63,
+            "counter_evidence": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/kura-oncology-kura-expected-beat-140005958.html",
+                "title": "Kura Oncology (KURA) Expected to Beat Earnings Estimates: What to Know Ahead of Q1 Release",
+                "source": "Zacks",
+                "published_at": "2026-04-30 14:00:05+00:00",
+                "quote": "This biopharmaceutical company is expected to post quarterly loss of $0.88 per share in its upcoming report, which represents a year-over-year change of -33.3%.",
+                "char_start": 813,
+                "char_end": 973,
+                "source_tier": "tier3"
+              },
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/kura-oncology-kura-story-evolving-231412737.html",
+                "title": "How The Kura Oncology (KURA) Story Is Evolving After Komzifti Launch And Q4 Reassessment",
+                "source": "Simply Wall St.",
+                "published_at": "2026-05-04 23:14:12+00:00",
+                "quote": "Find your next quality investment with Simply Wall St's easy and powerful screener, trusted by over 7 million individual investors worldwide.",
+                "char_start": 0,
+                "char_end": 141,
+                "source_tier": "tier3"
+              }
+            ],
+            "company_name": "Kura Oncology, Inc.",
+            "event_subtype": "unknown",
+            "entities": [
+              "KURA",
+              "Kura Oncology, Inc.",
+              "Some Analysts Just",
+              "Cut Their Kura",
+              "Oncology",
+              "Inc",
+              "NASDAQ",
+              "Estimates One"
+            ],
+            "metrics": [],
+            "evidence_spans": [
+              {
+                "url": "https://finance.yahoo.com/markets/stocks/articles/analysts-just-cut-kura-oncology-132233802.html",
+                "title": "Some Analysts Just Cut Their Kura Oncology, Inc. (NASDAQ:KURA) Estimates",
+                "source": "Simply Wall St.",
+                "published_at": "2026-05-17 13:22:33+00:00",
+                "quote": "One thing we could say about the analysts on Kura Oncology, Inc.",
+                "char_start": 0,
+                "char_end": 64,
+                "source_tier": "tier3"
+              }
+            ],
+            "source_quality_score": 0.68,
+            "market_reaction_score": 0.77,
+            "score": 0.48,
             "published_at": "2026-05-17 13:22:33+00:00"
           }
         ]
@@ -6881,124 +8345,13 @@
     },
     {
       "rank": 4,
-      "ticker": "IREN",
-      "name": "IREN LIMITED",
-      "market": "US",
-      "sources": [
-        "gainers",
-        "active"
-      ],
-      "score": 1.017,
-      "agentView": "news_first_watch",
-      "stance": "뉴스 우선 감시",
-      "price": {
-        "close": 52.709999084472656,
-        "dayChange": null,
-        "recentReturn20d": 0.0133
-      },
-      "technical": {
-        "structure": "uptrend / constructive pullback",
-        "momentum": "positive but not extreme",
-        "volume": "normal participation",
-        "support": 37.49,
-        "resistance": 65.61
-      },
-      "setup": {
-        "type": "trend_pullback",
-        "action": "pullback_watch",
-        "label": "눌림 감시",
-        "score": 0.65,
-        "confidence": 0.795,
-        "entry": {
-          "low": 49.49,
-          "high": 54.16
-        },
-        "stopLoss": 36.93,
-        "target1": 84.27,
-        "target2": 100.06,
-        "riskReward": 2.0,
-        "thesis": "상승 추세 안의 눌림목 셋업",
-        "invalidation": "36.93 이탈 시 셋업 무효",
-        "signals": [
-          "20/50일선 우상향",
-          "20일선 근처 건설적 눌림",
-          "RSI가 과열 전 구간"
-        ],
-        "warnings": []
-      },
-      "marketReaction": {
-        "abnormalReturn1d": null,
-        "abnormalReturn5d": null,
-        "abnormalReturn20d": null,
-        "volumeZscore": null,
-        "volumeRatio": null,
-        "gapReturn": null,
-        "reactionScore": null
-      },
-      "news": {
-        "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'Iren's Earnings Highlight Long-Term Growth Potential While Demanding Patience Before Profits'이며, 차트 신호와 함께 감시할 만하다.",
-        "positive": 4,
-        "negative": 0,
-        "mixed": 1,
-        "headlines": [
-          {
-            "stance": "positive",
-            "title": "Blockspace: IREN’s $3B Note, CME Compute Futures, Mike Alfred’s Stock Picks, Trump’s Q1 Bitcoin Equities",
-            "source": "CoinDesk"
-          },
-          {
-            "stance": "mixed",
-            "title": "Blockspace podcast recap: IREN’s $3 billion note, compute futures and Trump’s crypto stock buys",
-            "source": "Blockspace"
-          },
-          {
-            "stance": "positive",
-            "title": "Iren's Earnings Highlight Long-Term Growth Potential While Demanding Patience Before Profits",
-            "source": "Motley Fool"
-          },
-          {
-            "stance": "positive",
-            "title": "IREN Buys Awaken As AI Cloud Pivot Puts Brand In Focus",
-            "source": "Simply Wall St."
-          },
-          {
-            "stance": "positive",
-            "title": "Can IREN's Rising AI Cloud Revenues Offset Bitcoin Mining Weakness?",
-            "source": "Zacks"
-          }
-        ],
-        "rawItems": [],
-        "relevance": {
-          "level": "direct",
-          "label": "직접 관련",
-          "score": 1.0,
-          "note": "핵심 촉매 안에서 기업명 또는 티커가 직접 확인됨"
-        }
-      },
-      "catalyst": {
-        "count": 0,
-        "score": 0.86,
-        "qualityScore": 0.86,
-        "claim": "Iren's Earnings Highlight Long-Term Growth Potential While Demanding Patience Before Profits",
-        "type": "earnings",
-        "events": []
-      },
-      "risk": {
-        "chasePenalty": 0.0,
-        "reason": "뉴스 catalyst와 차트 구조를 함께 감시",
-        "relevanceHaircut": 0.0
-      },
-      "series": []
-    },
-    {
-      "rank": 5,
       "ticker": "CIEN",
       "name": "Ciena Corporation",
       "market": "US",
       "sources": [
         "growth_tech"
       ],
-      "score": 1.012,
+      "score": 0.884,
       "agentView": "news_first_watch",
       "stance": "뉴스 우선 감시",
       "price": {
@@ -7037,18 +8390,18 @@
         "warnings": []
       },
       "marketReaction": {
-        "abnormalReturn1d": null,
-        "abnormalReturn5d": null,
-        "abnormalReturn20d": null,
-        "volumeZscore": null,
-        "volumeRatio": null,
-        "gapReturn": null,
-        "reactionScore": null
+        "abnormalReturn1d": 0.02369,
+        "abnormalReturn5d": -0.04004,
+        "abnormalReturn20d": 0.11181,
+        "volumeZscore": -0.121,
+        "volumeRatio": 0.96193,
+        "gapReturn": 0.02268,
+        "reactionScore": 0.289
       },
       "news": {
-        "read": "부정/리스크성 뉴스가 우세해 차트가 좋아도 추격보다 리스크 확인이 먼저다.",
-        "positive": 0,
-        "negative": 1,
+        "read": "핵심 촉매를 제목 기준 직접 관련 뉴스로 재선별했다. 현재 표시 이슈는 'Ciena Subsea Breakthrough Puts WaveLogic 6 Rollout In Investor Focus'입니다.",
+        "positive": 1,
+        "negative": 0,
         "mixed": 2,
         "headlines": [
           {
@@ -7057,7 +8410,7 @@
             "source": "Simply Wall St."
           },
           {
-            "stance": "negative",
+            "stance": "positive",
             "title": "Can Proliferating WaveLogic 6 Adoption Fuel Ciena's Top Line?",
             "source": "Zacks"
           },
@@ -7094,10 +8447,10 @@
       },
       "catalyst": {
         "count": 2,
-        "score": 0.77,
-        "qualityScore": 0.77,
-        "claim": "Can Proliferating WaveLogic 6 Adoption Fuel Ciena's Top Line?",
-        "type": "ai_infrastructure",
+        "score": 0.45,
+        "qualityScore": 0.45,
+        "claim": "Ciena Subsea Breakthrough Puts WaveLogic 6 Rollout In Investor Focus",
+        "type": "company_news",
         "events": [
           {
             "ticker": "CIEN",
@@ -9112,14 +10465,14 @@
       ]
     },
     {
-      "rank": 6,
+      "rank": 5,
       "ticker": "DELL",
       "name": "Dell Technologies Inc.",
       "market": "US",
       "sources": [
         "growth_tech"
       ],
-      "score": 1.006,
+      "score": 0.986,
       "agentView": "news_first_watch",
       "stance": "뉴스 우선 감시",
       "price": {
@@ -9158,18 +10511,18 @@
         "warnings": []
       },
       "marketReaction": {
-        "abnormalReturn1d": null,
-        "abnormalReturn5d": null,
-        "abnormalReturn20d": null,
-        "volumeZscore": null,
-        "volumeRatio": null,
-        "gapReturn": null,
-        "reactionScore": null
+        "abnormalReturn1d": 0.0326,
+        "abnormalReturn5d": -0.00385,
+        "abnormalReturn20d": 0.13175,
+        "volumeZscore": -0.87065,
+        "volumeRatio": 0.63638,
+        "gapReturn": 0.0179,
+        "reactionScore": 0.259
       },
       "news": {
-        "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'Will Dell Technologies (DELL) Beat Estimates Again in Its Next Earnings Report?'이며, 차트 신호와 함께 감시할 만하다.",
-        "positive": 5,
-        "negative": 0,
+        "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'Dell Stock Nabs Price-Target Hikes On AI Strategy'이며, 차트 신호와 함께 감시할 만하다.",
+        "positive": 4,
+        "negative": 1,
         "mixed": 0,
         "headlines": [
           {
@@ -9178,7 +10531,7 @@
             "source": "Insider Monkey"
           },
           {
-            "stance": "positive",
+            "stance": "negative",
             "title": "Dell Stock Nabs Price-Target Hikes On AI Strategy",
             "source": "Investor's Business Daily"
           },
@@ -9208,9 +10561,9 @@
       },
       "catalyst": {
         "count": 0,
-        "score": 0.75,
-        "qualityScore": 0.75,
-        "claim": "Will Dell Technologies (DELL) Beat Estimates Again in Its Next Earnings Report?",
+        "score": 0.7,
+        "qualityScore": 0.7,
+        "claim": "Dell Stock Nabs Price-Target Hikes On AI Strategy",
         "type": "earnings",
         "events": []
       },
@@ -9222,90 +10575,77 @@
       "series": []
     },
     {
-      "rank": 7,
-      "ticker": "MT",
-      "name": "Arcelor Mittal NY Registry Shar",
+      "rank": 6,
+      "ticker": "GS",
+      "name": "Goldman Sachs Group, Inc. (The)",
       "market": "US",
       "sources": [
         "undervalued_growth"
       ],
-      "score": 0.983,
+      "score": 0.865,
       "agentView": "news_first_watch",
       "stance": "뉴스 우선 감시",
       "price": {
-        "close": 63.15999984741211,
+        "close": 982.1199951171876,
         "dayChange": null,
-        "recentReturn20d": 0.0608
+        "recentReturn20d": 0.0546
       },
       "technical": {
         "structure": "uptrend / constructive pullback",
         "momentum": "positive but not extreme",
         "volume": "normal participation",
-        "support": 51.73,
-        "resistance": 67.6
+        "support": 810.43,
+        "resistance": 982.72
       },
       "setup": {
-        "type": "base_building",
-        "action": "long_watch",
-        "label": "롱 감시",
-        "score": 0.67,
-        "confidence": 0.805,
+        "type": "volume_breakout",
+        "action": "breakout_watch",
+        "label": "돌파 감시",
+        "score": 0.89,
+        "confidence": 0.955,
         "entry": {
-          "low": 61.83,
-          "high": 63.83
+          "low": 975.66,
+          "high": 988.46
         },
-        "stopLoss": 50.95,
-        "target1": 87.57,
-        "target2": 99.78,
+        "stopLoss": 798.27,
+        "target1": 1349.81,
+        "target2": 1533.66,
         "riskReward": 2.0,
-        "thesis": "추세와 모멘텀이 동시에 유지되는 감시 셋업",
-        "invalidation": "50.95 이탈 시 셋업 무효",
+        "thesis": "거래량이 붙은 고점 돌파형 셋업",
+        "invalidation": "798.27 이탈 시 셋업 무효",
         "signals": [
-          "20/50/100일선 정배열",
-          "거래량 1.3배 참여",
+          "20/50일선 우상향",
+          "20일 고점 돌파와 거래량 동반",
+          "MACD 히스토그램 개선",
+          "거래량 1.4배 참여",
           "RSI가 과열 전 구간"
         ],
         "warnings": []
       },
       "marketReaction": {
-        "abnormalReturn1d": null,
-        "abnormalReturn5d": null,
-        "abnormalReturn20d": null,
-        "volumeZscore": null,
-        "volumeRatio": null,
-        "gapReturn": null,
-        "reactionScore": null
+        "abnormalReturn1d": 0.05748,
+        "abnormalReturn5d": 0.02795,
+        "abnormalReturn20d": 0.05058,
+        "volumeZscore": 1.9793,
+        "volumeRatio": 1.39474,
+        "gapReturn": 0.01751,
+        "reactionScore": 0.515
       },
       "news": {
-        "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'ArcelorMittal's Q1 Earnings Top Estimates, Sales Miss on Lower Volumes'이며, 차트 신호와 함께 감시할 만하다.",
-        "positive": 2,
-        "negative": 1,
+        "read": "핵심 촉매를 제목 기준 직접 관련 뉴스로 재선별했다. 현재 표시 이슈는 'SpaceX Taps Goldman Sachs to Lead Record-Breaking IPO Amid Trillion-Dollar Valuation Push'입니다.",
+        "positive": 0,
+        "negative": 0,
         "mixed": 2,
         "headlines": [
           {
             "stance": "mixed",
-            "title": "ArcelorMittal's (AMS:MT) Solid Profits Have Weak Fundamentals",
-            "source": "Simply Wall St."
-          },
-          {
-            "stance": "negative",
-            "title": "ArcelorMittal's Q1 Earnings Top Estimates, Sales Miss on Lower Volumes",
-            "source": "Zacks"
+            "title": "SpaceX Taps Goldman Sachs to Lead Record-Breaking IPO Amid Trillion-Dollar Valuation Push",
+            "source": "GuruFocus.com"
           },
           {
             "stance": "mixed",
-            "title": "ArcelorMittal (ENXTAM:MT) Valuation Check After Recent Share Price Moves",
-            "source": "Simply Wall St."
-          },
-          {
-            "stance": "positive",
-            "title": "ArcelorMittal Sells $667 Million Stake in Vallourec to Boost Shareholder Returns",
-            "source": "The Wall Street Journal"
-          },
-          {
-            "stance": "positive",
-            "title": "ArcelorMittal Partially Exits Vallourec Holding to Support Buybacks",
-            "source": "Zacks"
+            "title": "Why Goldman Sachs Stock Popped on Wednesday",
+            "source": "Motley Fool"
           }
         ],
         "rawItems": [],
@@ -9318,10 +10658,116 @@
       },
       "catalyst": {
         "count": 0,
-        "score": 0.84,
-        "qualityScore": 0.84,
-        "claim": "ArcelorMittal's Q1 Earnings Top Estimates, Sales Miss on Lower Volumes",
-        "type": "earnings",
+        "score": 0.45,
+        "qualityScore": 0.45,
+        "claim": "SpaceX Taps Goldman Sachs to Lead Record-Breaking IPO Amid Trillion-Dollar Valuation Push",
+        "type": "company_news",
+        "events": []
+      },
+      "risk": {
+        "chasePenalty": 0.0,
+        "reason": "뉴스 catalyst와 차트 구조를 함께 감시",
+        "relevanceHaircut": 0.0
+      },
+      "series": []
+    },
+    {
+      "rank": 7,
+      "ticker": "IREN",
+      "name": "IREN LIMITED",
+      "market": "US",
+      "sources": [
+        "gainers",
+        "active"
+      ],
+      "score": 0.853,
+      "agentView": "news_first_watch",
+      "stance": "뉴스 우선 감시",
+      "price": {
+        "close": 52.709999084472656,
+        "dayChange": null,
+        "recentReturn20d": 0.0133
+      },
+      "technical": {
+        "structure": "uptrend / constructive pullback",
+        "momentum": "positive but not extreme",
+        "volume": "normal participation",
+        "support": 37.49,
+        "resistance": 65.61
+      },
+      "setup": {
+        "type": "trend_pullback",
+        "action": "pullback_watch",
+        "label": "눌림 감시",
+        "score": 0.65,
+        "confidence": 0.795,
+        "entry": {
+          "low": 49.49,
+          "high": 54.16
+        },
+        "stopLoss": 36.93,
+        "target1": 84.27,
+        "target2": 100.06,
+        "riskReward": 2.0,
+        "thesis": "상승 추세 안의 눌림목 셋업",
+        "invalidation": "36.93 이탈 시 셋업 무효",
+        "signals": [
+          "20/50일선 우상향",
+          "20일선 근처 건설적 눌림",
+          "RSI가 과열 전 구간"
+        ],
+        "warnings": []
+      },
+      "marketReaction": {
+        "abnormalReturn1d": 0.10411,
+        "abnormalReturn5d": -0.04459,
+        "abnormalReturn20d": 0.08927,
+        "volumeZscore": -0.36478,
+        "volumeRatio": 0.83121,
+        "gapReturn": 0.02891,
+        "reactionScore": 0.468
+      },
+      "news": {
+        "read": "핵심 촉매를 제목 기준 직접 관련 뉴스로 재선별했다. 현재 표시 이슈는 'Blockspace: IREN’s $3B Note, CME Compute Futures, Mike Alfred’s Stock Picks, Trump’s Q1 Bitcoin Equities'입니다.",
+        "positive": 4,
+        "negative": 0,
+        "mixed": 0,
+        "headlines": [
+          {
+            "stance": "positive",
+            "title": "Blockspace: IREN’s $3B Note, CME Compute Futures, Mike Alfred’s Stock Picks, Trump’s Q1 Bitcoin Equities",
+            "source": "CoinDesk"
+          },
+          {
+            "stance": "positive",
+            "title": "Blockspace podcast recap: IREN’s $3 billion note, compute futures and Trump’s crypto stock buys",
+            "source": "Blockspace"
+          },
+          {
+            "stance": "positive",
+            "title": "Iren's Earnings Highlight Long-Term Growth Potential While Demanding Patience Before Profits",
+            "source": "Motley Fool"
+          },
+          {
+            "stance": "positive",
+            "title": "IREN Buys Awaken As AI Cloud Pivot Puts Brand In Focus",
+            "source": "Simply Wall St."
+          }
+        ],
+        "rawItems": [],
+        "relevance": {
+          "level": "direct",
+          "label": "직접 관련",
+          "score": 1.0,
+          "note": "핵심 촉매 안에서 기업명 또는 티커가 직접 확인됨"
+        }
+      },
+      "catalyst": {
+        "count": 0,
+        "score": 0.45,
+        "qualityScore": 0.45,
+        "claim": "Blockspace: IREN’s $3B Note, CME Compute Futures, Mike Alfred’s Stock Picks, Trump’s Q1 Bitcoin Equities",
+        "type": "company_news",
         "events": []
       },
       "risk": {
@@ -9339,7 +10785,7 @@
       "sources": [
         "undervalued_growth"
       ],
-      "score": 0.982,
+      "score": 0.946,
       "agentView": "news_first_watch",
       "stance": "뉴스 우선 감시",
       "price": {
@@ -9378,22 +10824,22 @@
         "warnings": []
       },
       "marketReaction": {
-        "abnormalReturn1d": null,
-        "abnormalReturn5d": null,
-        "abnormalReturn20d": null,
-        "volumeZscore": null,
-        "volumeRatio": null,
-        "gapReturn": null,
-        "reactionScore": null
+        "abnormalReturn1d": 0.04421,
+        "abnormalReturn5d": 0.00357,
+        "abnormalReturn20d": -0.04108,
+        "volumeZscore": -1.3929,
+        "volumeRatio": 0.52166,
+        "gapReturn": 0.00708,
+        "reactionScore": 0.19
       },
       "news": {
         "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'Evercore Inc (EVR) Q1 2026 Earnings Call Highlights: Record Revenues and Strategic Growth Amid ...'이며, 차트 신호와 함께 감시할 만하다.",
-        "positive": 3,
-        "negative": 0,
-        "mixed": 0,
+        "positive": 1,
+        "negative": 1,
+        "mixed": 1,
         "headlines": [
           {
-            "stance": "positive",
+            "stance": "negative",
             "title": "Evercore Inc (EVR) Q1 2026 Earnings Call Highlights: Record Revenues and Strategic Growth Amid ...",
             "source": "GuruFocus.com"
           },
@@ -9403,7 +10849,7 @@
             "source": "Simply Wall St."
           },
           {
-            "stance": "positive",
+            "stance": "mixed",
             "title": "Investment Banking & Brokerage Stocks Q1 Earnings: Evercore (NYSE:EVR) Firing on All Cylinders",
             "source": "StockStory"
           }
@@ -9418,10 +10864,10 @@
       },
       "catalyst": {
         "count": 0,
-        "score": 0.86,
-        "qualityScore": 0.86,
+        "score": 0.77,
+        "qualityScore": 0.77,
         "claim": "Evercore Inc (EVR) Q1 2026 Earnings Call Highlights: Record Revenues and Strategic Growth Amid ...",
-        "type": "earnings",
+        "type": "guidance",
         "events": []
       },
       "risk": {
@@ -9433,13 +10879,207 @@
     },
     {
       "rank": 9,
+      "ticker": "MT",
+      "name": "Arcelor Mittal NY Registry Shar",
+      "market": "US",
+      "sources": [
+        "undervalued_growth"
+      ],
+      "score": 0.943,
+      "agentView": "news_first_watch",
+      "stance": "뉴스 우선 감시",
+      "price": {
+        "close": 63.15999984741211,
+        "dayChange": null,
+        "recentReturn20d": 0.0608
+      },
+      "technical": {
+        "structure": "uptrend / constructive pullback",
+        "momentum": "positive but not extreme",
+        "volume": "normal participation",
+        "support": 51.73,
+        "resistance": 67.6
+      },
+      "setup": {
+        "type": "base_building",
+        "action": "long_watch",
+        "label": "롱 감시",
+        "score": 0.67,
+        "confidence": 0.805,
+        "entry": {
+          "low": 61.83,
+          "high": 63.83
+        },
+        "stopLoss": 50.95,
+        "target1": 87.57,
+        "target2": 99.78,
+        "riskReward": 2.0,
+        "thesis": "추세와 모멘텀이 동시에 유지되는 감시 셋업",
+        "invalidation": "50.95 이탈 시 셋업 무효",
+        "signals": [
+          "20/50/100일선 정배열",
+          "거래량 1.3배 참여",
+          "RSI가 과열 전 구간"
+        ],
+        "warnings": []
+      },
+      "marketReaction": {
+        "abnormalReturn1d": 0.06743,
+        "abnormalReturn5d": -0.02032,
+        "abnormalReturn20d": 0.03473,
+        "volumeZscore": 0.92335,
+        "volumeRatio": 1.37839,
+        "gapReturn": 0.04107,
+        "reactionScore": 0.496
+      },
+      "news": {
+        "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'ArcelorMittal's Q1 Earnings Top Estimates, Sales Miss on Lower Volumes'이며, 차트 신호와 함께 감시할 만하다.",
+        "positive": 3,
+        "negative": 1,
+        "mixed": 1,
+        "headlines": [
+          {
+            "stance": "positive",
+            "title": "ArcelorMittal's (AMS:MT) Solid Profits Have Weak Fundamentals",
+            "source": "Simply Wall St."
+          },
+          {
+            "stance": "negative",
+            "title": "ArcelorMittal's Q1 Earnings Top Estimates, Sales Miss on Lower Volumes",
+            "source": "Zacks"
+          },
+          {
+            "stance": "mixed",
+            "title": "ArcelorMittal (ENXTAM:MT) Valuation Check After Recent Share Price Moves",
+            "source": "Simply Wall St."
+          },
+          {
+            "stance": "positive",
+            "title": "ArcelorMittal Sells $667 Million Stake in Vallourec to Boost Shareholder Returns",
+            "source": "The Wall Street Journal"
+          },
+          {
+            "stance": "positive",
+            "title": "ArcelorMittal Partially Exits Vallourec Holding to Support Buybacks",
+            "source": "Zacks"
+          }
+        ],
+        "rawItems": [],
+        "relevance": {
+          "level": "direct",
+          "label": "직접 관련",
+          "score": 1.0,
+          "note": "핵심 촉매 안에서 기업명 또는 티커가 직접 확인됨"
+        }
+      },
+      "catalyst": {
+        "count": 0,
+        "score": 0.74,
+        "qualityScore": 0.74,
+        "claim": "ArcelorMittal's Q1 Earnings Top Estimates, Sales Miss on Lower Volumes",
+        "type": "earnings",
+        "events": []
+      },
+      "risk": {
+        "chasePenalty": 0.0,
+        "reason": "뉴스 catalyst와 차트 구조를 함께 감시",
+        "relevanceHaircut": 0.0
+      },
+      "series": []
+    },
+    {
+      "rank": 10,
+      "ticker": "AAL",
+      "name": "American Airlines Group, Inc.",
+      "market": "US",
+      "sources": [
+        "active"
+      ],
+      "score": 0.658,
+      "agentView": "news_first_watch",
+      "stance": "뉴스 우선 감시",
+      "price": {
+        "close": 12.949999809265137,
+        "dayChange": null,
+        "recentReturn20d": 0.0993
+      },
+      "technical": {
+        "structure": "uptrend / constructive pullback",
+        "momentum": "positive but not extreme",
+        "volume": "high participation",
+        "support": 10.54,
+        "resistance": 14.17
+      },
+      "setup": {
+        "type": "base_building",
+        "action": "long_watch",
+        "label": "롱 감시",
+        "score": 0.61,
+        "confidence": 0.775,
+        "entry": {
+          "low": 12.7,
+          "high": 13.08
+        },
+        "stopLoss": 10.38,
+        "target1": 18.09,
+        "target2": 20.65,
+        "riskReward": 2.0,
+        "thesis": "추세와 모멘텀이 동시에 유지되는 감시 셋업",
+        "invalidation": "10.38 이탈 시 셋업 무효",
+        "signals": [
+          "20/50일선 우상향",
+          "거래량 1.6배 참여",
+          "RSI가 과열 전 구간"
+        ],
+        "warnings": []
+      },
+      "marketReaction": {
+        "abnormalReturn1d": 0.0738,
+        "abnormalReturn5d": 0.01888,
+        "abnormalReturn20d": 0.12609,
+        "volumeZscore": 2.66111,
+        "volumeRatio": 1.64258,
+        "gapReturn": 0.00415,
+        "reactionScore": 0.609
+      },
+      "news": {
+        "read": "기업명/티커가 제목에 직접 확인되는 촉매가 없어 차트와 수급 중심의 감시 후보로만 봅니다.",
+        "positive": 0,
+        "negative": 0,
+        "mixed": 0,
+        "headlines": [],
+        "rawItems": [],
+        "relevance": {
+          "level": "weak",
+          "label": "관련성 약함",
+          "score": 0.35,
+          "note": "후보명과 기사 주체가 어긋날 수 있어 원문 확인 필요"
+        }
+      },
+      "catalyst": {
+        "count": 0,
+        "score": 0.0,
+        "qualityScore": 0.0,
+        "claim": "",
+        "type": "guidance",
+        "events": []
+      },
+      "risk": {
+        "chasePenalty": 0.0,
+        "reason": "뉴스 catalyst와 차트 구조를 함께 감시",
+        "relevanceHaircut": 0.65
+      },
+      "series": []
+    },
+    {
+      "rank": 11,
       "ticker": "SA",
       "name": "Seabridge Gold, Inc.",
       "market": "US",
       "sources": [
         "gainers"
       ],
-      "score": 0.977,
+      "score": 0.941,
       "agentView": "news_first_watch",
       "stance": "뉴스 우선 감시",
       "price": {
@@ -9479,22 +11119,22 @@
         "warnings": []
       },
       "marketReaction": {
-        "abnormalReturn1d": null,
-        "abnormalReturn5d": null,
-        "abnormalReturn20d": null,
-        "volumeZscore": null,
-        "volumeRatio": null,
-        "gapReturn": null,
-        "reactionScore": null
+        "abnormalReturn1d": 0.1101,
+        "abnormalReturn5d": -0.07847,
+        "abnormalReturn20d": -0.01256,
+        "volumeZscore": 1.10378,
+        "volumeRatio": 1.44759,
+        "gapReturn": 0.01883,
+        "reactionScore": 0.614
       },
       "news": {
-        "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'Seabridge Gold Inc. (SA): 10 Best Gold Mining Companies to Invest In According to Wall Street'이며, 차트 신호와 함께 감시할 만하다.",
-        "positive": 6,
-        "negative": 0,
-        "mixed": 0,
+        "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'Seabridge Gold (TSX:SEA) Valuation In Focus After KSM Permit Delay And Ongoing Legal Dispute'이며, 차트 신호와 함께 감시할 만하다.",
+        "positive": 3,
+        "negative": 2,
+        "mixed": 1,
         "headlines": [
           {
-            "stance": "positive",
+            "stance": "negative",
             "title": "How Higher Price Assumptions At Seabridge Gold (TSX:SEA) Have Changed Its Investment Story",
             "source": "Simply Wall St."
           },
@@ -9504,12 +11144,12 @@
             "source": "MT Newswires"
           },
           {
-            "stance": "positive",
+            "stance": "negative",
             "title": "Seabridge Gold (TSX:SEA) Valuation In Focus After KSM Permit Delay And Ongoing Legal Dispute",
             "source": "Simply Wall St."
           },
           {
-            "stance": "positive",
+            "stance": "mixed",
             "title": "Seabridge Gold Inc. (SA): 10 Best Gold Mining Companies to Invest In According to Wall Street",
             "source": "Insider Monkey"
           },
@@ -9534,10 +11174,10 @@
       },
       "catalyst": {
         "count": 0,
-        "score": 0.86,
-        "qualityScore": 0.86,
-        "claim": "Seabridge Gold Inc. (SA): 10 Best Gold Mining Companies to Invest In According to Wall Street",
-        "type": "earnings",
+        "score": 0.77,
+        "qualityScore": 0.77,
+        "claim": "Seabridge Gold (TSX:SEA) Valuation In Focus After KSM Permit Delay And Ongoing Legal Dispute",
+        "type": "guidance",
         "events": []
       },
       "risk": {
@@ -9548,14 +11188,14 @@
       "series": []
     },
     {
-      "rank": 10,
+      "rank": 12,
       "ticker": "VNO",
       "name": "Vornado Realty Trust",
       "market": "US",
       "sources": [
         "undervalued_growth"
       ],
-      "score": 0.962,
+      "score": 0.926,
       "agentView": "news_first_watch",
       "stance": "뉴스 우선 감시",
       "price": {
@@ -9594,27 +11234,27 @@
         "warnings": []
       },
       "marketReaction": {
-        "abnormalReturn1d": null,
-        "abnormalReturn5d": null,
-        "abnormalReturn20d": null,
-        "volumeZscore": null,
-        "volumeRatio": null,
-        "gapReturn": null,
-        "reactionScore": null
+        "abnormalReturn1d": 0.04222,
+        "abnormalReturn5d": 0.02965,
+        "abnormalReturn20d": 0.08256,
+        "volumeZscore": -1.14029,
+        "volumeRatio": 0.66075,
+        "gapReturn": 0.00231,
+        "reactionScore": 0.259
       },
       "news": {
-        "read": "부정/리스크성 뉴스가 우세해 차트가 좋아도 추격보다 리스크 확인이 먼저다.",
-        "positive": 1,
-        "negative": 2,
-        "mixed": 1,
+        "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'Is Vornado Realty (VNO) Pricing Reflect Recent Office REIT Volatility And Cash Flow Outlook'이며, 차트 신호와 함께 감시할 만하다.",
+        "positive": 3,
+        "negative": 1,
+        "mixed": 0,
         "headlines": [
           {
-            "stance": "mixed",
+            "stance": "positive",
             "title": "VNO Q1 FFO Meets Estimates, Revenues Top, Same-Store NOI Grows",
             "source": "Zacks"
           },
           {
-            "stance": "negative",
+            "stance": "positive",
             "title": "Is Vornado Realty (VNO) Pricing Reflect Recent Office REIT Volatility And Cash Flow Outlook",
             "source": "Simply Wall St."
           },
@@ -9639,218 +11279,10 @@
       },
       "catalyst": {
         "count": 0,
-        "score": 0.81,
-        "qualityScore": 0.81,
-        "claim": "VNO Q1 FFO Meets Estimates, Revenues Top, Same-Store NOI Grows",
-        "type": "earnings",
-        "events": []
-      },
-      "risk": {
-        "chasePenalty": 0.0,
-        "reason": "뉴스 catalyst와 차트 구조를 함께 감시",
-        "relevanceHaircut": 0.0
-      },
-      "series": []
-    },
-    {
-      "rank": 11,
-      "ticker": "INSW",
-      "name": "International Seaways, Inc.",
-      "market": "US",
-      "sources": [
-        "undervalued_growth"
-      ],
-      "score": 0.956,
-      "agentView": "news_first_watch",
-      "stance": "뉴스 우선 감시",
-      "price": {
-        "close": 86.66999816894531,
-        "dayChange": null,
-        "recentReturn20d": 0.1284
-      },
-      "technical": {
-        "structure": "uptrend / constructive pullback",
-        "momentum": "positive but not extreme",
-        "volume": "normal participation",
-        "support": 69.62,
-        "resistance": 92.66
-      },
-      "setup": {
-        "type": "trend_pullback",
-        "action": "pullback_watch",
-        "label": "눌림 감시",
-        "score": 0.71,
-        "confidence": 0.825,
-        "entry": {
-          "low": 83.26,
-          "high": 87.57
-        },
-        "stopLoss": 68.58,
-        "target1": 122.86,
-        "target2": 140.95,
-        "riskReward": 2.0,
-        "thesis": "상승 추세 안의 눌림목 셋업",
-        "invalidation": "68.58 이탈 시 셋업 무효",
-        "signals": [
-          "20/50/100일선 정배열",
-          "20일선 근처 건설적 눌림",
-          "RSI가 과열 전 구간"
-        ],
-        "warnings": []
-      },
-      "marketReaction": {
-        "abnormalReturn1d": null,
-        "abnormalReturn5d": null,
-        "abnormalReturn20d": null,
-        "volumeZscore": null,
-        "volumeRatio": null,
-        "gapReturn": null,
-        "reactionScore": null
-      },
-      "news": {
-        "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'International Seaways (INSW) Is Down 5.8% After Special Dividend And $200M ATM Offering News - What's Changed'이며, 차트 신호와 함께 감시할 만하다.",
-        "positive": 1,
-        "negative": 0,
-        "mixed": 1,
-        "headlines": [
-          {
-            "stance": "mixed",
-            "title": "Zacks.com featured highlights include Albemarle, FormFactor and International Seaways",
-            "source": "Zacks"
-          },
-          {
-            "stance": "positive",
-            "title": "International Seaways (INSW) Is Down 5.8% After Special Dividend And $200M ATM Offering News - What's Changed",
-            "source": "Simply Wall St."
-          }
-        ],
-        "rawItems": [],
-        "relevance": {
-          "level": "direct",
-          "label": "직접 관련",
-          "score": 1.0,
-          "note": "핵심 촉매 안에서 기업명 또는 티커가 직접 확인됨"
-        }
-      },
-      "catalyst": {
-        "count": 0,
-        "score": 0.77,
-        "qualityScore": 0.77,
-        "claim": "International Seaways (INSW) Is Down 5.8% After Special Dividend And $200M ATM Offering News - What's Changed",
-        "type": "earnings",
-        "events": []
-      },
-      "risk": {
-        "chasePenalty": 0.0,
-        "reason": "뉴스 catalyst와 차트 구조를 함께 감시",
-        "relevanceHaircut": 0.0
-      },
-      "series": []
-    },
-    {
-      "rank": 12,
-      "ticker": "KLIC",
-      "name": "Kulicke and Soffa Industries, I",
-      "market": "US",
-      "sources": [
-        "growth_tech"
-      ],
-      "score": 0.947,
-      "agentView": "news_first_watch",
-      "stance": "뉴스 우선 감시",
-      "price": {
-        "close": 101.2300033569336,
-        "dayChange": null,
-        "recentReturn20d": 0.1957
-      },
-      "technical": {
-        "structure": "uptrend / constructive pullback",
-        "momentum": "positive but not extreme",
-        "volume": "normal participation",
-        "support": 64.15,
-        "resistance": 107.01
-      },
-      "setup": {
-        "type": "no_trade_zone",
-        "action": "wait",
-        "label": "대기",
-        "score": 0.49,
-        "confidence": 0.635,
-        "entry": {
-          "low": null,
-          "high": null
-        },
-        "stopLoss": 63.19,
-        "target1": 177.31,
-        "target2": 215.36,
-        "riskReward": 2.0,
-        "thesis": "아직 진입 근거보다 확인해야 할 조건이 많음",
-        "invalidation": "63.19 이탈 시 셋업 무효",
-        "signals": [
-          "20/50/100일선 정배열"
-        ],
-        "warnings": []
-      },
-      "marketReaction": {
-        "abnormalReturn1d": null,
-        "abnormalReturn5d": null,
-        "abnormalReturn20d": null,
-        "volumeZscore": null,
-        "volumeRatio": null,
-        "gapReturn": null,
-        "reactionScore": null
-      },
-      "news": {
-        "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'Assessing Kulicke And Soffa Industries (KLIC) Valuation After Strong Share Price Momentum'이며, 차트 신호와 함께 감시할 만하다.",
-        "positive": 3,
-        "negative": 0,
-        "mixed": 3,
-        "headlines": [
-          {
-            "stance": "mixed",
-            "title": "Assessing Kulicke And Soffa Industries (KLIC) Valuation After Strong Share Price Momentum",
-            "source": "Simply Wall St."
-          },
-          {
-            "stance": "mixed",
-            "title": "Why Kulicke and Soffa (KLIC) Is Benefiting From the Advanced Packaging Recovery",
-            "source": "Insider Monkey"
-          },
-          {
-            "stance": "mixed",
-            "title": "Kulicke and Soffa (KLIC) Is Up 18.92% in One Week: What You Should Know",
-            "source": "Zacks"
-          },
-          {
-            "stance": "positive",
-            "title": "Earnings Estimates Moving Higher for Kulicke and Soffa (KLIC): Time to Buy?",
-            "source": "Zacks"
-          },
-          {
-            "stance": "positive",
-            "title": "Kulicke and Soffa’s Q1 Earnings Call: Our Top 5 Analyst Questions",
-            "source": "StockStory"
-          },
-          {
-            "stance": "positive",
-            "title": "Did Stronger Guidance and AI-Focused Capex Just Shift Kulicke and Soffa Industries' (KLIC) Investment Narrative?",
-            "source": "Simply Wall St."
-          }
-        ],
-        "rawItems": [],
-        "relevance": {
-          "level": "direct",
-          "label": "직접 관련",
-          "score": 1.0,
-          "note": "핵심 촉매 안에서 기업명 또는 티커가 직접 확인됨"
-        }
-      },
-      "catalyst": {
-        "count": 0,
-        "score": 0.7,
-        "qualityScore": 0.7,
-        "claim": "Assessing Kulicke And Soffa Industries (KLIC) Valuation After Strong Share Price Momentum",
-        "type": "earnings",
+        "score": 0.72,
+        "qualityScore": 0.72,
+        "claim": "Is Vornado Realty (VNO) Pricing Reflect Recent Office REIT Volatility And Cash Flow Outlook",
+        "type": "guidance",
         "events": []
       },
       "risk": {
@@ -9878,7 +11310,7 @@
       "withPriceCount": 7,
       "positiveCount": 4,
       "negativeCount": 0,
-      "averageReturn": 0.013641041043474507
+      "averageReturn": 0.014413722089173511
     },
     "rows": [
       {
@@ -9946,10 +11378,10 @@
         "previousPricedInRisk": "",
         "marketReactionScore": null,
         "previousClose": 97.6500015258789,
-        "currentClose": 101.2300033569336,
+        "currentClose": null,
         "currentPriceDate": "",
-        "nextReturn": 0.03666156451729208,
-        "outcome": "up",
+        "nextReturn": null,
+        "outcome": "pending",
         "catalyst": "Assessing Kulicke And Soffa Industries (KLIC) Valuation After Strong Share Price Momentum",
         "newsQuality": "직접 관련"
       },
@@ -10000,10 +11432,10 @@
         "previousPricedInRisk": "",
         "marketReactionScore": null,
         "previousClose": 942.469970703125,
-        "currentClose": null,
+        "currentClose": 982.1199951171876,
         "currentPriceDate": "",
-        "nextReturn": null,
-        "outcome": "pending",
+        "nextReturn": 0.042070331837185115,
+        "outcome": "up",
         "catalyst": "Goldman Sachs set to be named lead left underwriter for SpaceX IPO, source says",
         "newsQuality": "직접 관련"
       },
