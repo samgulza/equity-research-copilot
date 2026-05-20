@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup
 from equity_research_copilot.adapters.news_adapter import NewsAdapter, NewsItem
 from equity_research_copilot.adapters.openbb_adapter import OpenBBAdapter
 from equity_research_copilot.news.catalyst import CatalystEvent, build_catalyst_events
+from equity_research_copilot.news.relevance import split_direct_company_news
 from equity_research_copilot.technical.indicators import add_indicators
 from equity_research_copilot.technical.structure import analyze_structure
 
@@ -177,7 +178,12 @@ def _classify_news(text: str) -> str:
     return "mixed"
 
 
-def summarize_news_read(items: list[NewsItem], catalysts: list[CatalystEvent]) -> dict[str, str | int]:
+def summarize_news_read(
+    items: list[NewsItem],
+    catalysts: list[CatalystEvent],
+    *,
+    rejected_count: int = 0,
+) -> dict[str, str | int]:
     counts = {"positive": 0, "negative": 0, "mixed": 0}
     bullets = []
     for item in items[:10]:
@@ -188,8 +194,13 @@ def summarize_news_read(items: list[NewsItem], catalysts: list[CatalystEvent]) -
             summary += f" ({item.source})"
         bullets.append(summary)
     top = catalysts[0] if catalysts else None
-    if not items:
-        read = "최근 뉴스가 충분히 잡히지 않아 차트/시장 스크리닝 신호 중심으로만 판단해야 한다."
+    if not items and rejected_count:
+        read = (
+            f"검색 뉴스 {rejected_count}건은 제목 기준으로 기업명/티커가 직접 확인되지 않아 핵심 촉매에서 제외했다. "
+            "차트/시장 스크리닝 신호 중심의 감시 후보로만 봐야 한다."
+        )
+    elif not items:
+        read = "최근 직접 관련 뉴스가 충분히 잡히지 않아 차트/시장 스크리닝 신호 중심으로만 판단해야 한다."
     elif counts["negative"] > counts["positive"]:
         read = "부정/리스크성 뉴스가 우세해 차트가 좋아도 추격보다 리스크 확인이 먼저다."
     elif counts["positive"] > 0 and top and top.score >= 0.55:
@@ -266,16 +277,22 @@ def score_candidates(
 
         last = df.iloc[-1]
         recent_return = float(df["close"].iloc[-1] / df["close"].tail(min(len(df), 20)).iloc[0] - 1)
-        news_items = news_adapter.fetch(
+        raw_news_items = news_adapter.fetch(
             candidate.symbol,
             days=news_days,
             limit=12,
             include_sec=(candidate.market != "KR"),
             company_name=candidate.name,
         )
+        news_items, rejected_news_items = split_direct_company_news(
+            candidate.symbol,
+            candidate.name,
+            raw_news_items,
+            market=candidate.market,
+        )
         catalysts = build_catalyst_events(candidate.symbol, news_items, recent_return=recent_return)
         top_catalyst = catalysts[0] if catalysts else None
-        news_read = summarize_news_read(news_items, catalysts)
+        news_read = summarize_news_read(news_items, catalysts, rejected_count=len(rejected_news_items))
 
         source_score = 0.0
         for source in candidate.sources:
@@ -326,6 +343,9 @@ def score_candidates(
                 "support": technical.support_levels[0] if technical.support_levels else None,
                 "resistance": technical.resistance_levels[-1] if technical.resistance_levels else None,
                 "catalyst_count": len(catalysts),
+                "raw_news_count": len(raw_news_items),
+                "relevant_news_count": len(news_items),
+                "filtered_news_count": len(rejected_news_items),
                 "top_catalyst_score": top_catalyst.score if top_catalyst else 0.0,
                 "top_catalyst": top_catalyst.claim if top_catalyst else "",
                 "top_catalyst_type": top_catalyst.event_type if top_catalyst else "",

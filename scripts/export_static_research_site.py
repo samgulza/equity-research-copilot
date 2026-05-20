@@ -22,6 +22,20 @@ THEME_RULES: dict[str, list[str]] = {
     "실적 / 가이던스": ["실적", "영업이익", "매출", "가이던스", "성장", "흑자", "적자", "earnings", "guidance", "revenue"],
 }
 
+LOW_SIGNAL_TITLE_TERMS = [
+    "[그래픽]",
+    "그래픽",
+    "시황",
+    "마감시황",
+    "인기 검색",
+    "검색 종목",
+    "가격 비교",
+    "코스피",
+    "코스닥",
+    "환율",
+    "파란불",
+]
+
 
 def _project_root() -> Path:
     here = Path(__file__).resolve()
@@ -157,13 +171,76 @@ def _headline_items(headlines: str) -> list[dict[str, str]]:
     return items[:8]
 
 
+def _compact_text(value: str) -> str:
+    return re.sub(r"[^0-9a-z가-힣]+", "", value.casefold())
+
+
 def _name_tokens(name: str) -> list[str]:
     cleaned = re.sub(r"\s+", "", name)
     cleaned = re.sub(r"(보통주|우선주|우|홀딩스|지주|주식회사|\(.*?\))", "", cleaned)
     tokens = [name.strip(), cleaned.strip()]
+    if cleaned.upper().startswith("HD") and len(cleaned) > 4:
+        tokens.append(cleaned[2:])
     if len(cleaned) >= 4:
         tokens.append(cleaned[:4])
-    return [token.lower() for token in tokens if len(token) >= 2]
+    return [token for token in tokens if len(_compact_text(token)) >= 2]
+
+
+def _ticker_tokens(ticker: str) -> list[str]:
+    tokens = [ticker, ticker.split(".")[0]]
+    return [token for token in tokens if len(_compact_text(token)) >= 2]
+
+
+def _token_hits(name: str, ticker: str, text: str) -> list[str]:
+    haystack = _compact_text(text)
+    hits = []
+    for token in _name_tokens(name) + _ticker_tokens(ticker):
+        compacted = _compact_text(token)
+        if compacted and compacted in haystack:
+            hits.append(token)
+    return hits
+
+
+def _text_direct(name: str, ticker: str, text: str) -> bool:
+    return bool(_token_hits(name, ticker, text))
+
+
+def _low_signal_title(title: str) -> bool:
+    lowered = title.casefold()
+    return any(term in lowered for term in LOW_SIGNAL_TITLE_TERMS)
+
+
+def _direct_headlines(name: str, ticker: str, headlines: list[dict[str, str]], news_items: list[dict[str, Any]]) -> list[dict[str, str]]:
+    rows = [item for item in headlines if _text_direct(name, ticker, item.get("title", "")) and not _low_signal_title(item.get("title", ""))]
+    seen = {_compact_text(item.get("title", "")) for item in rows}
+    for item in news_items:
+        title = _clean_text(item.get("title"))
+        if not title or not _text_direct(name, ticker, title) or _low_signal_title(title):
+            continue
+        key = _compact_text(title)
+        if key in seen:
+            continue
+        seen.add(key)
+        rows.append({"stance": "mixed", "title": title, "source": _clean_text(item.get("source"))})
+    return rows[:8]
+
+
+def _direct_events(name: str, ticker: str, catalysts: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return [
+        event
+        for event in catalysts
+        if _text_direct(name, ticker, _clean_text(event.get("claim"))) and not _low_signal_title(_clean_text(event.get("claim")))
+    ]
+
+
+def _sanitize_news_read(raw_read: str, raw_claim: str, display_claim: str, direct_count: int) -> str:
+    if not display_claim:
+        return "기업명/티커가 제목에 직접 확인되는 촉매가 없어 차트와 수급 중심의 감시 후보로만 봅니다."
+    if raw_claim and raw_claim != display_claim and raw_claim in raw_read:
+        return f"핵심 촉매를 제목 기준 직접 관련 뉴스로 재선별했다. 현재 표시 이슈는 '{display_claim}'입니다."
+    if direct_count == 1 and "핵심 이슈" not in raw_read:
+        return f"직접 관련 뉴스 1건이 확인된다. 핵심 이슈는 '{display_claim}'입니다."
+    return raw_read
 
 
 def _news_relevance(
@@ -173,21 +250,21 @@ def _news_relevance(
     headlines: list[dict[str, str]],
     catalysts: list[dict[str, Any]],
 ) -> dict[str, Any]:
-    core_text = " ".join([top_claim, _clean_text(catalysts[0].get("claim")) if catalysts else ""]).lower()
+    core_text = " ".join([top_claim, _clean_text(catalysts[0].get("claim")) if catalysts else ""])
     haystack = " ".join(
         [core_text]
         + [item.get("title", "") for item in headlines]
         + [_clean_text(event.get("claim")) for event in catalysts[:5]]
         + [_clean_text(event.get("affected_driver")) for event in catalysts[:5]]
-    ).lower()
-    tokens = _name_tokens(name) + [ticker.lower(), ticker.split(".")[0].lower()]
-    core_hits = [token for token in tokens if token and token in core_text]
-    direct_hits = [token for token in tokens if token and token in haystack]
+    )
+    haystack_l = haystack.casefold()
+    core_hits = _token_hits(name, ticker, core_text)
+    direct_hits = _token_hits(name, ticker, haystack)
     if core_hits:
         return {"level": "direct", "label": "직접 관련", "score": 1.0, "note": "핵심 촉매 안에서 기업명 또는 티커가 직접 확인됨"}
     if direct_hits:
         return {"level": "partial", "label": "부분 직접", "score": 0.78, "note": "주변 기사에는 후보명이 있으나 핵심 촉매 제목은 별도 확인 필요"}
-    if any(keyword in haystack for terms in THEME_RULES.values() for keyword in terms):
+    if any(keyword in haystack_l for terms in THEME_RULES.values() for keyword in terms):
         return {"level": "theme", "label": "테마 관련", "score": 0.65, "note": "기업 직접 뉴스보다 업종/테마 뉴스 비중이 높음"}
     return {"level": "weak", "label": "관련성 약함", "score": 0.35, "note": "후보명과 기사 주체가 어긋날 수 있어 원문 확인 필요"}
 
@@ -227,17 +304,43 @@ def _build_candidates(df: pd.DataFrame, runs_dir: Path, top: int, series_limit: 
         if not ticker:
             continue
         name = _clean_text(row.get("name"))
-        headlines = _headline_items(_clean_text(row.get("news_headlines")))
-        catalysts = _load_json_list(runs_dir, ticker, "catalysts")
+        raw_headlines = _headline_items(_clean_text(row.get("news_headlines")))
+        raw_catalysts = _load_json_list(runs_dir, ticker, "catalysts")
         news_items = _load_json_list(runs_dir, ticker, "news")
+        direct_news_items = [
+            item
+            for item in news_items
+            if _text_direct(name, ticker, _clean_text(item.get("title"))) and not _low_signal_title(_clean_text(item.get("title")))
+        ]
+        direct_events = _direct_events(name, ticker, raw_catalysts)
+        headlines = _direct_headlines(name, ticker, raw_headlines, direct_news_items)
         series = _load_ohlcv(runs_dir, ticker, series_limit)
-        top_claim = _clean_text(row.get("top_catalyst"))
+        raw_top_claim = _clean_text(row.get("top_catalyst"))
+        raw_top_catalyst_score = _clean_number(row.get("top_catalyst_score")) or 0.0
+        top_claim = raw_top_claim if _text_direct(name, ticker, raw_top_claim) and not _low_signal_title(raw_top_claim) else ""
+        top_catalyst_score = raw_top_catalyst_score if top_claim else 0.0
+        catalyst_type = _clean_text(row.get("top_catalyst_type")) or "uncategorized"
+        if not top_claim and headlines:
+            top_claim = headlines[0]["title"]
+            top_catalyst_score = min(raw_top_catalyst_score, 0.45)
+            catalyst_type = "company_news"
+        elif not top_claim and direct_events:
+            top_claim = _clean_text(direct_events[0].get("claim"))
+            top_catalyst_score = _clean_number(direct_events[0].get("score")) or 0.0
+            catalyst_type = _clean_text(direct_events[0].get("event_type")) or "company_news"
+        catalysts = direct_events[:8]
         relevance = _news_relevance(name, ticker, top_claim, headlines, catalysts)
         score = _clean_number(row.get("score")) or 0.0
-        top_catalyst_score = _clean_number(row.get("top_catalyst_score")) or 0.0
+        if raw_top_claim and raw_top_claim != top_claim:
+            score = max(0.0, score - max(0.0, raw_top_catalyst_score - top_catalyst_score) * 0.4)
         catalyst_strength = round(min(1.0, top_catalyst_score * relevance["score"]), 3)
         chase_penalty = _clean_number(row.get("chase_risk_penalty")) or 0.0
         recent_return = _clean_number(row.get("recent_return_20d"))
+        headline_counts = {"positive": 0, "negative": 0, "mixed": 0}
+        for headline in headlines:
+            stance = headline.get("stance") if headline.get("stance") in headline_counts else "mixed"
+            headline_counts[stance] += 1
+        news_read = _sanitize_news_read(_clean_text(row.get("news_read")), raw_top_claim, top_claim, len(headlines))
         rows.append(
             {
                 "rank": len(rows) + 1,
@@ -257,21 +360,21 @@ def _build_candidates(df: pd.DataFrame, runs_dir: Path, top: int, series_limit: 
                     "resistance": _clean_number(row.get("resistance")),
                 },
                 "news": {
-                    "read": _clean_text(row.get("news_read")),
-                    "positive": int(_clean_number(row.get("news_positive_count")) or 0),
-                    "negative": int(_clean_number(row.get("news_negative_count")) or 0),
-                    "mixed": int(_clean_number(row.get("news_mixed_count")) or 0),
+                    "read": news_read,
+                    "positive": headline_counts["positive"],
+                    "negative": headline_counts["negative"],
+                    "mixed": headline_counts["mixed"],
                     "headlines": headlines,
-                    "rawItems": news_items[:8],
+                    "rawItems": direct_news_items[:8],
                     "relevance": relevance,
                 },
                 "catalyst": {
-                    "count": int(_clean_number(row.get("catalyst_count")) or 0),
+                    "count": len(catalysts),
                     "score": round(top_catalyst_score, 3),
                     "qualityScore": catalyst_strength,
                     "claim": top_claim,
-                    "type": _clean_text(row.get("top_catalyst_type")) or "uncategorized",
-                    "events": catalysts[:8],
+                    "type": catalyst_type,
+                    "events": catalysts,
                 },
                 "risk": {
                     "chasePenalty": round(chase_penalty, 3),

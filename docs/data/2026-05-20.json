@@ -1,136 +1,134 @@
 {
-  "generatedAt": "2026-05-20T20:54:28+09:00",
+  "generatedAt": "2026-05-20T22:04:01+09:00",
   "sourceDiscovery": "/Volumes/app/equity-research-copilot/runs/discovery/discovery_20260520T101810Z.csv",
   "reportTitle": "Equity Research Copilot",
   "reportSubtitle": "뉴스 촉매, 테마 강도, 차트 구조를 한 화면에서 검증하는 정적 리서치 노트",
   "researchOnly": true,
   "summary": {
     "candidateCount": 12,
-    "avgScore": 0.563,
-    "directNewsCount": 0,
-    "partialNewsCount": 8,
-    "themeNewsCount": 4,
-    "weakNewsCount": 0,
+    "avgScore": 0.357,
+    "directNewsCount": 8,
+    "partialNewsCount": 0,
+    "themeNewsCount": 0,
+    "weakNewsCount": 4,
     "chaseRiskCount": 3,
     "availableSeriesCount": 4,
     "sentiment": {
-      "positive": 37,
-      "negative": 5,
-      "mixed": 78
+      "positive": 1,
+      "negative": 0,
+      "mixed": 18
     }
   },
   "themes": [
     {
-      "name": "AI / 반도체",
-      "score": 2.888,
+      "name": "노동 / 규제",
+      "score": 0.94,
       "heat": 100,
       "tickers": [
-        "005930.KS",
-        "018880.KS",
-        "039030.KQ",
-        "214370.KQ",
-        "329180.KS",
-        "396500.KS"
-      ],
-      "sentiment": {
-        "positive": 25,
-        "negative": 2,
-        "mixed": 33
-      }
-    },
-    {
-      "name": "노동 / 규제",
-      "score": 2.52,
-      "heat": 87,
-      "tickers": [
-        "000270.KS",
         "005380.KS",
-        "005930.KS",
-        "018880.KS",
-        "329180.KS"
+        "005930.KS"
       ],
       "sentiment": {
-        "positive": 10,
-        "negative": 2,
-        "mixed": 38
+        "positive": 1,
+        "negative": 0,
+        "mixed": 6
       }
     },
     {
       "name": "자동차 / 전동화",
-      "score": 2.105,
-      "heat": 73,
+      "score": 0.9,
+      "heat": 96,
       "tickers": [
         "000270.KS",
-        "005380.KS",
-        "018880.KS",
-        "214370.KQ"
+        "005380.KS"
       ],
       "sentiment": {
-        "positive": 9,
-        "negative": 1,
-        "mixed": 30
-      }
-    },
-    {
-      "name": "실적 / 가이던스",
-      "score": 1.995,
-      "heat": 69,
-      "tickers": [
-        "002870.KS",
-        "087010.KQ",
-        "088350.KS",
-        "329180.KS"
-      ],
-      "sentiment": {
-        "positive": 4,
-        "negative": 2,
-        "mixed": 34
+        "positive": 0,
+        "negative": 0,
+        "mixed": 4
       }
     },
     {
       "name": "바이오 / 헬스케어",
-      "score": 1.974,
-      "heat": 68,
+      "score": 0.8,
+      "heat": 85,
       "tickers": [
-        "002870.KS",
-        "039030.KQ",
         "087010.KQ",
         "214370.KQ"
       ],
       "sentiment": {
-        "positive": 10,
-        "negative": 1,
-        "mixed": 29
+        "positive": 0,
+        "negative": 0,
+        "mixed": 3
       }
     },
     {
       "name": "ETF / 수급",
-      "score": 1.972,
-      "heat": 68,
+      "score": 0.71,
+      "heat": 76,
       "tickers": [
         "039030.KQ",
-        "214370.KQ",
+        "329180.KS",
         "396500.KS",
         "498400.KS"
       ],
       "sentiment": {
-        "positive": 25,
-        "negative": 1,
-        "mixed": 14
+        "positive": 0,
+        "negative": 0,
+        "mixed": 0
       }
     },
     {
       "name": "보험 / 금융",
-      "score": 1.064,
-      "heat": 37,
+      "score": 0.46,
+      "heat": 49,
       "tickers": [
-        "088350.KS",
-        "396500.KS"
+        "088350.KS"
       ],
       "sentiment": {
-        "positive": 10,
-        "negative": 2,
-        "mixed": 8
+        "positive": 0,
+        "negative": 0,
+        "mixed": 4
+      }
+    },
+    {
+      "name": "실적 / 가이던스",
+      "score": 0.46,
+      "heat": 49,
+      "tickers": [
+        "088350.KS"
+      ],
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "mixed": 4
+      }
+    },
+    {
+      "name": "AI / 반도체",
+      "score": 0.44,
+      "heat": 47,
+      "tickers": [
+        "005930.KS"
+      ],
+      "sentiment": {
+        "positive": 1,
+        "negative": 0,
+        "mixed": 3
+      }
+    },
+    {
+      "name": "개별 종목 뉴스",
+      "score": 0.36,
+      "heat": 38,
+      "tickers": [
+        "002870.KS",
+        "018880.KS"
+      ],
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "mixed": 4
       }
     }
   ],
@@ -144,7 +142,7 @@
       "sources": [
         "kr_kospi_marketcap"
       ],
-      "score": 0.656,
+      "score": 0.5,
       "agentView": "news_first_watch",
       "stance": "뉴스 우선 감시",
       "price": {
@@ -160,91 +158,28 @@
         "resistance": 774500.0
       },
       "news": {
-        "read": "긍정 catalyst가 확인된다. 핵심 이슈는 '성과급 요구 확산…카카오 파업 가결'이며, 차트 신호와 함께 감시할 만하다.",
-        "positive": 2,
+        "read": "핵심 촉매를 제목 기준 직접 관련 뉴스로 재선별했다. 현재 표시 이슈는 '현대차 하청노조 사용자성 판정 연기…내달 1일 2차 심판'입니다.",
+        "positive": 0,
         "negative": 0,
-        "mixed": 8,
+        "mixed": 3,
         "headlines": [
-          {
-            "stance": "mixed",
-            "title": "성과급 요구 확산…카카오 파업 가결",
-            "source": "Naver Search News"
-          },
           {
             "stance": "mixed",
             "title": "현대차 하청노조 사용자성 판정 연기…내달 1일 2차 심판",
             "source": "Naver Search News"
           },
           {
-            "stance": "positive",
-            "title": "[사설]후보자 정책, 됨됨이 제대로 따져보자",
+            "stance": "mixed",
+            "title": "현대차·기아, '2026 레드 닷' 5관왕…기아 EV4 최우수상",
             "source": "Naver Search News"
           },
           {
             "stance": "mixed",
-            "title": "[분양가이드] 아산 경남아너스빌 랜드마크49, 견본주택 오픈 ··· 원도...",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
-            "title": "\"선 넘었다\"…李대통령 삼전 노조 작심 비판",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
-            "title": "충남 '아산 경남아너스빌 랜드마크49' 견본주택 성황리 오픈",
+            "title": "현대차 최영일 “대기업 파업 사회에 시사하는 바 커”…임단협 평행선...",
             "source": "Naver Search News"
           }
         ],
         "rawItems": [
-          {
-            "title": "[그래픽] 현대차·기아 차량 가격 비교",
-            "source": "Naver Search News",
-            "published_at": "2026-05-20",
-            "url": "https://www.news1.kr/photos/7914124",
-            "summary": "양혜림 디자이너 = 19일 현대차(005380)·기아(000270)가 금융감독원에 제출한 1분기 분기보고서에 따르면, 올해 1분기 현대차의 해외 시장 승용차 평균 판매 가격은 8002만 원으로 집계됐다. 해외 승용차 분기...",
-            "kind": "news"
-          },
-          {
-            "title": "현대글로비스, HMG퓨처콤플렉스 출자…그룹 8조 투자 퍼즐 완성",
-            "source": "Naver Search News",
-            "published_at": "2026-05-20",
-            "url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4415970",
-            "summary": "지난달 현대차[005380]와 기아[000270], 현대모비스[012330], 현대제철[004020], 현대로템[064350] 등 5개 계열사가 총 7조3천280억원(지분 91.6%)의 출자 계획을 각각 밝혔다 (※연합인포맥스가 4월 24일 20시에 송고한...",
-            "kind": "news"
-          },
-          {
-            "title": "코스피 7200선 턱걸이, 10개중 9개 종목 '파란불'…환율 1510선 뚫어[시황...",
-            "source": "Naver Search News",
-            "published_at": "2026-05-20",
-            "url": "https://www.news1.kr/finance/general-stock/6172970",
-            "summary": "두산에너빌리티(034020) -4.43%, LG에너지솔루션(373220) -3.88%, 한화에어로스페이스(012450) -2.88%, 현대차(005380) -1.99%, 삼성전자우(005935) -1.66% 등은 하락했다. 이날 코스피 시장에서 상승한 종목은 90개로 하락...",
-            "kind": "news"
-          },
-          {
-            "title": "[서울데이터랩]마감 직후 인기 검색 종목 20選",
-            "source": "Naver Search News",
-            "published_at": "2026-05-20",
-            "url": "https://www.seoul.co.kr/news/economy/securities/2026/05/20/20260520500194?wlog_tag3=naver",
-            "summary": "현대차(005380)는 59만 2000원으로 1.99% 하락했고, LG전자(066570)는 18만 1000원으로 5.58% 밀렸다. 두산에너빌리티(034020)도 10만 1300원으로 4.43% 내렸다. 반면 코스모로보틱스(439960)는 5만 6200원으로 15.64...",
-            "kind": "news"
-          },
-          {
-            "title": "[마감시황] 코스피, 외국인·프로그램 매도에 7208.95 마감…나흘간 772....",
-            "source": "Naver Search News",
-            "published_at": "2026-05-20",
-            "url": "https://www.seoul.co.kr/news/economy/securities/2026/05/20/20260520500192?wlog_tag3=naver",
-            "summary": "반면 현대차(005380)는 59만 2000원으로 1.99%, LG에너지솔루션(373220)은 38만 4500원으로 3.87%, 두산에너빌리티(034020)는 10만 1300원으로 4.43%, 한화에어로스페이스(012450)는 124만 9000원으로 2.88% 내렸다....",
-            "kind": "news"
-          },
-          {
-            "title": "코스피, 외국인 3조원 매도에 약세…금리·환율 부담에 투심 위축",
-            "source": "Naver Search News",
-            "published_at": "2026-05-20",
-            "url": "http://www.edaily.co.kr/news/newspath.asp?newsid=04224646645450888",
-            "summary": "반면 현대차(005380)(-1.99%), LG에너지솔루션(373220)(-3.88%), 두산에너빌리티(034020)(-4.43%) 등은 약세를 나타냈다. 이날 코스피 시장 거래량은 4억 8590만주, 거래대금은 39조 5425억원으로 집계됐다. 상한가 4개 종목을...",
-            "kind": "news"
-          },
           {
             "title": "현대차·기아, '2026 레드 닷' 5관왕…기아 EV4 최우수상",
             "source": "Naver Search News",
@@ -254,147 +189,28 @@
             "kind": "news"
           },
           {
-            "title": "삼성전자 협상 결렬에 코스피 2% 하락…환율 1510원 뚫었다",
+            "title": "현대차 최영일 “대기업 파업 사회에 시사하는 바 커”…임단협 평행선...",
             "source": "Naver Search News",
             "published_at": "2026-05-20",
-            "url": "https://www.news1.kr/finance/general-stock/6172740",
-            "summary": "두산에너빌리티(034020) -5.09%, LG에너지솔루션(373220) -3.62%, 한화에어로스페이스(012450) -3.34%, 현대차(005380) -1.99%, SK하이닉스(000660) -0.11% 등은 하락했다. 코스닥은 전일 대비 32.09p(-2.96%) 하락한 1052.27를...",
+            "url": "https://www.sedaily.com/article/20046298?ref=naver",
+            "summary": "20일 완성차 업계에 따르면 현대차(005380)와 노동조합은 전날 제4차 단체교섭을 진행했다. 교섭에는 최영일 현대차 대표이사 사장과 이종철 노조 지부장이 참석했다. 앞서 노조는 월 기본급 14만 9600원(호봉 승급분 제외)...",
             "kind": "news"
           }
         ],
         "relevance": {
-          "level": "partial",
-          "label": "부분 직접",
-          "score": 0.78,
-          "note": "주변 기사에는 후보명이 있으나 핵심 촉매 제목은 별도 확인 필요"
+          "level": "direct",
+          "label": "직접 관련",
+          "score": 1.0,
+          "note": "핵심 촉매 안에서 기업명 또는 티커가 직접 확인됨"
         }
       },
       "catalyst": {
-        "count": 12,
-        "score": 0.84,
-        "qualityScore": 0.655,
-        "claim": "성과급 요구 확산…카카오 파업 가결",
-        "type": "earnings",
+        "count": 2,
+        "score": 0.45,
+        "qualityScore": 0.45,
+        "claim": "현대차 하청노조 사용자성 판정 연기…내달 1일 2차 심판",
+        "type": "company_news",
         "events": [
-          {
-            "ticker": "005380.KS",
-            "event_type": "policy_geopolitics",
-            "claim": "4월 중동 車 수출 39% 급감…부품 공급망 발목에 생산도 주춤",
-            "affected_driver": "Policy / market access",
-            "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.82,
-            "novelty_score": 1.0,
-            "priced_in_risk": "low",
-            "evidence_sources": [
-              "https://news.einfomax.co.kr/news/articleView.html?idxno=4415850"
-            ],
-            "counter_evidence": [],
-            "score": 0.8,
-            "published_at": "2026-05-20"
-          },
-          {
-            "ticker": "005380.KS",
-            "event_type": "general_news",
-            "claim": "[그래픽] 현대차·기아 차량 가격 비교",
-            "affected_driver": "Narrative / sentiment",
-            "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.45,
-            "novelty_score": 1.0,
-            "priced_in_risk": "low",
-            "evidence_sources": [
-              "https://www.news1.kr/photos/7914124"
-            ],
-            "counter_evidence": [],
-            "score": 0.64,
-            "published_at": "2026-05-20"
-          },
-          {
-            "ticker": "005380.KS",
-            "event_type": "general_news",
-            "claim": "현대글로비스, HMG퓨처콤플렉스 출자…그룹 8조 투자 퍼즐 완성",
-            "affected_driver": "Narrative / sentiment",
-            "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.45,
-            "novelty_score": 1.0,
-            "priced_in_risk": "low",
-            "evidence_sources": [
-              "https://news.einfomax.co.kr/news/articleView.html?idxno=4415970"
-            ],
-            "counter_evidence": [],
-            "score": 0.64,
-            "published_at": "2026-05-20"
-          },
-          {
-            "ticker": "005380.KS",
-            "event_type": "general_news",
-            "claim": "코스피 7200선 턱걸이, 10개중 9개 종목 '파란불'…환율 1510선 뚫어[시황...",
-            "affected_driver": "Narrative / sentiment",
-            "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.45,
-            "novelty_score": 1.0,
-            "priced_in_risk": "low",
-            "evidence_sources": [
-              "https://www.news1.kr/finance/general-stock/6172970"
-            ],
-            "counter_evidence": [],
-            "score": 0.64,
-            "published_at": "2026-05-20"
-          },
-          {
-            "ticker": "005380.KS",
-            "event_type": "general_news",
-            "claim": "[서울데이터랩]마감 직후 인기 검색 종목 20選",
-            "affected_driver": "Narrative / sentiment",
-            "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.45,
-            "novelty_score": 1.0,
-            "priced_in_risk": "low",
-            "evidence_sources": [
-              "https://www.seoul.co.kr/news/economy/securities/2026/05/20/20260520500194?wlog_tag3=naver"
-            ],
-            "counter_evidence": [],
-            "score": 0.64,
-            "published_at": "2026-05-20"
-          },
-          {
-            "ticker": "005380.KS",
-            "event_type": "general_news",
-            "claim": "[마감시황] 코스피, 외국인·프로그램 매도에 7208.95 마감…나흘간 772....",
-            "affected_driver": "Narrative / sentiment",
-            "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.45,
-            "novelty_score": 1.0,
-            "priced_in_risk": "low",
-            "evidence_sources": [
-              "https://www.seoul.co.kr/news/economy/securities/2026/05/20/20260520500192?wlog_tag3=naver"
-            ],
-            "counter_evidence": [],
-            "score": 0.64,
-            "published_at": "2026-05-20"
-          },
-          {
-            "ticker": "005380.KS",
-            "event_type": "general_news",
-            "claim": "코스피, 외국인 3조원 매도에 약세…금리·환율 부담에 투심 위축",
-            "affected_driver": "Narrative / sentiment",
-            "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.45,
-            "novelty_score": 1.0,
-            "priced_in_risk": "low",
-            "evidence_sources": [
-              "http://www.edaily.co.kr/news/newspath.asp?newsid=04224646645450888"
-            ],
-            "counter_evidence": [],
-            "score": 0.64,
-            "published_at": "2026-05-20"
-          },
           {
             "ticker": "005380.KS",
             "event_type": "general_news",
@@ -411,13 +227,30 @@
             "counter_evidence": [],
             "score": 0.64,
             "published_at": "2026-05-20"
+          },
+          {
+            "ticker": "005380.KS",
+            "event_type": "general_news",
+            "claim": "현대차 최영일 “대기업 파업 사회에 시사하는 바 커”…임단협 평행선...",
+            "affected_driver": "Narrative / sentiment",
+            "direction": "mixed",
+            "horizon": "5d-20d",
+            "materiality_score": 0.45,
+            "novelty_score": 1.0,
+            "priced_in_risk": "low",
+            "evidence_sources": [
+              "https://www.sedaily.com/article/20046298?ref=naver"
+            ],
+            "counter_evidence": [],
+            "score": 0.64,
+            "published_at": "2026-05-20"
           }
         ]
       },
       "risk": {
         "chasePenalty": 0.0,
         "reason": "뉴스 catalyst와 차트 구조를 함께 감시",
-        "relevanceHaircut": 0.22
+        "relevanceHaircut": 0.0
       },
       "series": [
         {
@@ -1086,7 +919,7 @@
       "sources": [
         "kr_volume"
       ],
-      "score": 0.616,
+      "score": 0.46,
       "agentView": "news_first_watch",
       "stance": "뉴스 우선 감시",
       "price": {
@@ -1102,75 +935,33 @@
         "resistance": 6160.0
       },
       "news": {
-        "read": "긍정 catalyst가 확인된다. 핵심 이슈는 '[취재후일담]보험업계 '연결' 실적 확산되나'이며, 차트 신호와 함께 감시할 만하다.",
-        "positive": 1,
-        "negative": 1,
-        "mixed": 8,
+        "read": "핵심 촉매를 제목 기준 직접 관련 뉴스로 재선별했다. 현재 표시 이슈는 '한화생명, 1분기 어닝 서프라이즈 기록…투자 손익·자회사 실적 개선'입니다.",
+        "positive": 0,
+        "negative": 0,
+        "mixed": 4,
         "headlines": [
           {
             "stance": "mixed",
-            "title": "여의도로 번진 '이장우 스카이박스 사유화' 논란",
+            "title": "한화생명, 1분기 어닝 서프라이즈 기록…투자 손익·자회사 실적 개선",
             "source": "Naver Search News"
           },
           {
             "stance": "mixed",
-            "title": "'문동주 수술' 소식 들은 달감독, 애제자 부활 믿는다…\"큰 꿈 가진 선수...",
+            "title": "\"한화생명 1분기 순익 2478억…컨센서스 47% 상회\"",
             "source": "Naver Search News"
           },
           {
             "stance": "mixed",
-            "title": "사생결단… 법정 다툼으로 번진 대전시장선거",
+            "title": "\"한화생명, CSM 순증 기대에 목표가 14.6%↑…신계약 배수 개선\"",
             "source": "Naver Search News"
           },
           {
             "stance": "mixed",
-            "title": "[오!쎈 인터뷰] 공포영화로 다시 의기투합…’커즈’ 문우찬, “안 풀릴...",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "positive",
-            "title": "[취재후일담]보험업계 '연결' 실적 확산되나",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
-            "title": "대전 지방선거 본격화… SNS 비방·의혹 공방 확산",
+            "title": "한화생명, 보험손익 부진에도 순익 늘어…“배당 재개가 관건”-NH",
             "source": "Naver Search News"
           }
         ],
         "rawItems": [
-          {
-            "title": "'생보 빅3' 1분기 순익 2조 돌파···투자손익 급증 영향",
-            "source": "Naver Search News",
-            "published_at": "2026-05-20",
-            "url": "http://www.koreastocknews.com/news/articleView.html?idxno=118588",
-            "summary": "교보생명(대표 신창재·조대규)과 한화생명(088350, 대표 권혁웅·이경근)도 각각 60.7%, 29% 증가한 4587억원, 3816억원의 순이익을 거뒀다. 교보생명은 보험손익과 투자손익이 모두 증가했고, 한화생명은 보험손익...",
-            "kind": "news"
-          },
-          {
-            "title": "[서울데이터랩]삼성전자·SK하이닉스 동반 강세…코스피 거래상위 종목...",
-            "source": "Naver Search News",
-            "published_at": "2026-05-18",
-            "url": "https://www.seoul.co.kr/news/economy/securities/2026/05/18/20260518500104?wlog_tag3=naver",
-            "summary": "한화생명(088350)도 4.45%, 대원전선(006340)은 3.17%, 대한해운(005880)은 1.61%, 삼성중공업(010140)은 0.68% 각각 상승하며 강보합권 이상 흐름을 이어갔다. 반면 하락 종목도 적지 않았다. 한화갤러리아(452260)는...",
-            "kind": "news"
-          },
-          {
-            "title": "KB증권, 5월 셋째주 삼성전기 등 34종목 매수 추천",
-            "source": "Naver Search News",
-            "published_at": "2026-05-16",
-            "url": "https://www.bigtanews.co.kr/article/view/big202605160002",
-            "summary": "한화생명(088350) 1분기 순이익 2478억원(+103.2% YoY)으로 컨센서스를 47.3% 상회. 목표주가를 5400원으로 5.9% 상향조정하지만 투자의견은 Hold 유지. SK오션플랜트(100090) 1분기 매출 1746억원 (-32.1% YoY, +0.1% QoQ)...",
-            "kind": "news"
-          },
-          {
-            "title": "[서울데이터랩]코스피 거래상위 혼조…두산로보틱스 급등, 삼성전자·LG...",
-            "source": "Naver Search News",
-            "published_at": "2026-05-15",
-            "url": "https://www.seoul.co.kr/news/economy/securities/2026/05/15/20260515500116?wlog_tag3=naver",
-            "summary": "한화생명(088350)은 0.36% 하락한 5470원, SK네트웍스(001740)는 4.05% 내린 7580원에 거래됐다. 대우건설(047040)은 11.35% 급락한 2만8900원으로 낙폭이 컸고, SK증권(001510)도 6.26% 하락한 4195원을 나타냈다. 개별...",
-            "kind": "news"
-          },
           {
             "title": "한화생명, 1분기 어닝 서프라이즈 기록…투자 손익·자회사 실적 개선",
             "source": "Naver Search News",
@@ -1180,78 +971,44 @@
             "kind": "news"
           },
           {
-            "title": "반도체 80% 뛸 때 13% 오른 보험주…순환매 상승기류",
-            "source": "Naver Search News",
-            "published_at": "2026-05-14",
-            "url": "https://www.news1.kr/finance/general-stock/6167010",
-            "summary": "14일 한화생명보험(088350)이 10%, 삼성화재(000810)가 8% 오르는 등 보험 업종이 일제히 급등했다. 지난달부터 본격화한 코스피 상승장에서 반도체 등과 비교해 소외됐던 보험주가 순환매 장세의 주도주가 될지...",
-            "kind": "news"
-          },
-          {
-            "title": "[서울데이터랩]코스피 거래상위 종목 혼조…SK네트웍스 상한가, 한화생...",
-            "source": "Naver Search News",
-            "published_at": "2026-05-14",
-            "url": "https://www.seoul.co.kr/news/economy/securities/2026/05/14/20260514500106?wlog_tag3=naver",
-            "summary": "거래량 최상위권에는 한화갤러리아(452260), 남선알미늄(008350), 한화생명(088350), 삼성전자(005930), LG디스플레이(034220) 등이 포진했고, 상승 종목과 하락 종목이 혼재하는 모습이다. 가장 두드러진...",
-            "kind": "news"
-          },
-          {
             "title": "\"한화생명 1분기 순익 2478억…컨센서스 47% 상회\"",
             "source": "Naver Search News",
             "published_at": "2026-05-14",
             "url": "https://www.news2day.co.kr/article/20260514500057",
             "summary": "대체투자 평가이익에 투자손익 급증 신계약 CSM 6109억원…수익성 개선 해외법인 성장…목표주가 7300원 유지 [사진=한화생명] [뉴스투데이=김태규 기자] 하나증권은 14일 한화생명(088350)에 대해 투자의견 매수와...",
             "kind": "news"
+          },
+          {
+            "title": "\"한화생명, CSM 순증 기대에 목표가 14.6%↑…신계약 배수 개선\"",
+            "source": "Naver Search News",
+            "published_at": "2026-05-13",
+            "url": "https://www.apnews.kr/news/articleView.html?idxno=3048492",
+            "summary": "메리츠증권은 한화생명(088350)의 목표주가를 기존보다 14.6% 상향한 5500원으로 제시하고, 투자의견은 '중립(Hold)'을 유지했다. 조아해 메리츠증권 연구원은 13일 보고서에서 \"예상을 웃돈 1분기 실적을 바탕으로...",
+            "kind": "news"
+          },
+          {
+            "title": "한화생명, 보험손익 부진에도 순익 늘어…“배당 재개가 관건”-NH",
+            "source": "Naver Search News",
+            "published_at": "2026-05-13",
+            "url": "http://www.edaily.co.kr/news/newspath.asp?newsid=03050406645448592",
+            "summary": "정준섭 NH투자증권 연구원은 13일 보고서를 통해 한화생명(088350)에 대한 투자의견 ‘매수’와 목표주가 6300원을 유지했다. 전날 종가 4845원 기준 상승 여력은 약 30%다. 정 연구원은 “한화생명은 1분기 보험손익...",
+            "kind": "news"
           }
         ],
         "relevance": {
-          "level": "partial",
-          "label": "부분 직접",
-          "score": 0.78,
-          "note": "주변 기사에는 후보명이 있으나 핵심 촉매 제목은 별도 확인 필요"
+          "level": "direct",
+          "label": "직접 관련",
+          "score": 1.0,
+          "note": "핵심 촉매 안에서 기업명 또는 티커가 직접 확인됨"
         }
       },
       "catalyst": {
-        "count": 12,
-        "score": 0.84,
-        "qualityScore": 0.655,
-        "claim": "[취재후일담]보험업계 '연결' 실적 확산되나",
-        "type": "earnings",
+        "count": 4,
+        "score": 0.45,
+        "qualityScore": 0.45,
+        "claim": "한화생명, 1분기 어닝 서프라이즈 기록…투자 손익·자회사 실적 개선",
+        "type": "company_news",
         "events": [
-          {
-            "ticker": "088350.KS",
-            "event_type": "earnings",
-            "claim": "'생보 빅3' 1분기 순익 2조 돌파···투자손익 급증 영향",
-            "affected_driver": "Revenue / margin / guidance",
-            "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.9,
-            "novelty_score": 1.0,
-            "priced_in_risk": "low",
-            "evidence_sources": [
-              "http://www.koreastocknews.com/news/articleView.html?idxno=118588"
-            ],
-            "counter_evidence": [],
-            "score": 0.84,
-            "published_at": "2026-05-20"
-          },
-          {
-            "ticker": "088350.KS",
-            "event_type": "earnings",
-            "claim": "KB증권, 5월 셋째주 삼성전기 등 34종목 매수 추천",
-            "affected_driver": "Revenue / margin / guidance",
-            "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.9,
-            "novelty_score": 1.0,
-            "priced_in_risk": "low",
-            "evidence_sources": [
-              "https://www.bigtanews.co.kr/article/view/big202605160002"
-            ],
-            "counter_evidence": [],
-            "score": 0.84,
-            "published_at": "2026-05-16"
-          },
           {
             "ticker": "088350.KS",
             "event_type": "earnings",
@@ -1288,57 +1045,6 @@
           },
           {
             "ticker": "088350.KS",
-            "event_type": "earnings",
-            "claim": "[코스피·코스닥, 미래에셋증권 신세계 한화생명 KT SK 펄어비스 진에...",
-            "affected_driver": "Revenue / margin / guidance",
-            "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.9,
-            "novelty_score": 1.0,
-            "priced_in_risk": "low",
-            "evidence_sources": [
-              "https://www.public25.com/news/articleView.html?idxno=46171"
-            ],
-            "counter_evidence": [],
-            "score": 0.84,
-            "published_at": "2026-05-13"
-          },
-          {
-            "ticker": "088350.KS",
-            "event_type": "ai_infrastructure",
-            "claim": "반도체 80% 뛸 때 13% 오른 보험주…순환매 상승기류",
-            "affected_driver": "AI infrastructure demand",
-            "direction": "positive",
-            "horizon": "5d-20d",
-            "materiality_score": 0.78,
-            "novelty_score": 1.0,
-            "priced_in_risk": "low",
-            "evidence_sources": [
-              "https://www.news1.kr/finance/general-stock/6167010"
-            ],
-            "counter_evidence": [],
-            "score": 0.78,
-            "published_at": "2026-05-14"
-          },
-          {
-            "ticker": "088350.KS",
-            "event_type": "analyst_revision",
-            "claim": "[서울데이터랩]코스피 거래상위 혼조…두산로보틱스 급등, 삼성전자·LG...",
-            "affected_driver": "Market expectations",
-            "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.55,
-            "novelty_score": 1.0,
-            "priced_in_risk": "low",
-            "evidence_sources": [
-              "https://www.seoul.co.kr/news/economy/securities/2026/05/15/20260515500116?wlog_tag3=naver"
-            ],
-            "counter_evidence": [],
-            "score": 0.68,
-            "published_at": "2026-05-15"
-          },
-          {
-            "ticker": "088350.KS",
             "event_type": "analyst_revision",
             "claim": "\"한화생명 1분기 순익 2478억…컨센서스 47% 상회\"",
             "affected_driver": "Market expectations",
@@ -1353,13 +1059,30 @@
             "counter_evidence": [],
             "score": 0.68,
             "published_at": "2026-05-14"
+          },
+          {
+            "ticker": "088350.KS",
+            "event_type": "analyst_revision",
+            "claim": "한화생명, 보험손익 부진에도 순익 늘어…“배당 재개가 관건”-NH",
+            "affected_driver": "Market expectations",
+            "direction": "mixed",
+            "horizon": "5d-20d",
+            "materiality_score": 0.55,
+            "novelty_score": 1.0,
+            "priced_in_risk": "low",
+            "evidence_sources": [
+              "http://www.edaily.co.kr/news/newspath.asp?newsid=03050406645448592"
+            ],
+            "counter_evidence": [],
+            "score": 0.68,
+            "published_at": "2026-05-13"
           }
         ]
       },
       "risk": {
         "chasePenalty": 0.0,
         "reason": "뉴스 catalyst와 차트 구조를 함께 감시",
-        "relevanceHaircut": 0.22
+        "relevanceHaircut": 0.0
       },
       "series": [
         {
@@ -2028,7 +1751,7 @@
       "sources": [
         "kr_volume"
       ],
-      "score": 0.584,
+      "score": 0.28,
       "agentView": "news_first_watch",
       "stance": "뉴스 우선 감시",
       "price": {
@@ -2044,89 +1767,31 @@
         "resistance": 50515.0
       },
       "news": {
-        "read": "긍정 catalyst가 확인된다. 핵심 이슈는 '\"반도체는 다 좋을 줄 알았는데\"...3일간 30% 급락하자 개미 '비명''이며, 차트 신호와 함께 감시할 만하다.",
-        "positive": 9,
-        "negative": 1,
+        "read": "기업명/티커가 제목에 직접 확인되는 촉매가 없어 차트와 수급 중심의 감시 후보로만 봅니다.",
+        "positive": 0,
+        "negative": 0,
         "mixed": 0,
-        "headlines": [
-          {
-            "stance": "positive",
-            "title": "[ETF 시황] 코스피 조정 속 글로벌 반도체 ETF '강세'",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "positive",
-            "title": "삼성전자·SK하이닉스 레버리지 ETF로 한미반도체·DB하이텍 주가 폭락?",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "positive",
-            "title": "[파생형 ETF가 뜬다-上] 손실 방어하고, 수익은 곱절로",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "positive",
-            "title": "단일종목 레버리지 ETF 나온다…삼전·하이닉스 주가 영향은?",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "positive",
-            "title": "미래에셋운용, 미래에셋생명 500억원 추가 출자… '종합금융 시너지' 강...",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "negative",
-            "title": "신한자산운용 이석원 號 마음만 급했나...'비중 부풀리기·광고 규정 위...",
-            "source": "Naver Search News"
-          }
-        ],
-        "rawItems": [
-          {
-            "title": "[주간증시] 하루 만에 사라진 8000선 환호…코스닥은 한주간 6%대 급락",
-            "source": "Naver Search News",
-            "published_at": "2026-05-16",
-            "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453104",
-            "summary": "38}, {rank:12, name:'삼성물산', end:396500, rate:-6.15, mcapE:64.3, mcapD:-4.22}, {rank:13, name:'한화에어로스페이스',end:1216000, rate:-6.96, mcapE:62.7, mcapD:-4.69}, {rank:14, name:'삼성생명', end:310000, rate:5.08...",
-            "kind": "news"
-          }
-        ],
+        "headlines": [],
+        "rawItems": [],
         "relevance": {
-          "level": "theme",
-          "label": "테마 관련",
-          "score": 0.65,
-          "note": "기업 직접 뉴스보다 업종/테마 뉴스 비중이 높음"
+          "level": "weak",
+          "label": "관련성 약함",
+          "score": 0.35,
+          "note": "후보명과 기사 주체가 어긋날 수 있어 원문 확인 필요"
         }
       },
       "catalyst": {
-        "count": 11,
-        "score": 0.76,
-        "qualityScore": 0.494,
-        "claim": "\"반도체는 다 좋을 줄 알았는데\"...3일간 30% 급락하자 개미 '비명'",
+        "count": 0,
+        "score": 0.0,
+        "qualityScore": 0.0,
+        "claim": "",
         "type": "earnings",
-        "events": [
-          {
-            "ticker": "396500.KS",
-            "event_type": "general_news",
-            "claim": "[주간증시] 하루 만에 사라진 8000선 환호…코스닥은 한주간 6%대 급락",
-            "affected_driver": "Narrative / sentiment",
-            "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.45,
-            "novelty_score": 1.0,
-            "priced_in_risk": "medium",
-            "evidence_sources": [
-              "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453104"
-            ],
-            "counter_evidence": [],
-            "score": 0.55,
-            "published_at": "2026-05-16"
-          }
-        ]
+        "events": []
       },
       "risk": {
         "chasePenalty": 0.0,
         "reason": "뉴스 catalyst와 차트 구조를 함께 감시",
-        "relevanceHaircut": 0.35
+        "relevanceHaircut": 0.65
       },
       "series": [
         {
@@ -2795,7 +2460,7 @@
       "sources": [
         "kr_volume"
       ],
-      "score": 0.572,
+      "score": 0.28,
       "agentView": "news_first_watch",
       "stance": "뉴스 우선 감시",
       "price": {
@@ -2811,62 +2476,31 @@
         "resistance": 24900.0
       },
       "news": {
-        "read": "긍정 catalyst가 확인된다. 핵심 이슈는 ''8천피' 물린 개미…하락장에도 레버리지 '베팅''이며, 차트 신호와 함께 감시할 만하다.",
-        "positive": 7,
+        "read": "기업명/티커가 제목에 직접 확인되는 촉매가 없어 차트와 수급 중심의 감시 후보로만 봅니다.",
+        "positive": 0,
         "negative": 0,
-        "mixed": 3,
-        "headlines": [
-          {
-            "stance": "mixed",
-            "title": "[파생형 ETF가 뜬다-上] 손실 방어하고, 수익은 곱절로",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
-            "title": "8000선 찍고 하락해도 “반등 온다” 굳게 믿는 개미들…레버리지 ETF에...",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
-            "title": "변동성 장세 '8천피'에 물린 개인…레버리지에 주로 베팅했다",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "positive",
-            "title": "'8천피' 물린 개미…하락장에도 레버리지 '베팅'",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "positive",
-            "title": "변동성 장세에도 상승에 베팅한 개미들⋯“인버스 던지고 레버리지 담았...",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "positive",
-            "title": "코스피 8,000선 넘었다 후퇴, 개인 투자자는 '레버리지'로 재도전",
-            "source": "Naver Search News"
-          }
-        ],
+        "mixed": 0,
+        "headlines": [],
         "rawItems": [],
         "relevance": {
-          "level": "theme",
-          "label": "테마 관련",
-          "score": 0.65,
-          "note": "기업 직접 뉴스보다 업종/테마 뉴스 비중이 높음"
+          "level": "weak",
+          "label": "관련성 약함",
+          "score": 0.35,
+          "note": "후보명과 기사 주체가 어긋날 수 있어 원문 확인 필요"
         }
       },
       "catalyst": {
-        "count": 10,
-        "score": 0.73,
-        "qualityScore": 0.474,
-        "claim": "'8천피' 물린 개미…하락장에도 레버리지 '베팅'",
+        "count": 0,
+        "score": 0.0,
+        "qualityScore": 0.0,
+        "claim": "",
         "type": "ai_infrastructure",
         "events": []
       },
       "risk": {
         "chasePenalty": 0.0,
         "reason": "뉴스 catalyst와 차트 구조를 함께 감시",
-        "relevanceHaircut": 0.35
+        "relevanceHaircut": 0.65
       },
       "series": []
     },
@@ -2878,7 +2512,7 @@
       "sources": [
         "kr_kospi_marketcap"
       ],
-      "score": 0.564,
+      "score": 0.4,
       "agentView": "news_first_watch",
       "stance": "뉴스 우선 감시",
       "price": {
@@ -2894,62 +2528,37 @@
         "resistance": 184200.0
       },
       "news": {
-        "read": "긍정 catalyst가 확인된다. 핵심 이슈는 '성과급 요구 확산…카카오 파업 가결'이며, 차트 신호와 함께 감시할 만하다.",
-        "positive": 1,
-        "negative": 1,
-        "mixed": 8,
+        "read": "핵심 촉매를 제목 기준 직접 관련 뉴스로 재선별했다. 현재 표시 이슈는 '예장통합 충북노회·희망친구 기아대책, CNT 업무협약 맺어'입니다.",
+        "positive": 0,
+        "negative": 0,
+        "mixed": 1,
         "headlines": [
           {
             "stance": "mixed",
-            "title": "성과급 요구 확산…카카오 파업 가결",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
-            "title": "403일 만의 복귀 KIA 곽도규 \"내 공 다시 찾고 싶다\"",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "negative",
-            "title": "남대전고는 창의력으로 어우렁더우렁 [2026년 행복한 대전교육 프로젝트...",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
-            "title": "아시안게임 출전 꿈꾸는 박재현 “지금의 타격감에 취하지 않겠다”",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
             "title": "예장통합 충북노회·희망친구 기아대책, CNT 업무협약 맺어",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
-            "title": "당근중고차 \"전기차 거래량 전년 대비 120% 증가\"",
             "source": "Naver Search News"
           }
         ],
         "rawItems": [],
         "relevance": {
-          "level": "partial",
-          "label": "부분 직접",
-          "score": 0.78,
-          "note": "주변 기사에는 후보명이 있으나 핵심 촉매 제목은 별도 확인 필요"
+          "level": "direct",
+          "label": "직접 관련",
+          "score": 1.0,
+          "note": "핵심 촉매 안에서 기업명 또는 티커가 직접 확인됨"
         }
       },
       "catalyst": {
-        "count": 12,
-        "score": 0.86,
-        "qualityScore": 0.671,
-        "claim": "성과급 요구 확산…카카오 파업 가결",
-        "type": "earnings",
+        "count": 0,
+        "score": 0.45,
+        "qualityScore": 0.45,
+        "claim": "예장통합 충북노회·희망친구 기아대책, CNT 업무협약 맺어",
+        "type": "company_news",
         "events": []
       },
       "risk": {
         "chasePenalty": 0.0,
         "reason": "뉴스 catalyst와 차트 구조를 함께 감시",
-        "relevanceHaircut": 0.22
+        "relevanceHaircut": 0.0
       },
       "series": []
     },
@@ -2961,7 +2570,7 @@
       "sources": [
         "kr_kosdaq_marketcap"
       ],
-      "score": 0.556,
+      "score": 0.4,
       "agentView": "news_first_watch",
       "stance": "뉴스 우선 감시",
       "price": {
@@ -2977,62 +2586,37 @@
         "resistance": 358000.0
       },
       "news": {
-        "read": "긍정 catalyst가 확인된다. 핵심 이슈는 '동국제약 연매출 1조 가시권···K뷰티 수출에 장기지속형 주사제까지'이며, 차트 신호와 함께 감시할 만하다.",
-        "positive": 1,
-        "negative": 1,
-        "mixed": 8,
+        "read": "핵심 촉매를 제목 기준 직접 관련 뉴스로 재선별했다. 현재 표시 이슈는 '펩트론 주가, 5월 20일 234,000원 4.68% 하락 마감'입니다.",
+        "positive": 0,
+        "negative": 0,
+        "mixed": 1,
         "headlines": [
-          {
-            "stance": "negative",
-            "title": "바이오주 추락에 흔들리는 코스닥…금리 쇼크까지 덮쳤다",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
-            "title": "[공매도 브리핑] 5월 20일 거래대금 2조7541억…한화에어로·골프존홀딩...",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
-            "title": "힘 빠진 코스닥...바이오·2차전지·로봇주 '우수수'",
-            "source": "Naver Search News"
-          },
           {
             "stance": "mixed",
             "title": "펩트론 주가, 5월 20일 234,000원 4.68% 하락 마감",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
-            "title": "코스닥 제약업종 올해 주식거래 105조원 규모",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
-            "title": "동국제약 연매출 1조 가시권···K뷰티 수출에 장기지속형 주사제까지",
             "source": "Naver Search News"
           }
         ],
         "rawItems": [],
         "relevance": {
-          "level": "partial",
-          "label": "부분 직접",
-          "score": 0.78,
-          "note": "주변 기사에는 후보명이 있으나 핵심 촉매 제목은 별도 확인 필요"
+          "level": "direct",
+          "label": "직접 관련",
+          "score": 1.0,
+          "note": "핵심 촉매 안에서 기업명 또는 티커가 직접 확인됨"
         }
       },
       "catalyst": {
-        "count": 12,
-        "score": 0.84,
-        "qualityScore": 0.655,
-        "claim": "동국제약 연매출 1조 가시권···K뷰티 수출에 장기지속형 주사제까지",
-        "type": "earnings",
+        "count": 0,
+        "score": 0.45,
+        "qualityScore": 0.45,
+        "claim": "펩트론 주가, 5월 20일 234,000원 4.68% 하락 마감",
+        "type": "company_news",
         "events": []
       },
       "risk": {
         "chasePenalty": 0.0,
         "reason": "뉴스 catalyst와 차트 구조를 함께 감시",
-        "relevanceHaircut": 0.22
+        "relevanceHaircut": 0.0
       },
       "series": []
     },
@@ -3044,7 +2628,7 @@
       "sources": [
         "kr_kosdaq_marketcap"
       ],
-      "score": 0.552,
+      "score": 0.22,
       "agentView": "news_first_watch",
       "stance": "뉴스 우선 감시",
       "price": {
@@ -3060,62 +2644,31 @@
         "resistance": 527000.0
       },
       "news": {
-        "read": "긍정 catalyst가 확인된다. 핵심 이슈는 '[코스닥 외국인] 에코프로·파두 대거 담았다… 주도주 다시 바뀌나'이며, 차트 신호와 함께 감시할 만하다.",
-        "positive": 7,
+        "read": "기업명/티커가 제목에 직접 확인되는 촉매가 없어 차트와 수급 중심의 감시 후보로만 봅니다.",
+        "positive": 0,
         "negative": 0,
-        "mixed": 3,
-        "headlines": [
-          {
-            "stance": "positive",
-            "title": "[코스닥 외국인] 에코프로·파두 대거 담았다… 주도주 다시 바뀌나",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "positive",
-            "title": "[코스닥 기관] 테스 알테오젠 성호전자 폭풍매도...레인보우로보스틱 로...",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "positive",
-            "title": "힘 빠진 코스닥...바이오·2차전지·로봇주 '우수수'",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
-            "title": "코스피, 유가·금리 불안에 7200선 하락 마감 … 삼전·SK하닉 보합",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
-            "title": "코스피, 변동성 끝에 7200선 약세 마감…코스닥 2%대 급락",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "positive",
-            "title": "삼성전자 약세에 코스닥 반도체 직격탄…장비·소재주 동반 휘청",
-            "source": "Naver Search News"
-          }
-        ],
+        "mixed": 0,
+        "headlines": [],
         "rawItems": [],
         "relevance": {
-          "level": "theme",
-          "label": "테마 관련",
-          "score": 0.65,
-          "note": "기업 직접 뉴스보다 업종/테마 뉴스 비중이 높음"
+          "level": "weak",
+          "label": "관련성 약함",
+          "score": 0.35,
+          "note": "후보명과 기사 주체가 어긋날 수 있어 원문 확인 필요"
         }
       },
       "catalyst": {
-        "count": 12,
-        "score": 0.83,
-        "qualityScore": 0.539,
-        "claim": "[코스닥 외국인] 에코프로·파두 대거 담았다… 주도주 다시 바뀌나",
+        "count": 0,
+        "score": 0.0,
+        "qualityScore": 0.0,
+        "claim": "",
         "type": "ai_infrastructure",
         "events": []
       },
       "risk": {
         "chasePenalty": 0.0,
         "reason": "뉴스 catalyst와 차트 구조를 함께 감시",
-        "relevanceHaircut": 0.35
+        "relevanceHaircut": 0.65
       },
       "series": []
     },
@@ -3127,7 +2680,7 @@
       "sources": [
         "kr_kosdaq_marketcap"
       ],
-      "score": 0.552,
+      "score": 0.4,
       "agentView": "news_first_watch",
       "stance": "뉴스 우선 감시",
       "price": {
@@ -3143,16 +2696,11 @@
         "resistance": 116600.0
       },
       "news": {
-        "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'AI·반도체·미래차·바이오 한자리에…지식재산처, 발명 유공자 85점 포...'이며, 차트 신호와 함께 감시할 만하다.",
-        "positive": 2,
+        "read": "핵심 촉매를 제목 기준 직접 관련 뉴스로 재선별했다. 현재 표시 이슈는 '케어젠, 美 웰니스 유통망 진입…펩타이드 기반 대사 건강 시장 공략'입니다.",
+        "positive": 0,
         "negative": 0,
-        "mixed": 8,
+        "mixed": 2,
         "headlines": [
-          {
-            "stance": "mixed",
-            "title": "코스맥스 '발명의날' 산업부 장관 표창 수상",
-            "source": "Naver Search News"
-          },
           {
             "stance": "mixed",
             "title": "케어젠, 美 웰니스 유통망 진입…펩타이드 기반 대사 건강 시장 공략",
@@ -3160,45 +2708,30 @@
           },
           {
             "stance": "mixed",
-            "title": "(마감시황)코스피, 외국인 3조 매도 폭탄에 7,200선 후퇴",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
             "title": "첫 여성 ‘발명왕’ 김은미 케어젠 부사장",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
-            "title": "코스피, 외국인 10일째 ‘팔자’에 7200선 간신히 방어⋯삼전은 장막판...",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "positive",
-            "title": "휴럼, K-건기식 열풍 타고 유통 채널 다각화 속도… 주가 탄력 받나",
             "source": "Naver Search News"
           }
         ],
         "rawItems": [],
         "relevance": {
-          "level": "partial",
-          "label": "부분 직접",
-          "score": 0.78,
-          "note": "주변 기사에는 후보명이 있으나 핵심 촉매 제목은 별도 확인 필요"
+          "level": "direct",
+          "label": "직접 관련",
+          "score": 1.0,
+          "note": "핵심 촉매 안에서 기업명 또는 티커가 직접 확인됨"
         }
       },
       "catalyst": {
-        "count": 12,
-        "score": 0.83,
-        "qualityScore": 0.647,
-        "claim": "AI·반도체·미래차·바이오 한자리에…지식재산처, 발명 유공자 85점 포...",
-        "type": "ai_infrastructure",
+        "count": 0,
+        "score": 0.45,
+        "qualityScore": 0.45,
+        "claim": "케어젠, 美 웰니스 유통망 진입…펩타이드 기반 대사 건강 시장 공략",
+        "type": "company_news",
         "events": []
       },
       "risk": {
         "chasePenalty": 0.0,
         "reason": "뉴스 catalyst와 차트 구조를 함께 감시",
-        "relevanceHaircut": 0.22
+        "relevanceHaircut": 0.0
       },
       "series": []
     },
@@ -3210,7 +2743,7 @@
       "sources": [
         "kr_risers"
       ],
-      "score": 0.536,
+      "score": 0.36,
       "agentView": "watch_with_chase_risk",
       "stance": "추격 리스크",
       "price": {
@@ -3229,16 +2762,11 @@
         "read": "뚜렷한 방향성 뉴스보다 일반 보도 비중이 높아, 후보 유지에는 추가 catalyst가 필요하다.",
         "positive": 0,
         "negative": 0,
-        "mixed": 10,
+        "mixed": 3,
         "headlines": [
           {
             "stance": "mixed",
             "title": "충남 공주시 신풍면 산정리 붉게 물든 '양귀비꽃' 만개",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
-            "title": "인천·서울교통공사, 기관 간 협력체계 재점검",
             "source": "Naver Search News"
           },
           {
@@ -3248,40 +2776,30 @@
           },
           {
             "stance": "mixed",
-            "title": "상장 제약바이오, 1Q 영업이익률 개선 속 기업별 격차 확대",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
             "title": "공주 신풍면 산정리, 붉게 물든 양귀비꽃 장관",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
-            "title": "서울경기양돈농협, 도농상생 협약",
             "source": "Naver Search News"
           }
         ],
         "rawItems": [],
         "relevance": {
-          "level": "partial",
-          "label": "부분 직접",
-          "score": 0.78,
-          "note": "주변 기사에는 후보명이 있으나 핵심 촉매 제목은 별도 확인 필요"
+          "level": "direct",
+          "label": "직접 관련",
+          "score": 1.0,
+          "note": "핵심 촉매 안에서 기업명 또는 티커가 직접 확인됨"
         }
       },
       "catalyst": {
-        "count": 11,
-        "score": 0.89,
-        "qualityScore": 0.694,
-        "claim": "상장 제약바이오, 1Q 영업이익률 개선 속 기업별 격차 확대",
-        "type": "earnings",
+        "count": 0,
+        "score": 0.45,
+        "qualityScore": 0.45,
+        "claim": "충남 공주시 신풍면 산정리 붉게 물든 '양귀비꽃' 만개",
+        "type": "company_news",
         "events": []
       },
       "risk": {
         "chasePenalty": 0.08,
         "reason": "상승률 리스트 의존도가 높음",
-        "relevanceHaircut": 0.22
+        "relevanceHaircut": 0.0
       },
       "series": []
     },
@@ -3293,7 +2811,7 @@
       "sources": [
         "kr_volume"
       ],
-      "score": 0.536,
+      "score": 0.36,
       "agentView": "news_first_watch",
       "stance": "뉴스 우선 감시",
       "price": {
@@ -3309,62 +2827,37 @@
         "resistance": 5860.0
       },
       "news": {
-        "read": "긍정 catalyst가 확인된다. 핵심 이슈는 '\"한국타이어앤테크놀로지, 이젠 열관리가 타이어에게 힘이 될 때\"'이며, 차트 신호와 함께 감시할 만하다.",
-        "positive": 4,
+        "read": "핵심 촉매를 제목 기준 직접 관련 뉴스로 재선별했다. 현재 표시 이슈는 '한온시스템 주가, 5월 20일 장중 4,335원 4.73% 하락'입니다.",
+        "positive": 0,
         "negative": 0,
-        "mixed": 6,
+        "mixed": 1,
         "headlines": [
           {
             "stance": "mixed",
-            "title": "김용남 평택을 국회의원 재선거 후보, 평택 노동 현장 잇따라 방문… \"...",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "positive",
-            "title": "\"한국타이어앤테크놀로지, 이젠 열관리가 타이어에게 힘이 될 때\"",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
             "title": "한온시스템 주가, 5월 20일 장중 4,335원 4.73% 하락",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
-            "title": "타이어 회사를 넘어 미래차 핵심 부품 그룹으로…한국타이어의 진짜 경...",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "positive",
-            "title": "SK하이닉스, 대기업 경영평가 2년연속 1위…카카오 톱10 진입",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
-            "title": "'고덕·교통·노동 현장까지'…평택을 후보들, 표심 잡기 총력전",
             "source": "Naver Search News"
           }
         ],
         "rawItems": [],
         "relevance": {
-          "level": "partial",
-          "label": "부분 직접",
-          "score": 0.78,
-          "note": "주변 기사에는 후보명이 있으나 핵심 촉매 제목은 별도 확인 필요"
+          "level": "direct",
+          "label": "직접 관련",
+          "score": 1.0,
+          "note": "핵심 촉매 안에서 기업명 또는 티커가 직접 확인됨"
         }
       },
       "catalyst": {
-        "count": 12,
-        "score": 0.89,
-        "qualityScore": 0.694,
-        "claim": "\"한국타이어앤테크놀로지, 이젠 열관리가 타이어에게 힘이 될 때\"",
-        "type": "earnings",
+        "count": 0,
+        "score": 0.45,
+        "qualityScore": 0.45,
+        "claim": "한온시스템 주가, 5월 20일 장중 4,335원 4.73% 하락",
+        "type": "company_news",
         "events": []
       },
       "risk": {
         "chasePenalty": 0.0,
         "reason": "뉴스 catalyst와 차트 구조를 함께 감시",
-        "relevanceHaircut": 0.22
+        "relevanceHaircut": 0.0
       },
       "series": []
     },
@@ -3377,7 +2870,7 @@
         "kr_kospi_marketcap",
         "kr_volume"
       ],
-      "score": 0.528,
+      "score": 0.44,
       "agentView": "watch_with_chase_risk",
       "stance": "추격 리스크",
       "price": {
@@ -3393,16 +2886,11 @@
         "resistance": 299500.0
       },
       "news": {
-        "read": "긍정 catalyst가 확인된다. 핵심 이슈는 '이익의 N% 달라?…주주들 \"진짜 열받네\" 소송 예고'이며, 차트 신호와 함께 감시할 만하다.",
+        "read": "핵심 촉매를 제목 기준 직접 관련 뉴스로 재선별했다. 현재 표시 이슈는 '삼성전자 사측, 총파업 대비 필수인력 7087명 근무조 편성'입니다.",
         "positive": 1,
-        "negative": 1,
-        "mixed": 8,
+        "negative": 0,
+        "mixed": 3,
         "headlines": [
-          {
-            "stance": "mixed",
-            "title": "파업 가시화 100조 손실 예상…노조는 책임 없다?",
-            "source": "Naver Search News"
-          },
           {
             "stance": "mixed",
             "title": "삼성전자 사측, 총파업 대비 필수인력 7087명 근무조 편성",
@@ -3411,11 +2899,6 @@
           {
             "stance": "positive",
             "title": "삼성전자 비반도체 노조 “밀실 교섭요구안 백지화하라”",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
-            "title": "미 국채·삼전 이슈에…코스피 7,200선 후퇴",
             "source": "Naver Search News"
           },
           {
@@ -3429,228 +2912,26 @@
             "source": "Naver Search News"
           }
         ],
-        "rawItems": [
-          {
-            "title": "Tech stocks today: Elon Musk loses court battle against OpenAI, Samsung extends talks to avert looming strike",
-            "source": "Yahoo Finance",
-            "published_at": "2026-05-18 11:11:03+00:00",
-            "url": "https://finance.yahoo.com/sectors/technology/live/tech-stocks-today-elon-musk-loses-court-battle-against-openai-samsung-extends-talks-to-avert-looming-strike-111103140.html",
-            "summary": "Nvidia earnings report is expected to be the main event for tech investors this week.",
-            "kind": "news"
-          },
-          {
-            "title": "Market Chatter: Apple Working on AI Writing Tools, Shortcuts for iOS 27",
-            "source": "MT Newswires",
-            "published_at": "2026-05-18 18:12:23+00:00",
-            "url": "https://finance.yahoo.com/sectors/technology/articles/market-chatter-apple-working-ai-181223388.html",
-            "summary": "Apple (AAPL) is preparing new AI features for iOS 27 and iPadOS 27 as it looks to narrow the gap wit",
-            "kind": "news"
-          },
-          {
-            "title": "CXMT Revenue Surges 700% Ahead of Planned China IPO",
-            "source": "GuruFocus.com",
-            "published_at": "2026-05-18 18:26:33+00:00",
-            "url": "https://finance.yahoo.com/markets/stocks/articles/cxmt-revenue-surges-700-ahead-182633869.html",
-            "summary": "Chinese memory chipmaker posts more than 20 billion yuan profit as AI-driven DRAM demand lifts pricing.",
-            "kind": "news"
-          },
-          {
-            "title": "​Taiwan Semiconductor Manufacturing (TSM) Among the Best Stocks to Invest in According to Billionaires",
-            "source": "Insider Monkey",
-            "published_at": "2026-05-18 19:59:42+00:00",
-            "url": "https://finance.yahoo.com/markets/stocks/articles/taiwan-semiconductor-manufacturing-tsm-among-195942269.html",
-            "summary": "​Taiwan Semiconductor Manufacturing Company Limited (NYSE:TSM) is one of the Best Stocks to Invest in For 5 Years According to Billionaires. On May 15, Bank of America Securities analyst Haas Liu reiterated a Buy rating on Taiwan Semiconductor Manufacturing Company Limited (NYSE:TSM) with a price target of 2,560 Taiwan dollars. ​The firm noted that competitive […]",
-            "kind": "news"
-          },
-          {
-            "title": "These Stocks Are Today’s Movers: Dominion Energy, ServiceNow, Ford, Tesla, Lumentum, Micron, UnitedHealth, and More",
-            "source": "Barrons.com",
-            "published_at": "2026-05-18 21:20:00+00:00",
-            "url": "https://www.barrons.com/articles/stock-movers-28d5e3cc?siteid=yhoof2&yptr=yahoo",
-            "summary": "Dominion stock rallies after NextEra Energy strikes a roughly $67 billion deal to acquire the electric utility.",
-            "kind": "news"
-          },
-          {
-            "title": "Is Berkshire Hathaway a Buy, Sell, or Hold in 2026?",
-            "source": "Motley Fool",
-            "published_at": "2026-05-18 21:25:00+00:00",
-            "url": "https://finance.yahoo.com/markets/stocks/articles/berkshire-hathaway-buy-sell-hold-212500249.html",
-            "summary": "The company may be a sleeper after falling 10% from its all-time high.",
-            "kind": "news"
-          },
-          {
-            "title": "Micron Stock Drops as Samsung Strike Spikes Fears Over Memory-Chip Shortage",
-            "source": "Barrons.com",
-            "published_at": "2026-05-18 21:48:00+00:00",
-            "url": "https://www.barrons.com/articles/micron-stock-price-samsung-strike-chips-6b4b1ff6?siteid=yhoof2&yptr=yahoo",
-            "summary": "Micron Technology  stock slumped Monday.  Investors were watching for labor action at rival  Samsung Electronics  that could disrupt memory-chip supplies and further boost prices.  It was Micron’s third consecutive trading day down after rising more than 140% this year.",
-            "kind": "news"
-          },
-          {
-            "title": "Stock Market Today, May 18: Micron Falls as Memory Concerns Test AI Rally",
-            "source": "Motley Fool",
-            "published_at": "2026-05-18 22:30:33+00:00",
-            "url": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-may-18-223033235.html",
-            "summary": "AI server demand remains Micron’s key upside driver, with the next earnings update set to give investors more detail on DRAM pricing and high-bandwidth memory demand.",
-            "kind": "news"
-          }
-        ],
+        "rawItems": [],
         "relevance": {
-          "level": "partial",
-          "label": "부분 직접",
-          "score": 0.78,
-          "note": "주변 기사에는 후보명이 있으나 핵심 촉매 제목은 별도 확인 필요"
+          "level": "direct",
+          "label": "직접 관련",
+          "score": 1.0,
+          "note": "핵심 촉매 안에서 기업명 또는 티커가 직접 확인됨"
         }
       },
       "catalyst": {
-        "count": 12,
-        "score": 0.67,
-        "qualityScore": 0.523,
-        "claim": "이익의 N% 달라?…주주들 \"진짜 열받네\" 소송 예고",
-        "type": "earnings",
-        "events": [
-          {
-            "ticker": "005930.KS",
-            "event_type": "earnings",
-            "claim": "Tech stocks today: Elon Musk loses court battle against OpenAI, Samsung extends talks to avert looming strike",
-            "affected_driver": "Revenue / margin / guidance",
-            "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.9,
-            "novelty_score": 1.0,
-            "priced_in_risk": "high",
-            "evidence_sources": [
-              "https://finance.yahoo.com/sectors/technology/live/tech-stocks-today-elon-musk-loses-court-battle-against-openai-samsung-extends-talks-to-avert-looming-strike-111103140.html"
-            ],
-            "counter_evidence": [],
-            "score": 0.64,
-            "published_at": "2026-05-18 11:11:03+00:00"
-          },
-          {
-            "ticker": "005930.KS",
-            "event_type": "earnings",
-            "claim": "CXMT Revenue Surges 700% Ahead of Planned China IPO",
-            "affected_driver": "Revenue / margin / guidance",
-            "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.9,
-            "novelty_score": 1.0,
-            "priced_in_risk": "high",
-            "evidence_sources": [
-              "https://finance.yahoo.com/markets/stocks/articles/cxmt-revenue-surges-700-ahead-182633869.html"
-            ],
-            "counter_evidence": [],
-            "score": 0.64,
-            "published_at": "2026-05-18 18:26:33+00:00"
-          },
-          {
-            "ticker": "005930.KS",
-            "event_type": "earnings",
-            "claim": "Stock Market Today, May 18: Micron Falls as Memory Concerns Test AI Rally",
-            "affected_driver": "Revenue / margin / guidance",
-            "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.9,
-            "novelty_score": 1.0,
-            "priced_in_risk": "high",
-            "evidence_sources": [
-              "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-may-18-223033235.html"
-            ],
-            "counter_evidence": [],
-            "score": 0.64,
-            "published_at": "2026-05-18 22:30:33+00:00"
-          },
-          {
-            "ticker": "005930.KS",
-            "event_type": "earnings",
-            "claim": "Asian shares trade mixed and Kospi falls nearly 4% as oil prices keep swinging",
-            "affected_driver": "Revenue / margin / guidance",
-            "direction": "mixed",
-            "horizon": "5d-20d",
-            "materiality_score": 0.9,
-            "novelty_score": 1.0,
-            "priced_in_risk": "high",
-            "evidence_sources": [
-              "https://finance.yahoo.com/markets/world-indices/articles/asian-shares-trade-mixed-kospi-031957855.html"
-            ],
-            "counter_evidence": [],
-            "score": 0.64,
-            "published_at": "2026-05-19 03:19:57+00:00"
-          },
-          {
-            "ticker": "005930.KS",
-            "event_type": "ai_infrastructure",
-            "claim": "Samsung, labour union meet again as Seoul threatens to intervene to block strike",
-            "affected_driver": "AI infrastructure demand",
-            "direction": "positive",
-            "horizon": "5d-20d",
-            "materiality_score": 0.78,
-            "novelty_score": 1.0,
-            "priced_in_risk": "high",
-            "evidence_sources": [
-              "https://finance.yahoo.com/sectors/technology/articles/samsung-labour-union-meet-again-033328970.html"
-            ],
-            "counter_evidence": [],
-            "score": 0.64,
-            "published_at": "2026-05-19 03:33:28+00:00"
-          },
-          {
-            "ticker": "005930.KS",
-            "event_type": "ai_infrastructure",
-            "claim": "Market Chatter: Apple Working on AI Writing Tools, Shortcuts for iOS 27",
-            "affected_driver": "AI infrastructure demand",
-            "direction": "positive",
-            "horizon": "5d-20d",
-            "materiality_score": 0.78,
-            "novelty_score": 1.0,
-            "priced_in_risk": "high",
-            "evidence_sources": [
-              "https://finance.yahoo.com/sectors/technology/articles/market-chatter-apple-working-ai-181223388.html"
-            ],
-            "counter_evidence": [],
-            "score": 0.59,
-            "published_at": "2026-05-18 18:12:23+00:00"
-          },
-          {
-            "ticker": "005930.KS",
-            "event_type": "ai_infrastructure",
-            "claim": "​Taiwan Semiconductor Manufacturing (TSM) Among the Best Stocks to Invest in According to Billionaires",
-            "affected_driver": "AI infrastructure demand",
-            "direction": "positive",
-            "horizon": "5d-20d",
-            "materiality_score": 0.78,
-            "novelty_score": 1.0,
-            "priced_in_risk": "high",
-            "evidence_sources": [
-              "https://finance.yahoo.com/markets/stocks/articles/taiwan-semiconductor-manufacturing-tsm-among-195942269.html"
-            ],
-            "counter_evidence": [],
-            "score": 0.59,
-            "published_at": "2026-05-18 19:59:42+00:00"
-          },
-          {
-            "ticker": "005930.KS",
-            "event_type": "ai_infrastructure",
-            "claim": "Micron Stock Drops as Samsung Strike Spikes Fears Over Memory-Chip Shortage",
-            "affected_driver": "AI infrastructure demand",
-            "direction": "positive",
-            "horizon": "5d-20d",
-            "materiality_score": 0.78,
-            "novelty_score": 1.0,
-            "priced_in_risk": "high",
-            "evidence_sources": [
-              "https://www.barrons.com/articles/micron-stock-price-samsung-strike-chips-6b4b1ff6?siteid=yhoof2&yptr=yahoo"
-            ],
-            "counter_evidence": [],
-            "score": 0.59,
-            "published_at": "2026-05-18 21:48:00+00:00"
-          }
-        ]
+        "count": 0,
+        "score": 0.45,
+        "qualityScore": 0.45,
+        "claim": "삼성전자 사측, 총파업 대비 필수인력 7087명 근무조 편성",
+        "type": "company_news",
+        "events": []
       },
       "risk": {
         "chasePenalty": 0.12,
         "reason": "20거래일 수익률이 20% 이상",
-        "relevanceHaircut": 0.22
+        "relevanceHaircut": 0.0
       },
       "series": [
         {
@@ -5584,7 +4865,7 @@
         "kr_kospi_marketcap",
         "kr_risers"
       ],
-      "score": 0.508,
+      "score": 0.18,
       "agentView": "watch_with_chase_risk",
       "stance": "추격 리스크",
       "price": {
@@ -5600,62 +4881,31 @@
         "resistance": 734000.0
       },
       "news": {
-        "read": "긍정 catalyst가 확인된다. 핵심 이슈는 '성과급 기준이 왜 영업이익?… 李 “이해 안 된다” 제동'이며, 차트 신호와 함께 감시할 만하다.",
-        "positive": 2,
+        "read": "기업명/티커가 제목에 직접 확인되는 촉매가 없어 차트와 수급 중심의 감시 후보로만 봅니다.",
+        "positive": 0,
         "negative": 0,
-        "mixed": 8,
-        "headlines": [
-          {
-            "stance": "positive",
-            "title": "성과급 기준이 왜 영업이익?… 李 “이해 안 된다” 제동",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
-            "title": "\"선 넘었다\"…李대통령 삼전 노조 작심 비판",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
-            "title": "[이슈] 개정노조법+하닉發 성과급…산업계, 노조 파업 동력으로",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
-            "title": "[삼성 DS 총파업] '총파업' D-1, 정부·노조·경영진 '동상이몽'",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
-            "title": "'美국채 금리·삼전 파업' 이슈에… 코스피, 이틀째 하락 7,200선 턱걸이",
-            "source": "Naver Search News"
-          },
-          {
-            "stance": "mixed",
-            "title": "김경률 해군총장 캐나다 방문...\"방산협력 지원\"",
-            "source": "Naver Search News"
-          }
-        ],
+        "mixed": 0,
+        "headlines": [],
         "rawItems": [],
         "relevance": {
-          "level": "theme",
-          "label": "테마 관련",
-          "score": 0.65,
-          "note": "기업 직접 뉴스보다 업종/테마 뉴스 비중이 높음"
+          "level": "weak",
+          "label": "관련성 약함",
+          "score": 0.35,
+          "note": "후보명과 기사 주체가 어긋날 수 있어 원문 확인 필요"
         }
       },
       "catalyst": {
-        "count": 12,
-        "score": 0.82,
-        "qualityScore": 0.533,
-        "claim": "성과급 기준이 왜 영업이익?… 李 “이해 안 된다” 제동",
+        "count": 0,
+        "score": 0.0,
+        "qualityScore": 0.0,
+        "claim": "",
         "type": "earnings",
         "events": []
       },
       "risk": {
         "chasePenalty": 0.08,
         "reason": "상승률 리스트 의존도가 높음",
-        "relevanceHaircut": 0.35
+        "relevanceHaircut": 0.65
       },
       "series": []
     }

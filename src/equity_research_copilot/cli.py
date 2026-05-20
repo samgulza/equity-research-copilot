@@ -14,6 +14,7 @@ from equity_research_copilot.discovery import score_candidates, write_discovery_
 from equity_research_copilot.evaluation.point_in_time import evaluate_symbol_history
 from equity_research_copilot.memory import ThesisRecord, append_record, evidence_hash, recent_records
 from equity_research_copilot.news.catalyst import build_catalyst_events
+from equity_research_copilot.news.relevance import split_direct_company_news
 from equity_research_copilot.reports.composer import compose_deep_dive_markdown, write_text_pdf
 from equity_research_copilot.technical.indicators import add_indicators
 from equity_research_copilot.technical.structure import analyze_structure
@@ -54,6 +55,7 @@ def _watchlist_symbols(watchlist: str | Path) -> list[str]:
 def analyze(
     symbol: str,
     *,
+    company_name: str | None = None,
     days: int,
     start: str | None,
     end: str | None,
@@ -84,7 +86,13 @@ def analyze(
     charts = render_chart_pack(df, chart_dir, ticker)
     fundamentals = adapter.get_fundamental_snapshot(ticker) if with_fundamentals else None
     recent_return = float(df["close"].iloc[-1] / df["close"].tail(min(len(df), 20)).iloc[0] - 1)
-    news_items = NewsAdapter(provider=provider).fetch(ticker, days=news_days, limit=news_limit, include_sec=include_sec) if with_news else []
+    raw_news_items = (
+        NewsAdapter(provider=provider).fetch(ticker, days=news_days, limit=news_limit, include_sec=include_sec, company_name=company_name)
+        if with_news
+        else []
+    )
+    market = "KR" if ticker.upper().endswith((".KS", ".KQ")) else "US"
+    news_items, _rejected_news_items = split_direct_company_news(ticker, company_name, raw_news_items, market=market)
     catalysts = build_catalyst_events(ticker, news_items, recent_return=recent_return)
     (data_dir / f"{ticker.lower()}_news.json").write_text(json.dumps([item.__dict__ for item in news_items], ensure_ascii=False, indent=2), encoding="utf-8")
     (data_dir / f"{ticker.lower()}_catalysts.json").write_text(json.dumps([event.__dict__ for event in catalysts], ensure_ascii=False, indent=2), encoding="utf-8")
@@ -189,6 +197,7 @@ def daily(
             provider=provider,
             out_dir=out_dir,
             output_format=output_format,
+            company_name=None,
             with_fundamentals=True,
             with_news=True,
             news_days=14,
@@ -267,15 +276,17 @@ def discover(
     print(f"- discovery report: {md_path}")
     if pdf_path:
         print(f"- discovery pdf: {pdf_path}")
-    for ticker in df.head(analyze_top)["ticker"].tolist() if analyze_top and not df.empty else []:
+    for _, row in df.head(analyze_top).iterrows() if analyze_top and not df.empty else []:
+        ticker = str(row.get("ticker"))
         analyze(
-            str(ticker),
+            ticker,
             days=days,
             start=None,
             end=None,
             provider=provider,
             out_dir=out_dir,
             output_format=output_format,
+            company_name=str(row.get("name") or ""),
             with_fundamentals=True,
             with_news=True,
             news_days=news_days,
@@ -292,6 +303,7 @@ def main() -> None:
 
     analyze_parser = sub.add_parser("analyze", help="Generate a live OpenBB deep-dive memo")
     analyze_parser.add_argument("symbol")
+    analyze_parser.add_argument("--company-name")
     analyze_parser.add_argument("--days", type=int, default=180)
     analyze_parser.add_argument("--start")
     analyze_parser.add_argument("--end")
@@ -349,6 +361,7 @@ def main() -> None:
     elif args.command == "analyze":
         analyze(
             args.symbol,
+            company_name=args.company_name,
             days=args.days,
             start=args.start,
             end=args.end,
