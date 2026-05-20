@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TechnicalSignal",
+  "type": "object",
+  "required": [
+    "ticker",
+    "timeframe",
+    "market_structure",
+    "support_levels",
+    "resistance_levels",
+    "momentum_state",
+    "volume_state",
+    "invalidation_levels"
+  ],
+  "properties": {
+    "ticker": {
+      "type": "string"
+    },
+    "timeframe": {
+      "type": "string"
+    },
+    "market_structure": {
+      "type": "string"
+    },
+    "support_levels": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "resistance_levels": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "momentum_state": {
+      "type": "string"
+    },
+    "volume_state": {
+      "type": "string"
+    },
+    "invalidation_levels": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    }
+  }
+}

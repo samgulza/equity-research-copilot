@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CatalystEvent",
+  "type": "object",
+  "required": [
+    "ticker",
+    "event_type",
+    "claim",
+    "affected_driver",
+    "direction",
+    "horizon",
+    "materiality_score",
+    "novelty_score",
+    "priced_in_risk",
+    "evidence_sources"
+  ],
+  "properties": {
+    "ticker": {
+      "type": "string"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "earnings",
+        "guidance",
+        "product",
+        "regulatory",
+        "supply_chain",
+        "macro",
+        "litigation",
+        "mna",
+        "management",
+        "other"
+      ]
+    },
+    "claim": {
+      "type": "string"
+    },
+    "affected_driver": {
+      "type": "string"
+    },
+    "direction": {
+      "type": "string",
+      "enum": [
+        "positive",
+        "negative",
+        "mixed",
+        "neutral"
+      ]
+    },
+    "horizon": {
+      "type": "string",
+      "enum": [
+        "1d",
+        "5d",
+        "20d",
+        "60d",
+        "1y"
+      ]
+    },
+    "materiality_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "novelty_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "priced_in_risk": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "unknown"
+      ]
+    },
+    "evidence_sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "counter_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

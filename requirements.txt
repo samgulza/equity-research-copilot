@@ -1,0 +1,10 @@
+pandas>=2.0
+numpy>=1.24
+matplotlib>=3.7
+pydantic>=2.0
+requests>=2.31
+reportlab>=4.0
+# Optional production data layer:
+# openbb
+# openbb-equity
+# openbb-yfinance

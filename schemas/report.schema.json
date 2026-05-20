@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ResearchReport",
+  "type": "object",
+  "required": [
+    "ticker",
+    "as_of",
+    "verdict",
+    "confidence",
+    "technical_summary",
+    "catalysts",
+    "scenarios",
+    "risks",
+    "sources"
+  ],
+  "properties": {
+    "ticker": {
+      "type": "string"
+    },
+    "as_of": {
+      "type": "string"
+    },
+    "verdict": {
+      "type": "string"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "technical_summary": {
+      "type": "string"
+    },
+    "catalysts": {
+      "type": "array"
+    },
+    "scenarios": {
+      "type": "array"
+    },
+    "risks": {
+      "type": "array"
+    },
+    "sources": {
+      "type": "array"
+    }
+  }
+}

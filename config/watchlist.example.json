@@ -1,0 +1,38 @@
+{
+  "name": "ai_semis_core",
+  "benchmark": "QQQ",
+  "tickers": [
+    {
+      "symbol": "NVDA",
+      "name": "NVIDIA",
+      "sector": "Semiconductors"
+    },
+    {
+      "symbol": "AMD",
+      "name": "Advanced Micro Devices",
+      "sector": "Semiconductors"
+    },
+    {
+      "symbol": "AVGO",
+      "name": "Broadcom",
+      "sector": "Semiconductors"
+    },
+    {
+      "symbol": "TSM",
+      "name": "Taiwan Semiconductor",
+      "sector": "Semiconductors"
+    }
+  ],
+  "report": {
+    "horizons": [
+      "5d",
+      "20d",
+      "60d"
+    ],
+    "charts": [
+      "structure",
+      "momentum_volume",
+      "event_overlay"
+    ]
+  }
+}

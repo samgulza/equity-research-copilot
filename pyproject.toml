@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "equity-research-copilot"
+version = "0.1.0"
+description = "OpenBB + OpenClaw equity research copilot with news catalysts and annotated charts"
+requires-python = ">=3.10,<3.14"
+dependencies = [
+  "pandas>=2.0",
+  "numpy>=1.24",
+  "matplotlib>=3.7",
+  "pydantic>=2.0",
+  "requests>=2.31",
+  "reportlab>=4.0"
+]
+
+[project.optional-dependencies]
+openbb = ["openbb>=4.4.0", "openbb-equity", "openbb-yfinance"]
+
+[project.scripts]
+research-copilot = "equity_research_copilot.cli:main"
