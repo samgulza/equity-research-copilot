@@ -92,7 +92,8 @@ def text_directly_mentions_company(symbol: str, company_name: str | None, text: 
 
 
 def news_item_directly_mentions_company(symbol: str, company_name: str | None, item: NewsItem) -> bool:
-    return text_directly_mentions_company(symbol, company_name, item.title)
+    text = f"{item.title} {item.summary} {item.body[:5000]}"
+    return text_directly_mentions_company(symbol, company_name, text)
 
 
 def is_low_signal_title(title: str) -> bool:

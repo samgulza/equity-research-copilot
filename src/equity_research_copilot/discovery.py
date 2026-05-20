@@ -10,9 +10,11 @@ from bs4 import BeautifulSoup
 
 from equity_research_copilot.adapters.news_adapter import NewsAdapter, NewsItem
 from equity_research_copilot.adapters.openbb_adapter import OpenBBAdapter
+from equity_research_copilot.news.article import enrich_news_items
 from equity_research_copilot.news.catalyst import CatalystEvent, build_catalyst_events
 from equity_research_copilot.news.relevance import split_direct_company_news
 from equity_research_copilot.technical.indicators import add_indicators
+from equity_research_copilot.technical.reaction import analyze_market_reaction
 from equity_research_copilot.technical.signals import build_trading_setup
 from equity_research_copilot.technical.structure import analyze_structure
 
@@ -187,8 +189,9 @@ def summarize_news_read(
 ) -> dict[str, str | int]:
     counts = {"positive": 0, "negative": 0, "mixed": 0}
     bullets = []
+    stance_by_title = {event.claim: event.direction if event.direction in counts else "mixed" for event in catalysts}
     for item in items[:10]:
-        stance = _classify_news(f"{item.title} {item.summary}")
+        stance = stance_by_title.get(item.title) or _classify_news(f"{item.title} {item.summary} {item.body[:1000]}")
         counts[stance] += 1
         summary = f"{stance}: {item.title}"
         if item.source:
@@ -272,6 +275,7 @@ def score_candidates(
         try:
             df = add_indicators(price_adapter.get_price_history(candidate.symbol, start=(pd.Timestamp.today() - pd.Timedelta(days=days)).date().isoformat()))
             technical = analyze_structure(df)
+            market_reaction = analyze_market_reaction(df)
         except Exception as exc:
             rows.append({"ticker": candidate.symbol, "name": candidate.name, "error": str(exc), "score": 0.0})
             continue
@@ -285,13 +289,20 @@ def score_candidates(
             include_sec=(candidate.market != "KR"),
             company_name=candidate.name,
         )
+        raw_news_items = enrich_news_items(raw_news_items)
         news_items, rejected_news_items = split_direct_company_news(
             candidate.symbol,
             candidate.name,
             raw_news_items,
             market=candidate.market,
         )
-        catalysts = build_catalyst_events(candidate.symbol, news_items, recent_return=recent_return)
+        catalysts = build_catalyst_events(
+            candidate.symbol,
+            news_items,
+            recent_return=recent_return,
+            company_name=candidate.name,
+            market_reaction=market_reaction.to_dict(),
+        )
         top_catalyst = catalysts[0] if catalysts else None
         news_read = summarize_news_read(news_items, catalysts, rejected_count=len(rejected_news_items))
 
@@ -342,6 +353,13 @@ def score_candidates(
                 "close": float(last["close"]),
                 "percent_change": candidate.percent_change,
                 "recent_return_20d": round(recent_return, 4),
+                "abnormal_return_1d": market_reaction.abnormal_return_1d,
+                "abnormal_return_5d": market_reaction.abnormal_return_5d,
+                "abnormal_return_20d": market_reaction.abnormal_return_20d,
+                "volume_zscore": market_reaction.volume_zscore,
+                "volume_ratio": market_reaction.volume_ratio,
+                "gap_return": market_reaction.gap_return,
+                "market_reaction_score": market_reaction.reaction_score,
                 "market_structure": technical.market_structure,
                 "momentum": technical.momentum_state,
                 "volume_state": technical.volume_state,

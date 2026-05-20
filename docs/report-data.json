@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-21T06:22:04+09:00",
+  "generatedAt": "2026-05-21T07:52:16+09:00",
   "sourceDiscovery": "/Volumes/app/equity-research-copilot/runs/discovery/discovery_20260520T211915Z.csv",
   "reportTitle": "Equity Research Copilot",
   "reportSubtitle": "뉴스 촉매, 테마 강도, 차트 구조를 한 화면에서 검증하는 정적 리서치 노트",
@@ -141,6 +141,15 @@
           "RSI가 과열 전 구간"
         ],
         "warnings": []
+      },
+      "marketReaction": {
+        "abnormalReturn1d": null,
+        "abnormalReturn5d": null,
+        "abnormalReturn20d": null,
+        "volumeZscore": null,
+        "volumeRatio": null,
+        "gapReturn": null,
+        "reactionScore": null
       },
       "news": {
         "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'Arcos Dorados (ARCO) Tops Q1 Earnings and Revenue Estimates'이며, 차트 신호와 함께 감시할 만하다.",
@@ -2353,6 +2362,15 @@
           "RSI가 과열 전 구간"
         ],
         "warnings": []
+      },
+      "marketReaction": {
+        "abnormalReturn1d": null,
+        "abnormalReturn5d": null,
+        "abnormalReturn20d": null,
+        "volumeZscore": null,
+        "volumeRatio": null,
+        "gapReturn": null,
+        "reactionScore": null
       },
       "news": {
         "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'Harmony Gold Mining Co Ltd (HMY) (Half Year 2026) Earnings Call Highlights: Strong Financial ...'이며, 차트 신호와 함께 감시할 만하다.",
@@ -4627,6 +4645,15 @@
         ],
         "warnings": []
       },
+      "marketReaction": {
+        "abnormalReturn1d": null,
+        "abnormalReturn5d": null,
+        "abnormalReturn20d": null,
+        "volumeZscore": null,
+        "volumeRatio": null,
+        "gapReturn": null,
+        "reactionScore": null
+      },
       "news": {
         "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'Kura Oncology (KURA) Expected to Beat Earnings Estimates: What to Know Ahead of Q1 Release'이며, 차트 신호와 함께 감시할 만하다.",
         "positive": 4,
@@ -6899,6 +6926,15 @@
         ],
         "warnings": []
       },
+      "marketReaction": {
+        "abnormalReturn1d": null,
+        "abnormalReturn5d": null,
+        "abnormalReturn20d": null,
+        "volumeZscore": null,
+        "volumeRatio": null,
+        "gapReturn": null,
+        "reactionScore": null
+      },
       "news": {
         "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'Iren's Earnings Highlight Long-Term Growth Potential While Demanding Patience Before Profits'이며, 차트 신호와 함께 감시할 만하다.",
         "positive": 4,
@@ -6999,6 +7035,15 @@
           "RSI가 과열 전 구간"
         ],
         "warnings": []
+      },
+      "marketReaction": {
+        "abnormalReturn1d": null,
+        "abnormalReturn5d": null,
+        "abnormalReturn20d": null,
+        "volumeZscore": null,
+        "volumeRatio": null,
+        "gapReturn": null,
+        "reactionScore": null
       },
       "news": {
         "read": "부정/리스크성 뉴스가 우세해 차트가 좋아도 추격보다 리스크 확인이 먼저다.",
@@ -9112,6 +9157,15 @@
         ],
         "warnings": []
       },
+      "marketReaction": {
+        "abnormalReturn1d": null,
+        "abnormalReturn5d": null,
+        "abnormalReturn20d": null,
+        "volumeZscore": null,
+        "volumeRatio": null,
+        "gapReturn": null,
+        "reactionScore": null
+      },
       "news": {
         "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'Will Dell Technologies (DELL) Beat Estimates Again in Its Next Earnings Report?'이며, 차트 신호와 함께 감시할 만하다.",
         "positive": 5,
@@ -9212,6 +9266,15 @@
           "RSI가 과열 전 구간"
         ],
         "warnings": []
+      },
+      "marketReaction": {
+        "abnormalReturn1d": null,
+        "abnormalReturn5d": null,
+        "abnormalReturn20d": null,
+        "volumeZscore": null,
+        "volumeRatio": null,
+        "gapReturn": null,
+        "reactionScore": null
       },
       "news": {
         "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'ArcelorMittal's Q1 Earnings Top Estimates, Sales Miss on Lower Volumes'이며, 차트 신호와 함께 감시할 만하다.",
@@ -9314,6 +9377,15 @@
         ],
         "warnings": []
       },
+      "marketReaction": {
+        "abnormalReturn1d": null,
+        "abnormalReturn5d": null,
+        "abnormalReturn20d": null,
+        "volumeZscore": null,
+        "volumeRatio": null,
+        "gapReturn": null,
+        "reactionScore": null
+      },
       "news": {
         "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'Evercore Inc (EVR) Q1 2026 Earnings Call Highlights: Record Revenues and Strategic Growth Amid ...'이며, 차트 신호와 함께 감시할 만하다.",
         "positive": 3,
@@ -9405,6 +9477,15 @@
           "RSI가 과열 전 구간"
         ],
         "warnings": []
+      },
+      "marketReaction": {
+        "abnormalReturn1d": null,
+        "abnormalReturn5d": null,
+        "abnormalReturn20d": null,
+        "volumeZscore": null,
+        "volumeRatio": null,
+        "gapReturn": null,
+        "reactionScore": null
       },
       "news": {
         "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'Seabridge Gold Inc. (SA): 10 Best Gold Mining Companies to Invest In According to Wall Street'이며, 차트 신호와 함께 감시할 만하다.",
@@ -9512,6 +9593,15 @@
         ],
         "warnings": []
       },
+      "marketReaction": {
+        "abnormalReturn1d": null,
+        "abnormalReturn5d": null,
+        "abnormalReturn20d": null,
+        "volumeZscore": null,
+        "volumeRatio": null,
+        "gapReturn": null,
+        "reactionScore": null
+      },
       "news": {
         "read": "부정/리스크성 뉴스가 우세해 차트가 좋아도 추격보다 리스크 확인이 먼저다.",
         "positive": 1,
@@ -9608,6 +9698,15 @@
         ],
         "warnings": []
       },
+      "marketReaction": {
+        "abnormalReturn1d": null,
+        "abnormalReturn5d": null,
+        "abnormalReturn20d": null,
+        "volumeZscore": null,
+        "volumeRatio": null,
+        "gapReturn": null,
+        "reactionScore": null
+      },
       "news": {
         "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'International Seaways (INSW) Is Down 5.8% After Special Dividend And $200M ATM Offering News - What's Changed'이며, 차트 신호와 함께 감시할 만하다.",
         "positive": 1,
@@ -9691,6 +9790,15 @@
           "20/50/100일선 정배열"
         ],
         "warnings": []
+      },
+      "marketReaction": {
+        "abnormalReturn1d": null,
+        "abnormalReturn5d": null,
+        "abnormalReturn20d": null,
+        "volumeZscore": null,
+        "volumeRatio": null,
+        "gapReturn": null,
+        "reactionScore": null
       },
       "news": {
         "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'Assessing Kulicke And Soffa Industries (KLIC) Valuation After Strong Share Price Momentum'이며, 차트 신호와 함께 감시할 만하다.",
@@ -9779,6 +9887,10 @@
         "previousRank": 1,
         "previousScore": 1.093,
         "previousStance": "뉴스 우선 감시",
+        "previousSetupAction": "pullback_watch",
+        "previousEventType": "ai_infrastructure",
+        "previousPricedInRisk": "low",
+        "marketReactionScore": null,
         "previousClose": 555.7000122070312,
         "currentClose": 555.7000122070312,
         "currentPriceDate": "2026-05-20",
@@ -9793,6 +9905,10 @@
         "previousRank": 2,
         "previousScore": 1.036,
         "previousStance": "뉴스 우선 감시",
+        "previousSetupAction": "wait",
+        "previousEventType": "earnings",
+        "previousPricedInRisk": "medium",
+        "marketReactionScore": null,
         "previousClose": 221.97000122070312,
         "currentClose": 221.97000122070312,
         "currentPriceDate": "2026-05-20",
@@ -9807,6 +9923,10 @@
         "previousRank": 3,
         "previousScore": 1.002,
         "previousStance": "뉴스 우선 감시",
+        "previousSetupAction": "pullback_watch",
+        "previousEventType": "earnings",
+        "previousPricedInRisk": "medium",
+        "marketReactionScore": null,
         "previousClose": 463.5400085449219,
         "currentClose": 463.5400085449219,
         "currentPriceDate": "2026-05-20",
@@ -9821,6 +9941,10 @@
         "previousRank": 4,
         "previousScore": 0.998,
         "previousStance": "뉴스 우선 감시",
+        "previousSetupAction": "pullback_watch",
+        "previousEventType": "earnings",
+        "previousPricedInRisk": "",
+        "marketReactionScore": null,
         "previousClose": 97.6500015258789,
         "currentClose": 101.2300033569336,
         "currentPriceDate": "",
@@ -9835,6 +9959,10 @@
         "previousRank": 5,
         "previousScore": 0.992,
         "previousStance": "뉴스 우선 감시",
+        "previousSetupAction": "pullback_watch",
+        "previousEventType": "earnings",
+        "previousPricedInRisk": "",
+        "marketReactionScore": null,
         "previousClose": 61.564998626708984,
         "currentClose": 63.15999984741211,
         "currentPriceDate": "",
@@ -9849,6 +9977,10 @@
         "previousRank": 6,
         "previousScore": 0.99,
         "previousStance": "뉴스 우선 감시",
+        "previousSetupAction": "pullback_watch",
+        "previousEventType": "ai_infrastructure",
+        "previousPricedInRisk": "",
+        "marketReactionScore": null,
         "previousClose": 239.5249938964844,
         "currentClose": 242.92999267578125,
         "currentPriceDate": "",
@@ -9863,6 +9995,10 @@
         "previousRank": 7,
         "previousScore": 0.983,
         "previousStance": "뉴스 우선 감시",
+        "previousSetupAction": "pullback_watch",
+        "previousEventType": "policy_geopolitics",
+        "previousPricedInRisk": "",
+        "marketReactionScore": null,
         "previousClose": 942.469970703125,
         "currentClose": null,
         "currentPriceDate": "",
@@ -9877,6 +10013,10 @@
         "previousRank": 8,
         "previousScore": 0.982,
         "previousStance": "뉴스 우선 감시",
+        "previousSetupAction": "pullback_watch",
+        "previousEventType": "earnings",
+        "previousPricedInRisk": "",
+        "marketReactionScore": null,
         "previousClose": 17.110000610351562,
         "currentClose": 17.43000030517578,
         "currentPriceDate": "2026-05-20",
@@ -9891,6 +10031,10 @@
         "previousRank": 9,
         "previousScore": 0.977,
         "previousStance": "뉴스 우선 감시",
+        "previousSetupAction": "pullback_watch",
+        "previousEventType": "earnings",
+        "previousPricedInRisk": "",
+        "marketReactionScore": null,
         "previousClose": 110.9250030517578,
         "currentClose": null,
         "currentPriceDate": "",
@@ -9905,6 +10049,10 @@
         "previousRank": 10,
         "previousScore": 0.976,
         "previousStance": "뉴스 우선 감시",
+        "previousSetupAction": "pullback_watch",
+        "previousEventType": "earnings",
+        "previousPricedInRisk": "",
+        "marketReactionScore": null,
         "previousClose": 24.3700008392334,
         "currentClose": null,
         "currentPriceDate": "",
@@ -9919,6 +10067,10 @@
         "previousRank": 11,
         "previousScore": 0.948,
         "previousStance": "뉴스 우선 감시",
+        "previousSetupAction": "pullback_watch",
+        "previousEventType": "earnings",
+        "previousPricedInRisk": "",
+        "marketReactionScore": null,
         "previousClose": 691.5900268554688,
         "currentClose": null,
         "currentPriceDate": "",
@@ -9933,6 +10085,10 @@
         "previousRank": 12,
         "previousScore": 0.945,
         "previousStance": "뉴스 우선 감시",
+        "previousSetupAction": "wait",
+        "previousEventType": "earnings",
+        "previousPricedInRisk": "",
+        "marketReactionScore": null,
         "previousClose": 208.25,
         "currentClose": null,
         "currentPriceDate": "",

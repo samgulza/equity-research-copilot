@@ -11,11 +11,13 @@
     "horizon",
     "materiality_score",
     "novelty_score",
-    "priced_in_risk",
-    "evidence_sources"
+    "priced_in_risk"
   ],
   "properties": {
     "ticker": {
+      "type": "string"
+    },
+    "company_name": {
       "type": "string"
     },
     "event_type": {
@@ -23,14 +25,58 @@
       "enum": [
         "earnings",
         "guidance",
+        "analyst_revision",
         "product",
-        "regulatory",
+        "ai_infrastructure",
+        "policy_geopolitics",
+        "legal_regulatory",
+        "filing",
         "supply_chain",
-        "macro",
-        "litigation",
         "mna",
         "management",
+        "capital_allocation",
+        "macro",
+        "general_news",
         "other"
+      ]
+    },
+    "event_subtype": {
+      "type": "string",
+      "enum": [
+        "beat_miss",
+        "margin_expansion",
+        "margin_compression",
+        "segment_growth",
+        "one_off_gain_loss",
+        "raise",
+        "cut",
+        "withdraw",
+        "reaffirm",
+        "order_contract",
+        "backlog",
+        "shipment",
+        "capacity_expansion",
+        "inventory_correction",
+        "buyback",
+        "dividend",
+        "dilution",
+        "debt_refinancing",
+        "capex",
+        "approval",
+        "investigation",
+        "litigation",
+        "fine_penalty",
+        "export_control",
+        "antitrust",
+        "mna",
+        "spin_off",
+        "restructuring",
+        "management_change",
+        "analyst_upgrade",
+        "analyst_downgrade",
+        "target_raise",
+        "consensus_revision",
+        "unknown"
       ]
     },
     "claim": {
@@ -55,8 +101,76 @@
         "5d",
         "20d",
         "60d",
-        "1y"
+        "1y",
+        "5d-20d",
+        "unknown"
       ]
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "evidence_spans": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "quote"
+        ],
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "published_at": {
+            "type": "string"
+          },
+          "quote": {
+            "type": "string"
+          },
+          "char_start": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "char_end": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "source_tier": {
+            "type": "string",
+            "enum": [
+              "tier1",
+              "tier2",
+              "tier3",
+              "tier4",
+              "unknown"
+            ]
+          }
+        }
+      }
+    },
+    "counter_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
     },
     "materiality_score": {
       "type": "number",
@@ -64,6 +178,16 @@
       "maximum": 1
     },
     "novelty_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "source_quality_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "market_reaction_score": {
       "type": "number",
       "minimum": 0,
       "maximum": 1
@@ -83,11 +207,13 @@
         "type": "string"
       }
     },
-    "counter_evidence": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+    "score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "published_at": {
+      "type": "string"
     }
   }
 }

@@ -139,6 +139,8 @@ function renderTickerSwitcher(payload) {
 
 function renderMemo(candidate) {
   const setup = candidate.setup || {};
+  const reaction = candidate.marketReaction || {};
+  const primaryEvent = candidate.catalyst?.events?.[0] || {};
   const entry =
     setup.entry?.low !== null && setup.entry?.low !== undefined && setup.entry?.high !== null && setup.entry?.high !== undefined
       ? `${formatPrice(setup.entry.low, candidate.market)}~${formatPrice(setup.entry.high, candidate.market)}`
@@ -152,6 +154,8 @@ function renderMemo(candidate) {
     <div><dt>Stop</dt><dd>${formatPrice(setup.stopLoss, candidate.market)}</dd></div>
     <div><dt>Target</dt><dd>${formatPrice(setup.target1, candidate.market)}</dd></div>
     <div><dt>R/R</dt><dd>${setup.riskReward ? setup.riskReward.toFixed(2) : "-"}</dd></div>
+    <div><dt>MR</dt><dd>${reaction.reactionScore === null || reaction.reactionScore === undefined ? "-" : Number(reaction.reactionScore).toFixed(2)}</dd></div>
+    <div><dt>Vol Z</dt><dd>${reaction.volumeZscore === null || reaction.volumeZscore === undefined ? "-" : Number(reaction.volumeZscore).toFixed(1)}</dd></div>
   `;
   $("#memoRead").textContent =
     [setup.invalidation, candidate.news.read].filter(Boolean).join(" · ") ||
@@ -161,6 +165,7 @@ function renderMemo(candidate) {
     `<span class="quality-pill ${relevanceClass(candidate.news.relevance.level)}">${escapeHtml(candidate.news.relevance.label)}</span>`,
     `<span class="quality-pill ${stanceClass(candidate)}">${escapeHtml(candidate.stance)}</span>`,
     `<span class="quality-pill">RS ${escapeHtml(candidate.technical.momentum || "-")}</span>`,
+    `<span class="quality-pill">Priced ${escapeHtml(primaryEvent.priced_in_risk || "-")}</span>`,
   ].join("");
 }
 
@@ -287,6 +292,7 @@ function renderCandidateRows(payload) {
           <td><span class="quality-pill ${relevanceClass(candidate.news.relevance.level)}">${escapeHtml(candidate.news.relevance.label)}</span></td>
           <td><span class="quality-pill ${setupClass(candidate.setup)}">${escapeHtml(candidate.setup?.label || "-")}</span></td>
           <td>${formatPct(candidate.price.recentReturn20d)}</td>
+          <td>${candidate.marketReaction?.reactionScore === null || candidate.marketReaction?.reactionScore === undefined ? "-" : Number(candidate.marketReaction.reactionScore).toFixed(2)}</td>
           <td>${escapeHtml(candidate.technical.structure || "-")}</td>
           <td>${escapeHtml(candidate.catalyst.claim || candidate.news.read || "-")}</td>
         </tr>
@@ -373,6 +379,8 @@ function renderNews(payload) {
   const cards = [];
   payload.candidates.slice(0, 8).forEach((candidate) => {
     const primary = candidate.news.headlines[0];
+    const event = candidate.catalyst.events?.[0] || {};
+    const evidence = event.evidence_spans?.[0]?.quote || "";
     cards.push({
       ticker: candidate.ticker,
       stance: primary?.stance || "mixed",
@@ -380,6 +388,8 @@ function renderNews(payload) {
       title: primary?.title || candidate.catalyst.claim || candidate.news.read,
       relevance: candidate.news.relevance.label,
       read: candidate.news.read,
+      evidence,
+      eventType: [event.event_type, event.event_subtype].filter(Boolean).join(" / "),
     });
   });
   $("#newsGrid").innerHTML = cards
@@ -392,7 +402,8 @@ function renderNews(payload) {
           </header>
           <h3>${escapeHtml(card.title || "-")}</h3>
           <p>${escapeHtml(card.read || "추가 원문 확인 필요")}</p>
-          <p>${escapeHtml(card.relevance)} · ${escapeHtml(card.source)}</p>
+          <p>${escapeHtml(card.evidence || "원문 evidence span 없음")}</p>
+          <p>${escapeHtml(card.relevance)} · ${escapeHtml(card.eventType || "event")} · ${escapeHtml(card.source)}</p>
         </article>
       `,
     )

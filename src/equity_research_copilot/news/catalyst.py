@@ -1,9 +1,12 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
-import re
+from dataclasses import asdict, dataclass, field
 
 from equity_research_copilot.adapters.news_adapter import NewsItem
+from equity_research_copilot.news.clustering import NewsCluster, cluster_news_items, novelty_score
+from equity_research_copilot.news.counter_evidence import find_counter_evidence
+from equity_research_copilot.news.event_extractor import EvidenceSpan, MetricMention, extract_structured_event, source_tier_score
+from equity_research_copilot.schemas import validate_catalyst_event
 
 
 @dataclass
@@ -18,72 +21,137 @@ class CatalystEvent:
     novelty_score: float
     priced_in_risk: str
     evidence_sources: list[str]
-    counter_evidence: list[str]
+    counter_evidence: list[EvidenceSpan] = field(default_factory=list)
+    company_name: str = ""
+    event_subtype: str = "unknown"
+    entities: list[str] = field(default_factory=list)
+    metrics: list[MetricMention] = field(default_factory=list)
+    evidence_spans: list[EvidenceSpan] = field(default_factory=list)
+    source_quality_score: float = 0.0
+    market_reaction_score: float = 0.0
     score: float = 0.0
     published_at: str = ""
 
+    def to_dict(self) -> dict:
+        return asdict(self)
 
-def score_event(materiality: float, novelty: float, source_quality: float, priced_in_penalty: float) -> float:
-    raw = 0.45 * materiality + 0.3 * novelty + 0.25 * source_quality
+
+def score_event(
+    materiality: float,
+    novelty: float,
+    source_quality: float,
+    market_reaction: float,
+    priced_in_penalty: float,
+) -> float:
+    raw = 0.38 * materiality + 0.24 * novelty + 0.22 * source_quality + 0.16 * market_reaction
     return max(0.0, min(1.0, raw - priced_in_penalty))
 
 
-def _norm(text: str) -> str:
-    cleaned = re.sub(r"[^a-z0-9가-힣 ]+", " ", text.lower())
-    tokens = [tok for tok in cleaned.split() if len(tok) > 2]
-    return " ".join(tokens[:12])
-
-
-def _event_type(text: str, kind: str) -> tuple[str, str, str, float]:
-    lowered = text.lower()
-    if kind == "filing" or "sec " in lowered or "10-k" in lowered or "10-q" in lowered or "8-k" in lowered:
-        return "filing", "Disclosure / governance", "mixed", 0.68
-    if any(term in lowered for term in ["earnings", "guidance", "revenue", "eps", "margin", "quarter", "실적", "매출", "영업이익", "순이익", "가이던스"]):
-        return "earnings", "Revenue / margin / guidance", "mixed", 0.9
-    if any(term in lowered for term in ["ai", "chip", "gpu", "data center", "cloud", "semiconductor", "반도체", "hbm", "데이터센터", "인공지능"]):
-        return "ai_infrastructure", "AI infrastructure demand", "positive", 0.78
-    if any(term in lowered for term in ["china", "export", "tariff", "ban", "approval", "regulation", "중국", "수출", "관세", "규제", "승인"]):
-        return "policy_geopolitics", "Policy / market access", "mixed", 0.82
-    if any(term in lowered for term in ["lawsuit", "court", "probe", "investigation", "sec", "소송", "검찰", "조사", "제재", "리콜"]):
-        return "legal_regulatory", "Legal / regulatory risk", "negative", 0.7
-    if any(term in lowered for term in ["downgrade", "upgrade", "price target", "analyst", "목표가", "투자의견", "상향", "하향", "증권"]):
-        return "analyst_revision", "Market expectations", "mixed", 0.55
-    return "general_news", "Narrative / sentiment", "mixed", 0.45
-
-
-def build_catalyst_events(ticker: str, items: list[NewsItem], recent_return: float = 0.0) -> list[CatalystEvent]:
-    clusters: dict[str, list[NewsItem]] = {}
-    for item in items:
-        key = _norm(item.title)
-        if not key:
-            continue
-        clusters.setdefault(key, []).append(item)
-
+def build_catalyst_events(
+    ticker: str,
+    items: list[NewsItem],
+    recent_return: float = 0.0,
+    *,
+    company_name: str = "",
+    market_reaction: dict | None = None,
+) -> list[CatalystEvent]:
+    market_reaction = market_reaction or {}
+    clusters = cluster_news_items(items)
     events: list[CatalystEvent] = []
-    priced_in_penalty = min(0.22, max(0.0, abs(recent_return) - 0.04))
-    for cluster_items in clusters.values():
-        primary = sorted(cluster_items, key=lambda x: x.published_at, reverse=True)[0]
-        text = f"{primary.title} {primary.summary}"
-        event_type, driver, direction, materiality = _event_type(text, primary.kind)
-        novelty = max(0.25, 1.0 / len(cluster_items))
-        source_quality = 0.85 if primary.source in {"SEC EDGAR", "Reuters", "NVIDIA Newsroom"} else 0.72 if primary.source.startswith("Naver") else 0.62
-        score = score_event(materiality, novelty, source_quality, priced_in_penalty)
-        priced_in = "high" if priced_in_penalty >= 0.15 else "medium" if priced_in_penalty >= 0.05 else "low"
-        events.append(
-            CatalystEvent(
-                ticker=ticker.upper(),
-                event_type=event_type,
-                claim=primary.title,
-                affected_driver=driver,
-                direction=direction,
-                horizon="5d-20d",
-                materiality_score=round(materiality, 2),
-                novelty_score=round(novelty, 2),
-                priced_in_risk=priced_in,
-                evidence_sources=[item.url for item in cluster_items if item.url][:4],
-                counter_evidence=[],
-                score=round(score, 2),
-                published_at=primary.published_at,
-            )
+    reaction_score = float(market_reaction.get("reaction_score") or 0.0)
+    priced_in_penalty = _priced_in_penalty(recent_return, reaction_score)
+    priced_in = _priced_in_label(recent_return, reaction_score, priced_in_penalty)
+
+    for cluster in clusters:
+        primary = sorted(cluster.items, key=lambda x: x.published_at, reverse=True)[0]
+        structured = extract_structured_event(ticker, company_name, primary)
+        source_quality = _source_quality(cluster, structured.evidence_spans)
+        novelty = novelty_score(cluster)
+        score = score_event(
+            structured.materiality_score,
+            novelty,
+            source_quality,
+            reaction_score,
+            priced_in_penalty,
         )
-    return sorted(events, key=lambda event: (event.score, event.materiality_score), reverse=True)
+        evidence_sources = _evidence_sources(cluster, structured.evidence_spans)
+        counter_evidence = find_counter_evidence(
+            structured.direction,
+            items,
+            primary_url=primary.canonical_url or primary.url,
+        )
+        event = CatalystEvent(
+            ticker=ticker.upper(),
+            company_name=company_name,
+            event_type=structured.event_type,
+            event_subtype=structured.event_subtype,
+            claim=primary.title,
+            affected_driver=structured.affected_driver,
+            direction=structured.direction,
+            horizon=structured.horizon,
+            entities=structured.entities,
+            metrics=structured.metrics,
+            evidence_spans=structured.evidence_spans,
+            materiality_score=structured.materiality_score,
+            novelty_score=novelty,
+            source_quality_score=round(source_quality, 2),
+            market_reaction_score=round(reaction_score, 2),
+            priced_in_risk=priced_in,
+            evidence_sources=evidence_sources,
+            counter_evidence=counter_evidence,
+            score=round(score, 2),
+            published_at=primary.published_at,
+        )
+        validate_catalyst_event(event.to_dict())
+        events.append(event)
+    return sorted(events, key=lambda event: (event.score, event.materiality_score, event.source_quality_score), reverse=True)
+
+
+def _source_quality(cluster: NewsCluster, evidence_spans: list[EvidenceSpan]) -> float:
+    scores = [source_tier_score(span.source_tier) for span in evidence_spans if span.source_tier]
+    if not scores:
+        for item in cluster.items[:4]:
+            probe = EvidenceSpan(source_tier="unknown")
+            if item.source or item.url:
+                from equity_research_copilot.news.event_extractor import detect_source_tier
+
+                probe.source_tier = detect_source_tier(item)
+            scores.append(source_tier_score(probe.source_tier))
+    if not scores:
+        return 0.55
+    return max(0.0, min(1.0, sum(scores) / len(scores)))
+
+
+def _evidence_sources(cluster: NewsCluster, evidence_spans: list[EvidenceSpan]) -> list[str]:
+    sources: list[str] = []
+    for span in evidence_spans:
+        if span.url:
+            sources.append(span.url)
+    for item in cluster.items:
+        url = item.canonical_url or item.url
+        if url:
+            sources.append(url)
+    unique: list[str] = []
+    seen: set[str] = set()
+    for url in sources:
+        if url in seen:
+            continue
+        seen.add(url)
+        unique.append(url)
+        if len(unique) >= 5:
+            break
+    return unique
+
+
+def _priced_in_penalty(recent_return: float, reaction_score: float) -> float:
+    move_penalty = min(0.22, max(0.0, abs(recent_return) - 0.04))
+    reaction_penalty = min(0.12, max(0.0, reaction_score) * 0.16)
+    return min(0.28, move_penalty + reaction_penalty)
+
+
+def _priced_in_label(recent_return: float, reaction_score: float, penalty: float) -> str:
+    if penalty >= 0.18 or abs(recent_return) >= 0.22 or reaction_score >= 0.75:
+        return "high"
+    if penalty >= 0.07 or abs(recent_return) >= 0.1 or reaction_score >= 0.35:
+        return "medium"
+    return "low"

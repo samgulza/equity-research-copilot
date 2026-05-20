@@ -10,7 +10,7 @@ Equity Research Copilot은 공개 가격 데이터, 뉴스, 공시, 차트 구�
 이 시스템은 자동매매 봇이 아니다. 핵심 목적은 다음이다.
 
 - 종목 후보를 동적으로 발굴한다.
-- 뉴스와 차트가 같은 방향을 가리키는지 검증한다.
+- 뉴스 전문, 공시, 차트가 같은 방향을 가리키는지 검증한다.
 - 촉매 뉴스가 실제 해당 종목과 직접 관련되는지 필터링한다.
 - 차트 기반 진입/손절/목표/손익비를 산출한다.
 - 날짜별 리포트 스냅샷을 저장한다.
@@ -27,6 +27,9 @@ Equity Research Copilot은 공개 가격 데이터, 뉴스, 공시, 차트 구�
 - Naver Search News API 기반 한국 뉴스 수집
 - OpenBB company news 및 SEC filing 수집
 - 뉴스 catalyst 추출과 점수화
+- 기사 전문 추출, canonical URL, content hash 저장
+- source tier, evidence span, counter-evidence, metric mention 저장
+- market reaction score 산출
 - 기업명/티커 직접성 기반 뉴스 필터
 - SMA/RSI/MACD/ATR/거래량 기반 차트 분석
 - 돌파/눌림/롱감시/추격회피/리스크감시 셋업 산출
@@ -71,24 +74,33 @@ Equity Research Copilot은 공개 가격 데이터, 뉴스, 공시, 차트 구�
    breakout, pullback, base, extended, risk_distribution
 
 6. 뉴스 수집
-   OpenBB company news, SEC filing, Naver Search News, Naver Finance item news
+   OpenBB company news, SEC filing, Naver Search News, Naver Finance item news,
+   optional GDELT/RSS/company IR feeds
 
-7. 뉴스 직접성 필터
-   제목에 기업명/티커가 직접 있는 기사만 핵심 catalyst 후보로 사용
+7. 기사 전문 추출
+   trafilatura/HTML fallback으로 body, metadata, content hash, canonical URL 저장
 
-8. Catalyst 생성
-   event type, driver, direction, materiality, novelty, priced-in risk
+8. 뉴스 직접성 / entity-linked 필터
+   제목, 요약, 본문에서 기업명/티커/alias 직접성을 확인
 
-9. 후보 점수화
+9. Catalyst 생성
+   event type/subtype, driver, direction, metrics, evidence span, counter-evidence,
+   materiality, novelty, priced-in risk
+
+10. Market reaction 분석
+   abnormal return, volume z-score, gap reaction으로 선반영 가능성 산출
+
+11. 후보 점수화
    source score + technical score + setup score + catalyst score - risk penalty
 
-10. 산출물 생성
+12. 산출물 생성
    discovery CSV/Markdown/PDF, 종목별 memo/chart pack, 정적 JSON/HTML
 
-11. 아카이브 및 검증
-   docs/data/YYYY-MM-DD.json 저장, 전일 후보 outcome 계산
+13. 아카이브 및 검증
+   docs/data/YYYY-MM-DD.json 저장, 전일 후보 outcome 계산,
+   event/setup/news-quality별 hit rate 평가
 
-12. 배포
+14. 배포
    docs/ -> GitHub Pages
 ```
 
@@ -127,6 +139,12 @@ research-copilot analyze NVDA --days 180 --format both --with-fundamentals --wit
 research-copilot discover --universe all --candidate-limit 25 --top 10 --analyze-top 3 --format md
 ```
 
+### 아카이브 기반 event 평가
+
+```bash
+research-copilot evaluate-events --archive-dir docs/data --out-dir runs
+```
+
 ## 6. 데이터 입력
 
 | 입력 | 출처 | 구현 위치 |
@@ -138,6 +156,9 @@ research-copilot discover --universe all --candidate-limit 25 --top 10 --analyze
 | SEC filing | OpenBB SEC endpoint | `src/equity_research_copilot/adapters/news_adapter.py` |
 | 한국 뉴스 | Naver Search News API | `src/equity_research_copilot/adapters/news_adapter.py` |
 | 한국 종목 뉴스 | Naver Finance item news | `src/equity_research_copilot/adapters/news_adapter.py` |
+| 글로벌 뉴스 discovery | GDELT DOC API, optional | `src/equity_research_copilot/adapters/news_adapter.py` |
+| RSS/회사 IR | 환경변수 feed list | `src/equity_research_copilot/adapters/news_adapter.py` |
+| 기사 전문 | trafilatura + HTML fallback | `src/equity_research_copilot/news/article.py` |
 
 ## 7. 핵심 모듈
 
@@ -146,13 +167,19 @@ research-copilot discover --universe all --candidate-limit 25 --top 10 --analyze
 | `discovery.py` | 후보 수집, 뉴스/차트/셋업/촉매 점수 결합 |
 | `adapters/openbb_adapter.py` | OpenBB 가격/펀더멘털 호출 격리 |
 | `adapters/news_adapter.py` | 뉴스/공시 수집 |
+| `news/article.py` | URL canonicalization, full-text extraction, metadata/hash 저장 |
 | `news/relevance.py` | 기업명/티커 직접성 필터, 저신호 제목 제거 |
-| `news/catalyst.py` | catalyst event 생성과 점수화 |
+| `news/event_extractor.py` | event type/subtype, driver, evidence span, metric mention 추출 |
+| `news/clustering.py` | 기사/event clustering과 novelty 계산 |
+| `news/counter_evidence.py` | 반대 방향 evidence span 추출 |
+| `news/catalyst.py` | structured catalyst event 생성과 점수화 |
 | `technical/indicators.py` | SMA, RSI, MACD, ATR, volume 지표 계산 |
+| `technical/reaction.py` | abnormal return, volume z-score, gap reaction 계산 |
 | `technical/structure.py` | 시장 구조, 지지/저항, 모멘텀 판정 |
 | `technical/signals.py` | 트레이딩 셋업, 진입/손절/목표/손익비 산출 |
 | `charts/render.py` | 주석 차트 pack 생성 |
 | `reports/composer.py` | Markdown/PDF 리포트 생성 |
+| `evaluation/event_level.py` | 날짜별 아카이브 기반 event/setup/news-quality 성능 평가 |
 | `scripts/export_static_research_site.py` | key-free JSON과 HTML 아카이브 생성 |
 | `docs/app.js` | Chart.js 기반 정적 대시보드 렌더링 |
 
@@ -218,7 +245,20 @@ score =
 
 ### Catalyst score
 
-`news/catalyst.py`가 생성한 event의 materiality, novelty, source quality, priced-in penalty를 반영한다.
+`news/catalyst.py`가 생성한 event의 materiality, novelty, source quality, market reaction, priced-in penalty를 반영한다.
+
+CatalystEvent 핵심 필드:
+
+- event_type / event_subtype
+- affected_driver
+- direction / horizon
+- entities
+- metrics
+- evidence_spans
+- counter_evidence
+- source_quality_score
+- market_reaction_score
+- priced_in_risk
 
 ## 9. 뉴스 직접성 정의
 
@@ -226,7 +266,7 @@ score =
 
 핵심 catalyst 후보가 되려면 다음 조건을 만족해야 한다.
 
-- 제목에 기업명, 주요 alias, 또는 티커가 직접 들어가야 한다.
+- 제목, 요약, 본문 중 최소 하나에서 기업명, 주요 alias, 또는 티커가 직접 확인되어야 한다.
 - 한국 종목은 6자리 종목코드 또는 기업명을 우선 사용한다.
 - 미국 종목은 티커, 기업명, 주요 기업명 phrase를 사용한다.
 - `[그래픽]`, 시황, 인기검색, 가격비교 같은 저신호 제목은 제외한다.
@@ -291,6 +331,21 @@ current latest close
 - benchmark/sector excess return은 아직 포함하지 않는다.
 - 가격 데이터가 없는 후보는 pending 처리한다.
 
+`research-copilot evaluate-events`는 `docs/data` 아카이브를 읽어 event-level 평가 CSV/JSON을 생성한다.
+
+집계 축:
+
+- event_type / event_subtype
+- setup_action
+- news_relevance_level
+
+핵심 metric:
+
+- measured_records
+- hit_rate
+- avg_next_return
+- avg_catalyst_score
+
 ## 12. 보안 및 운영 원칙
 
 - `.env`, `.env.*` raw secret은 커밋하지 않는다.
@@ -323,21 +378,21 @@ https://samgulza.github.io/equity-research-copilot/
 
 ## 14. 현재 한계
 
-- 뉴스 clustering은 아직 heuristic 중심이다.
-- 미국 뉴스도 회사명 직접성은 보지만 기사 주체/문맥 완전 판별은 제한적이다.
+- 뉴스 clustering은 lightweight token embedding 기반이며 대형 embedding/reranker는 아직 붙이지 않았다.
+- 회사명 직접성은 제목/요약/본문까지 보지만 기사 주체/문맥 완전 판별은 제한적이다.
 - 한국 데이터는 Naver 기반이며 OpenDART/KRX 정식 adapter는 후속이다.
 - chart setup은 rule-based이며 백테스트 기반 calibration이 아직 없다.
-- outcome은 단순 다음날 가격 비교라 sector/market 조정이 없다.
+- outcome은 단순 다음날 가격 비교이고, market reaction은 현재 benchmark가 없으면 raw abnormal proxy를 사용한다.
 - LLM analyst/critic prompt는 문서화되어 있으나 정적 HTML pipeline에는 아직 깊게 연결되지 않았다.
 
 ## 15. 후속 개발 우선순위
 
 1. Sector-relative return과 benchmark 대비 outcome 추가
-2. Catalyst clustering 정교화
+2. 대형 embedding/reranker 기반 catalyst clustering
 3. 기사 주체 판별 강화
 4. OpenDART/KRX adapter 추가
-5. LLM analyst + critic을 report composition에 연결
-6. 셋업별 hit rate와 평균 수익률 calibration
+5. LLM/FinGPT-style extractor + critic을 report composition에 연결
+6. source hallucination, priced-in error, event precision 평가 추가
 7. PDF/HTML 리포트의 source appendix 강화
 8. GitHub Actions Node 24 전환 경고 대응
 

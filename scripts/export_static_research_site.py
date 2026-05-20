@@ -263,8 +263,20 @@ def _direct_events(name: str, ticker: str, catalysts: list[dict[str, Any]]) -> l
     return [
         event
         for event in catalysts
-        if _text_direct(name, ticker, _clean_text(event.get("claim"))) and not _low_signal_title(_clean_text(event.get("claim")))
+        if _text_direct(name, ticker, _event_text(event)) and not _low_signal_title(_clean_text(event.get("claim")))
     ]
+
+
+def _event_text(event: dict[str, Any]) -> str:
+    evidence = event.get("evidence_spans") if isinstance(event.get("evidence_spans"), list) else []
+    return " ".join(
+        [
+            _clean_text(event.get("claim")),
+            _clean_text(event.get("affected_driver")),
+            " ".join(_clean_text(entity) for entity in event.get("entities", []) if entity),
+            " ".join(_clean_text(span.get("quote")) for span in evidence if isinstance(span, dict)),
+        ]
+    )
 
 
 def _sanitize_news_read(raw_read: str, raw_claim: str, display_claim: str, direct_count: int) -> str:
@@ -290,6 +302,7 @@ def _news_relevance(
         + [item.get("title", "") for item in headlines]
         + [_clean_text(event.get("claim")) for event in catalysts[:5]]
         + [_clean_text(event.get("affected_driver")) for event in catalysts[:5]]
+        + [_event_text(event) for event in catalysts[:5]]
     )
     haystack_l = haystack.casefold()
     core_hits = _token_hits(name, ticker, core_text)
@@ -359,7 +372,8 @@ def _build_candidates(df: pd.DataFrame, runs_dir: Path, top: int, series_limit: 
         direct_news_items = [
             item
             for item in news_items
-            if _text_direct(name, ticker, _clean_text(item.get("title"))) and not _low_signal_title(_clean_text(item.get("title")))
+            if _text_direct(name, ticker, " ".join([_clean_text(item.get("title")), _clean_text(item.get("summary")), _clean_text(item.get("body"))]))
+            and not _low_signal_title(_clean_text(item.get("title")))
         ]
         direct_events = _direct_events(name, ticker, raw_catalysts)
         headlines = _direct_headlines(name, ticker, raw_headlines, direct_news_items)
@@ -429,6 +443,15 @@ def _build_candidates(df: pd.DataFrame, runs_dir: Path, top: int, series_limit: 
                     "resistance": _clean_number(row.get("resistance")),
                 },
                 "setup": setup,
+                "marketReaction": {
+                    "abnormalReturn1d": _clean_number(row.get("abnormal_return_1d")),
+                    "abnormalReturn5d": _clean_number(row.get("abnormal_return_5d")),
+                    "abnormalReturn20d": _clean_number(row.get("abnormal_return_20d")),
+                    "volumeZscore": _clean_number(row.get("volume_zscore")),
+                    "volumeRatio": _clean_number(row.get("volume_ratio")),
+                    "gapReturn": _clean_number(row.get("gap_return")),
+                    "reactionScore": _clean_number(row.get("market_reaction_score")),
+                },
                 "news": {
                     "read": news_read,
                     "positive": headline_counts["positive"],
@@ -583,6 +606,12 @@ def _build_outcomes(
                 "previousRank": item.get("rank"),
                 "previousScore": item.get("score"),
                 "previousStance": item.get("stance", ""),
+                "previousSetupAction": item.get("setup", {}).get("action", ""),
+                "previousEventType": item.get("catalyst", {}).get("type", ""),
+                "previousPricedInRisk": (item.get("catalyst", {}).get("events") or [{}])[0].get("priced_in_risk", "")
+                if item.get("catalyst", {}).get("events")
+                else "",
+                "marketReactionScore": item.get("marketReaction", {}).get("reactionScore"),
                 "previousClose": previous_close,
                 "currentClose": current_close,
                 "currentPriceDate": current_price_date,

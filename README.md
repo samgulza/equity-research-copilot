@@ -22,6 +22,7 @@ research-copilot discover --days 180 --news-days 7 --candidate-limit 25 --top 10
 research-copilot screen --watchlist config/watchlist.example.json --days 90 --top 4
 research-copilot daily --watchlist config/watchlist.example.json --days 120 --top 2 --format md
 research-copilot evaluate NVDA --start 2024-01-01 --horizon-days 20 --step-days 10 --lookback-days 120
+research-copilot evaluate-events --archive-dir docs/data --out-dir runs
 python scripts/export_static_research_site.py
 ```
 
@@ -62,6 +63,21 @@ research-copilot discover --universe kr --candidate-limit 20 --top 8 --analyze-t
 ```
 
 실운용에서는 raw 값을 shell history나 파일에 남기지 말고 `.env.1password`에 `op://...` reference로 둡니다. `discover`는 CSV/Markdown과 함께 상위 후보 PDF도 `runs/discovery/`에 생성합니다.
+
+기사 전문 추출은 기본적으로 상위 뉴스 일부에 적용됩니다. 속도나 네트워크 부하를 조절하려면 아래 환경변수를 사용합니다.
+
+```bash
+export ENABLE_ARTICLE_EXTRACTION=1
+export ARTICLE_EXTRACTION_LIMIT=2
+```
+
+GDELT/RSS/회사 IR feed는 보조 discovery source입니다. 노이즈가 크기 때문에 기본값은 off이며, 원문 evidence와 source tier를 거친 뒤 catalyst에 반영됩니다.
+
+```bash
+export ENABLE_GDELT=1
+export NEWS_RSS_FEEDS="https://example.com/rss.xml"
+export COMPANY_IR_FEEDS_JSON='{"NVDA":["https://investor.nvidia.com/rss/news-releases.xml"]}'
+```
 
 생성물은 `runs/<TICKER>/` 아래에 저장됩니다.
 
@@ -104,7 +120,11 @@ scripts/run_daily_static_report.sh
 - OpenBB company news 수집
 - Naver Search News API 기반 한국 종목 뉴스 수집
 - SEC EDGAR filing 수집
-- catalyst dedup/scoring 및 JSON export
+- trafilatura 기반 기사 전문/메타데이터 추출, canonical URL, content hash 저장
+- GDELT/RSS/회사 IR feed 보조 adapter
+- source tier, evidence span, counter-evidence, metric mention 기반 catalyst JSON export
+- lightweight token embedding 기반 event clustering/deduplication
+- market reaction score: 1D/5D/20D abnormal return, volume z-score, gap reaction
 - market movers / growth / undervalued-growth / active discovery 기반 동적 후보 발굴
 - 종목 후보별 뉴스 방향성/주요 기사/뉴스 해석 block 생성
 - technical structure / support / resistance / RSI / MACD / volume 해석
@@ -115,14 +135,14 @@ scripts/run_daily_static_report.sh
 - thesis memory JSONL 저장/조회
 - daily watchlist run 생성
 - point-in-time OHLCV evaluation CSV/summary 생성
+- event-level archived snapshot evaluation: event type/setup/news quality별 hit rate와 평균 다음날 수익률
 
-아직 Phase 1 후속으로 남은 범위:
+다음 고도화 범위:
 
-- RSS/GDELT/licensed news provider 추가
-- 더 정교한 event clustering/deduplication
-- sector-relative return / benchmark 비교
-- LLM analyst + critic prompt를 live report composition에 연결
-- evaluation metric 확장: Top-K excess return, hallucinated source rate, priced-in error rate
+- licensed news provider 또는 broker research feed 연결
+- real sector/benchmark mapping 기반 excess return
+- LLM/FinGPT-style structured extractor와 critic prompt를 live report composition에 연결
+- hallucinated source rate, priced-in error rate, event precision calibration
 
 ## 주요 파일
 

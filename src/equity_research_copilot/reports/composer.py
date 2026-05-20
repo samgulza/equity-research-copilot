@@ -119,12 +119,18 @@ def compose_deep_dive_markdown(
             fundamentals_note = warning
 
     catalyst_rows = []
+    evidence_rows = []
     for event in (catalysts or [])[:8]:
         source = event.evidence_sources[0] if event.evidence_sources else ""
         catalyst_rows.append(
-            f"| {event.event_type} | {event.direction} | {event.affected_driver} | {event.materiality_score:.2f} | {event.novelty_score:.2f} | {event.score:.2f} | {event.priced_in_risk} | {event.claim} | {source} |"
+            f"| {event.event_type}/{event.event_subtype} | {event.direction} | {event.affected_driver} | {event.materiality_score:.2f} | {event.novelty_score:.2f} | {event.score:.2f} | {event.priced_in_risk} | {event.claim} | {source} |"
         )
+        evidence = event.evidence_spans[0].quote if event.evidence_spans else ""
+        counter = event.counter_evidence[0].quote if event.counter_evidence else ""
+        if evidence or counter:
+            evidence_rows.append(f"- **{event.event_type}**: {evidence or 'No extracted span.'}" + (f" Counter: {counter}" if counter else ""))
     catalyst_text = "\n".join(catalyst_rows) if catalyst_rows else "| - | - | - | - | - | - | - | No live catalyst found in configured sources. | - |"
+    evidence_text = "\n".join(evidence_rows) if evidence_rows else "- No article-body evidence span was extracted in this run."
 
     history_rows = []
     for item in (thesis_history or [])[-5:]:
@@ -178,6 +184,10 @@ def compose_deep_dive_markdown(
 
 {priced_in}
 
+### Evidence / Counter Evidence
+
+{evidence_text}
+
 ## 7. Scenario Table
 
 | Scenario | Conditions | What to watch |
@@ -190,7 +200,7 @@ def compose_deep_dive_markdown(
 
 - A good company narrative can still be fully priced in.
 - Technical indicators are descriptive, not causal.
-- Catalyst extraction is live but heuristic; source relevance and materiality still need analyst review.
+- Catalyst extraction is structured and evidence-first, but source relevance and materiality still need analyst review.
 - OpenBB provider coverage and endpoint behavior can change by version.
 
 ## 9. Watchpoints

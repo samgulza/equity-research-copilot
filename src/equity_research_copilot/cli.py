@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from dataclasses import asdict
 from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
 
@@ -11,12 +12,15 @@ from equity_research_copilot.adapters.news_adapter import NewsAdapter
 from equity_research_copilot.adapters.openbb_adapter import OpenBBAdapter
 from equity_research_copilot.charts.render import render_chart_pack
 from equity_research_copilot.discovery import score_candidates, write_discovery_report
+from equity_research_copilot.evaluation.event_level import evaluate_archived_events
 from equity_research_copilot.evaluation.point_in_time import evaluate_symbol_history
 from equity_research_copilot.memory import ThesisRecord, append_record, evidence_hash, recent_records
+from equity_research_copilot.news.article import enrich_news_items
 from equity_research_copilot.news.catalyst import build_catalyst_events
 from equity_research_copilot.news.relevance import split_direct_company_news
 from equity_research_copilot.reports.composer import compose_deep_dive_markdown, write_text_pdf
 from equity_research_copilot.technical.indicators import add_indicators
+from equity_research_copilot.technical.reaction import analyze_market_reaction
 from equity_research_copilot.technical.structure import analyze_structure
 
 
@@ -86,16 +90,24 @@ def analyze(
     charts = render_chart_pack(df, chart_dir, ticker)
     fundamentals = adapter.get_fundamental_snapshot(ticker) if with_fundamentals else None
     recent_return = float(df["close"].iloc[-1] / df["close"].tail(min(len(df), 20)).iloc[0] - 1)
+    market_reaction = analyze_market_reaction(df)
     raw_news_items = (
         NewsAdapter(provider=provider).fetch(ticker, days=news_days, limit=news_limit, include_sec=include_sec, company_name=company_name)
         if with_news
         else []
     )
+    raw_news_items = enrich_news_items(raw_news_items)
     market = "KR" if ticker.upper().endswith((".KS", ".KQ")) else "US"
     news_items, _rejected_news_items = split_direct_company_news(ticker, company_name, raw_news_items, market=market)
-    catalysts = build_catalyst_events(ticker, news_items, recent_return=recent_return)
-    (data_dir / f"{ticker.lower()}_news.json").write_text(json.dumps([item.__dict__ for item in news_items], ensure_ascii=False, indent=2), encoding="utf-8")
-    (data_dir / f"{ticker.lower()}_catalysts.json").write_text(json.dumps([event.__dict__ for event in catalysts], ensure_ascii=False, indent=2), encoding="utf-8")
+    catalysts = build_catalyst_events(
+        ticker,
+        news_items,
+        recent_return=recent_return,
+        company_name=company_name or "",
+        market_reaction=market_reaction.to_dict(),
+    )
+    (data_dir / f"{ticker.lower()}_news.json").write_text(json.dumps([asdict(item) for item in news_items], ensure_ascii=False, indent=2), encoding="utf-8")
+    (data_dir / f"{ticker.lower()}_catalysts.json").write_text(json.dumps([event.to_dict() for event in catalysts], ensure_ascii=False, indent=2), encoding="utf-8")
     snapshot_at = datetime.now(UTC).isoformat(timespec="seconds")
     md_path = report_dir / f"{ticker}_research_memo.md"
     history = recent_records(memory_path, ticker, limit=5)
@@ -244,6 +256,20 @@ def evaluate(
     print(f"- evaluation summary: {json_path}")
 
 
+def evaluate_events(*, archive_dir: str | Path, out_dir: str | Path) -> None:
+    rows, summary = evaluate_archived_events(Path(archive_dir))
+    root = Path(out_dir) / "evaluation" / "events"
+    root.mkdir(parents=True, exist_ok=True)
+    stamp = datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ")
+    csv_path = root / f"event_evaluation_{stamp}.csv"
+    json_path = root / "latest_summary.json"
+    rows.to_csv(csv_path, index=False)
+    json_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(json.dumps(summary, ensure_ascii=False, indent=2))
+    print(f"- event evaluation rows: {csv_path}")
+    print(f"- event evaluation summary: {json_path}")
+
+
 def discover(
     *,
     days: int,
@@ -343,6 +369,10 @@ def main() -> None:
     eval_parser.add_argument("--provider", default="yfinance")
     eval_parser.add_argument("--out-dir", default="runs")
 
+    event_eval_parser = sub.add_parser("evaluate-events", help="Evaluate archived event/setup outcomes from docs/data snapshots")
+    event_eval_parser.add_argument("--archive-dir", default="docs/data")
+    event_eval_parser.add_argument("--out-dir", default="runs")
+
     discover_parser = sub.add_parser("discover", help="Dynamically discover stocks from market movers/news, then rank by chart+catalyst")
     discover_parser.add_argument("--days", type=int, default=180)
     discover_parser.add_argument("--news-days", type=int, default=7)
@@ -398,6 +428,8 @@ def main() -> None:
             provider=args.provider,
             out_dir=args.out_dir,
         )
+    elif args.command == "evaluate-events":
+        evaluate_events(archive_dir=args.archive_dir, out_dir=args.out_dir)
     elif args.command == "discover":
         discover(
             days=args.days,
