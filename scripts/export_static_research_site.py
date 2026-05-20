@@ -36,6 +36,24 @@ LOW_SIGNAL_TITLE_TERMS = [
     "파란불",
 ]
 
+GENERIC_COMPANY_TERMS = {
+    "class",
+    "co",
+    "company",
+    "corp",
+    "corporation",
+    "digital",
+    "group",
+    "holding",
+    "holdings",
+    "inc",
+    "incorporated",
+    "ltd",
+    "plc",
+    "systems",
+    "technologies",
+}
+
 
 def _project_root() -> Path:
     here = Path(__file__).resolve()
@@ -177,18 +195,34 @@ def _compact_text(value: str) -> str:
 
 def _name_tokens(name: str) -> list[str]:
     cleaned = re.sub(r"\s+", "", name)
-    cleaned = re.sub(r"(보통주|우선주|우|홀딩스|지주|주식회사|\(.*?\))", "", cleaned)
+    cleaned = re.sub(r"\(.*?\)", "", cleaned)
+    cleaned = re.sub(
+        r"(보통주|우선주|우|홀딩스|지주|주식회사|corporation|incorporated|holdings|holding|company|corp|inc|ltd|plc)$",
+        "",
+        cleaned,
+        flags=re.IGNORECASE,
+    )
     tokens = [name.strip(), cleaned.strip()]
     if cleaned.upper().startswith("HD") and len(cleaned) > 4:
         tokens.append(cleaned[2:])
-    if len(cleaned) >= 4:
+    words = [token.strip() for token in re.split(r"[\s/&.,()+-]+", name) if token.strip()]
+    if len(words) >= 2:
+        first = _compact_text(words[0])
+        if first not in GENERIC_COMPANY_TERMS:
+            tokens.append("".join(words[:2]))
+    has_korean = bool(re.search(r"[가-힣]", cleaned))
+    for token in words:
+        compacted = _compact_text(token)
+        if (has_korean or len(words) == 1) and len(compacted) >= 4 and compacted not in GENERIC_COMPANY_TERMS:
+            tokens.append(token)
+    if has_korean and len(cleaned) >= 4:
         tokens.append(cleaned[:4])
     return [token for token in tokens if len(_compact_text(token)) >= 2]
 
 
 def _ticker_tokens(ticker: str) -> list[str]:
     tokens = [ticker, ticker.split(".")[0]]
-    return [token for token in tokens if len(_compact_text(token)) >= 2]
+    return [token for token in tokens if _compact_text(token).isdigit() or len(_compact_text(token)) >= 3]
 
 
 def _token_hits(name: str, ticker: str, text: str) -> list[str]:
@@ -279,6 +313,21 @@ def _stance_label(agent_view: str, chase_penalty: float | None) -> str:
     return "중립 감시"
 
 
+def _setup_label(action: str) -> str:
+    return {
+        "breakout_watch": "돌파 감시",
+        "pullback_watch": "눌림 감시",
+        "long_watch": "롱 감시",
+        "avoid_chase": "추격 회피",
+        "risk_watch": "리스크 감시",
+        "wait": "대기",
+    }.get(action, "대기")
+
+
+def _split_lines(value: str) -> list[str]:
+    return [line.strip() for line in value.splitlines() if line.strip()]
+
+
 def _price_snapshot(series: list[dict[str, Any]], fallback_close: float | None, fallback_return: float | None) -> dict[str, Any]:
     if len(series) >= 2:
         last = series[-1]
@@ -336,6 +385,26 @@ def _build_candidates(df: pd.DataFrame, runs_dir: Path, top: int, series_limit: 
         catalyst_strength = round(min(1.0, top_catalyst_score * relevance["score"]), 3)
         chase_penalty = _clean_number(row.get("chase_risk_penalty")) or 0.0
         recent_return = _clean_number(row.get("recent_return_20d"))
+        setup_action = _clean_text(row.get("setup_action")) or "wait"
+        setup = {
+            "type": _clean_text(row.get("setup_type")) or "unknown",
+            "action": setup_action,
+            "label": _setup_label(setup_action),
+            "score": round(_clean_number(row.get("setup_score")) or 0.0, 3),
+            "confidence": round(_clean_number(row.get("setup_confidence")) or 0.0, 3),
+            "entry": {
+                "low": _clean_number(row.get("setup_entry_low")),
+                "high": _clean_number(row.get("setup_entry_high")),
+            },
+            "stopLoss": _clean_number(row.get("setup_stop_loss")),
+            "target1": _clean_number(row.get("setup_target_1")),
+            "target2": _clean_number(row.get("setup_target_2")),
+            "riskReward": _clean_number(row.get("setup_risk_reward")),
+            "thesis": _clean_text(row.get("setup_thesis")),
+            "invalidation": _clean_text(row.get("setup_invalidation")),
+            "signals": _split_lines(_clean_text(row.get("setup_signals"))),
+            "warnings": _split_lines(_clean_text(row.get("setup_warnings"))),
+        }
         headline_counts = {"positive": 0, "negative": 0, "mixed": 0}
         for headline in headlines:
             stance = headline.get("stance") if headline.get("stance") in headline_counts else "mixed"
@@ -359,6 +428,7 @@ def _build_candidates(df: pd.DataFrame, runs_dir: Path, top: int, series_limit: 
                     "support": _clean_number(row.get("support")),
                     "resistance": _clean_number(row.get("resistance")),
                 },
+                "setup": setup,
                 "news": {
                     "read": news_read,
                     "positive": headline_counts["positive"],
@@ -442,6 +512,10 @@ def _build_summary(candidates: list[dict[str, Any]]) -> dict[str, Any]:
         "partialNewsCount": sum(1 for item in candidates if item["news"]["relevance"]["level"] == "partial"),
         "themeNewsCount": sum(1 for item in candidates if item["news"]["relevance"]["level"] == "theme"),
         "weakNewsCount": sum(1 for item in candidates if item["news"]["relevance"]["level"] == "weak"),
+        "highQualitySetupCount": sum(1 for item in candidates if item.get("setup", {}).get("score", 0) >= 0.65),
+        "actionableSetupCount": sum(
+            1 for item in candidates if item.get("setup", {}).get("action") in {"breakout_watch", "pullback_watch", "long_watch"}
+        ),
         "chaseRiskCount": sum(1 for item in candidates if item["risk"]["chasePenalty"] > 0),
         "availableSeriesCount": sum(1 for item in candidates if item["series"]),
         "sentiment": sentiment,

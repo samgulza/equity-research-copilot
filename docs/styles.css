@@ -650,7 +650,7 @@ section {
 
 table {
   width: 100%;
-  min-width: 980px;
+  min-width: 1080px;
   border-collapse: collapse;
 }
 
@@ -934,6 +934,6 @@ footer {
   }
 
   table {
-    min-width: 760px;
+    min-width: 880px;
   }
 }

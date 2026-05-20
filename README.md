@@ -108,6 +108,7 @@ scripts/run_daily_static_report.sh
 - market movers / growth / undervalued-growth / active discovery 기반 동적 후보 발굴
 - 종목 후보별 뉴스 방향성/주요 기사/뉴스 해석 block 생성
 - technical structure / support / resistance / RSI / MACD / volume 해석
+- AI-Trader식 operation 신호를 참고한 트레이딩 셋업 점수, 진입/손절/목표/손익비 산출
 - annotated chart pack 3장 생성
 - Markdown/PDF deep-dive report 생성
 - watchlist screening CSV 생성

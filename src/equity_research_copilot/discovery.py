@@ -13,6 +13,7 @@ from equity_research_copilot.adapters.openbb_adapter import OpenBBAdapter
 from equity_research_copilot.news.catalyst import CatalystEvent, build_catalyst_events
 from equity_research_copilot.news.relevance import split_direct_company_news
 from equity_research_copilot.technical.indicators import add_indicators
+from equity_research_copilot.technical.signals import build_trading_setup
 from equity_research_copilot.technical.structure import analyze_structure
 
 
@@ -317,6 +318,10 @@ def score_candidates(
             tech_score += 0.04
         if "high" in technical.volume_state:
             tech_score += 0.08
+        setup = build_trading_setup(df, technical)
+        setup_score = setup.score * 0.18
+        if setup.action in {"avoid_chase", "risk_watch"}:
+            setup_score -= 0.06
         catalyst_score = (top_catalyst.score if top_catalyst else 0.0) * 0.4
         news_text = f"{top_catalyst.claim if top_catalyst else ''}\n{news_read.get('news_headlines', '')}"
         agent_view, chase_penalty, chase_reason = assess_chase_risk(
@@ -325,7 +330,7 @@ def score_candidates(
             sources=candidate.sources,
         )
         move_score = min(0.05, max(0.0, abs(float(candidate.percent_change or 0.0)) * 0.25))
-        total = round(max(0.0, source_score + tech_score + catalyst_score + move_score - chase_penalty), 3)
+        total = round(max(0.0, source_score + tech_score + setup_score + catalyst_score + move_score - chase_penalty), 3)
         rows.append(
             {
                 "ticker": candidate.symbol,
@@ -342,6 +347,20 @@ def score_candidates(
                 "volume_state": technical.volume_state,
                 "support": technical.support_levels[0] if technical.support_levels else None,
                 "resistance": technical.resistance_levels[-1] if technical.resistance_levels else None,
+                "setup_type": setup.setup_type,
+                "setup_action": setup.action,
+                "setup_score": setup.score,
+                "setup_confidence": setup.confidence,
+                "setup_entry_low": setup.entry_low,
+                "setup_entry_high": setup.entry_high,
+                "setup_stop_loss": setup.stop_loss,
+                "setup_target_1": setup.target_1,
+                "setup_target_2": setup.target_2,
+                "setup_risk_reward": setup.risk_reward,
+                "setup_thesis": setup.thesis,
+                "setup_invalidation": setup.invalidation,
+                "setup_signals": "\n".join(setup.signals),
+                "setup_warnings": "\n".join(setup.warnings),
                 "catalyst_count": len(catalysts),
                 "raw_news_count": len(raw_news_items),
                 "relevant_news_count": len(news_items),
@@ -376,6 +395,7 @@ def write_discovery_report(df: pd.DataFrame, out_path: str | Path, top: int = 10
             "발굴경로",
             "차트구조",
             "모멘텀",
+            "셋업",
             "핵심뉴스",
             "뉴스해석",
             "지지",
@@ -391,6 +411,7 @@ def write_discovery_report(df: pd.DataFrame, out_path: str | Path, top: int = 10
             "발굴경로": "sources",
             "차트구조": "market_structure",
             "모멘텀": "momentum",
+            "셋업": "setup_thesis",
             "핵심뉴스": "top_catalyst",
             "뉴스해석": "news_read",
             "지지": "support",

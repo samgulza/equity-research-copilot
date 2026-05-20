@@ -59,6 +59,13 @@ function stanceClass(candidate) {
   return "good";
 }
 
+function setupClass(setup) {
+  if (!setup) return "warn";
+  if (setup.action === "avoid_chase" || setup.action === "risk_watch" || setup.score < 0.35) return "bad";
+  if (setup.score >= 0.65 || setup.action === "breakout_watch" || setup.action === "pullback_watch") return "good";
+  return "warn";
+}
+
 function candidateLabel(candidate) {
   return candidate.name ? `${candidate.ticker} · ${candidate.name}` : candidate.ticker;
 }
@@ -87,7 +94,7 @@ function renderKpis(payload) {
   const items = [
     ["후보 수", `${summary.candidateCount}`, `${summary.availableSeriesCount || 0}개 후보는 가격 시계열 포함`],
     ["평균 점수", summary.avgScore.toFixed(3), "뉴스, 차트, 수급, 추격 리스크 조정"],
-    ["직접/부분 뉴스", `${summary.directNewsCount}/${summary.partialNewsCount || 0}`, `${summary.themeNewsCount || 0}개 후보는 테마성 기사 중심`],
+    ["트레이딩 셋업", `${summary.actionableSetupCount || 0}`, `${summary.highQualitySetupCount || 0}개는 점수 0.65 이상`],
     ["추격 리스크", `${summary.chaseRiskCount}`, "급등/선반영 가능성을 별도 감점"],
   ];
   $("#kpiGrid").innerHTML = items
@@ -131,20 +138,26 @@ function renderTickerSwitcher(payload) {
 }
 
 function renderMemo(candidate) {
+  const setup = candidate.setup || {};
+  const entry =
+    setup.entry?.low !== null && setup.entry?.low !== undefined && setup.entry?.high !== null && setup.entry?.high !== undefined
+      ? `${formatPrice(setup.entry.low, candidate.market)}~${formatPrice(setup.entry.high, candidate.market)}`
+      : "-";
   $("#focusTitle").textContent = candidateLabel(candidate);
-  $("#memoHeadline").textContent = candidate.catalyst.claim || candidate.news.read || "촉매 확인 필요";
+  $("#memoHeadline").textContent = setup.thesis || candidate.catalyst.claim || candidate.news.read || "촉매 확인 필요";
   $("#memoStats").innerHTML = `
     <div><dt>Score</dt><dd>${candidate.score.toFixed(3)}</dd></div>
-    <div><dt>20D Return</dt><dd>${formatPct(candidate.price.recentReturn20d)}</dd></div>
-    <div><dt>Support</dt><dd>${formatPrice(candidate.technical.support, candidate.market)}</dd></div>
-    <div><dt>Resistance</dt><dd>${formatPrice(candidate.technical.resistance, candidate.market)}</dd></div>
-    <div><dt>Catalyst</dt><dd>${candidate.catalyst.qualityScore.toFixed(2)}</dd></div>
-    <div><dt>News</dt><dd>${candidate.news.relevance.label}</dd></div>
+    <div><dt>Setup</dt><dd>${escapeHtml(setup.label || "-")}</dd></div>
+    <div><dt>Entry</dt><dd>${escapeHtml(entry)}</dd></div>
+    <div><dt>Stop</dt><dd>${formatPrice(setup.stopLoss, candidate.market)}</dd></div>
+    <div><dt>Target</dt><dd>${formatPrice(setup.target1, candidate.market)}</dd></div>
+    <div><dt>R/R</dt><dd>${setup.riskReward ? setup.riskReward.toFixed(2) : "-"}</dd></div>
   `;
   $("#memoRead").textContent =
-    candidate.news.read ||
+    [setup.invalidation, candidate.news.read].filter(Boolean).join(" · ") ||
     "뉴스 촉매가 충분하지 않아 가격 구조, 지지/저항, 거래량 확인을 먼저 해야 합니다.";
   $("#qualityStrip").innerHTML = [
+    `<span class="quality-pill ${setupClass(setup)}">Setup ${Number(setup.score || 0).toFixed(2)}</span>`,
     `<span class="quality-pill ${relevanceClass(candidate.news.relevance.level)}">${escapeHtml(candidate.news.relevance.label)}</span>`,
     `<span class="quality-pill ${stanceClass(candidate)}">${escapeHtml(candidate.stance)}</span>`,
     `<span class="quality-pill">RS ${escapeHtml(candidate.technical.momentum || "-")}</span>`,
@@ -272,6 +285,7 @@ function renderCandidateRows(payload) {
           <td class="score">${candidate.score.toFixed(3)}</td>
           <td><span class="quality-pill ${stanceClass(candidate)}">${escapeHtml(candidate.stance)}</span></td>
           <td><span class="quality-pill ${relevanceClass(candidate.news.relevance.level)}">${escapeHtml(candidate.news.relevance.label)}</span></td>
+          <td><span class="quality-pill ${setupClass(candidate.setup)}">${escapeHtml(candidate.setup?.label || "-")}</span></td>
           <td>${formatPct(candidate.price.recentReturn20d)}</td>
           <td>${escapeHtml(candidate.technical.structure || "-")}</td>
           <td>${escapeHtml(candidate.catalyst.claim || candidate.news.read || "-")}</td>
@@ -387,6 +401,10 @@ function renderNews(payload) {
 
 function renderRisk(payload) {
   const notes = [
+    {
+      title: "트레이딩 셋업",
+      body: `${payload.summary.actionableSetupCount || 0}개 후보는 돌파/눌림/롱 감시 셋업이 잡혔고, ${payload.summary.highQualitySetupCount || 0}개는 셋업 점수 0.65 이상입니다.`,
+    },
     {
       title: "뉴스 직접성",
       body: `${payload.summary.partialNewsCount || 0}개는 부분 직접, ${payload.summary.themeNewsCount || 0}개는 테마 관련입니다. 핵심 촉매 원문을 먼저 확인해야 합니다.`,

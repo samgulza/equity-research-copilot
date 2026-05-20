@@ -19,6 +19,24 @@ LOW_SIGNAL_TITLE_TERMS = [
     "파란불",
 ]
 
+GENERIC_COMPANY_TERMS = {
+    "class",
+    "co",
+    "company",
+    "corp",
+    "corporation",
+    "digital",
+    "group",
+    "holding",
+    "holdings",
+    "inc",
+    "incorporated",
+    "ltd",
+    "plc",
+    "systems",
+    "technologies",
+}
+
 
 def compact_text(value: str) -> str:
     return re.sub(r"[^0-9a-z가-힣]+", "", value.casefold())
@@ -27,22 +45,34 @@ def compact_text(value: str) -> str:
 def company_match_terms(symbol: str, company_name: str | None = None) -> list[str]:
     terms: list[str] = []
     code = symbol.split(".")[0].strip()
-    if code:
+    if code and (code.isdigit() or len(code) >= 3):
         terms.append(code)
 
     name = (company_name or "").strip()
     if name:
         cleaned = re.sub(r"\s+", "", name)
         cleaned = re.sub(r"\(.*?\)", "", cleaned)
-        cleaned = re.sub(r"(보통주|우선주|홀딩스|지주|주식회사)$", "", cleaned)
+        cleaned = re.sub(
+            r"(보통주|우선주|홀딩스|지주|주식회사|corporation|incorporated|holdings|holding|company|corp|inc|ltd|plc)$",
+            "",
+            cleaned,
+            flags=re.IGNORECASE,
+        )
         terms.extend([name, cleaned])
         if cleaned.upper().startswith("HD") and len(cleaned) > 4:
             terms.append(cleaned[2:])
+        words = [token.strip() for token in re.split(r"[\s/&.,()+-]+", name) if token.strip()]
+        if len(words) >= 2:
+            first = compact_text(words[0])
+            if first not in GENERIC_COMPANY_TERMS:
+                terms.append("".join(words[:2]))
+        has_korean = bool(re.search(r"[가-힣]", cleaned))
         for token in re.split(r"[\s/&.,()+-]+", name):
             token = token.strip()
-            if len(compact_text(token)) >= 3:
+            compacted = compact_text(token)
+            if (has_korean or len(words) == 1) and len(compacted) >= 4 and compacted not in GENERIC_COMPANY_TERMS:
                 terms.append(token)
-        if len(cleaned) >= 4:
+        if has_korean and len(cleaned) >= 4:
             terms.append(cleaned[:4])
 
     unique: list[str] = []
@@ -77,7 +107,7 @@ def split_direct_company_news(
     *,
     market: str = "",
 ) -> tuple[list[NewsItem], list[NewsItem]]:
-    if market.upper() != "KR":
+    if market.upper() != "KR" and not company_name:
         return items, []
 
     direct: list[NewsItem] = []
