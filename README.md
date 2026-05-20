@@ -130,6 +130,7 @@ scripts/run_daily_static_report.sh
 |---|---|
 | `ABC_DELIVERABLES.md` | A/B/C 산출물 요약과 파일 맵 |
 | `PRD.md` | 제품 요구사항과 리포트 품질 기준 |
+| `SYSTEM_SPEC.md` | 현재 구현 기준 시스템 정의서와 운영 계약 |
 | `SYSTEM_ARCHITECTURE.md` | 데이터/에이전트/평가 아키텍처 |
 | `CODE_ARCHITECTURE.md` | Python 모듈 구조와 확장 지점 |
 | `openclaw/SKILL.md` | OpenClaw skill contract |
