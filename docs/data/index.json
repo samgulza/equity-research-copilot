@@ -1,6 +1,14 @@
 {
-  "latest": "2026-06-16",
+  "latest": "2026-06-17",
   "dates": [
+    {
+      "date": "2026-06-17",
+      "path": "data/2026-06-17.json",
+      "generatedAt": "2026-06-17T07:38:05+09:00",
+      "candidateCount": 12,
+      "avgScore": 0.869,
+      "outcomeTrackedCount": 7
+    },
     {
       "date": "2026-06-16",
       "path": "data/2026-06-16.json",
