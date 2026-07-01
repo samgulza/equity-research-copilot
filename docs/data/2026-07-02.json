@@ -1,32 +1,33 @@
 {
-  "generatedAt": "2026-07-02T07:11:01+09:00",
-  "sourceDiscovery": "/Volumes/app/equity-research-copilot/runs/discovery/discovery_20260701T220158Z.csv",
+  "generatedAt": "2026-07-02T07:37:23+09:00",
+  "sourceDiscovery": "/Volumes/app/equity-research-copilot/runs/discovery/discovery_20260701T223042Z.csv",
   "reportTitle": "Equity Research Copilot",
   "reportSubtitle": "뉴스 촉매, 테마 강도, 차트 구조를 한 화면에서 검증하는 정적 리서치 노트",
   "researchOnly": true,
   "summary": {
     "candidateCount": 12,
-    "avgScore": 0.847,
-    "directNewsCount": 10,
+    "avgScore": 0.862,
+    "directNewsCount": 11,
     "partialNewsCount": 0,
     "themeNewsCount": 0,
-    "weakNewsCount": 2,
+    "weakNewsCount": 1,
     "highQualitySetupCount": 9,
     "actionableSetupCount": 11,
     "chaseRiskCount": 0,
     "availableSeriesCount": 4,
     "sentiment": {
-      "positive": 23,
-      "negative": 7,
-      "mixed": 19
+      "positive": 25,
+      "negative": 5,
+      "mixed": 21
     }
   },
   "themes": [
     {
       "name": "AI / 반도체",
-      "score": 5.426,
+      "score": 6.224,
       "heat": 100,
       "tickers": [
+        "000660.KS",
         "APP",
         "DUOL",
         "FICO",
@@ -35,15 +36,15 @@
         "TBLA"
       ],
       "sentiment": {
-        "positive": 16,
-        "negative": 4,
-        "mixed": 15
+        "positive": 17,
+        "negative": 3,
+        "mixed": 17
       }
     },
     {
       "name": "실적 / 가이던스",
       "score": 1.905,
-      "heat": 35,
+      "heat": 31,
       "tickers": [
         "GEN",
         "TBLA"
@@ -57,7 +58,7 @@
     {
       "name": "개별 종목 뉴스",
       "score": 1.727,
-      "heat": 32,
+      "heat": 28,
       "tickers": [
         "DELL",
         "FIS",
@@ -65,35 +66,34 @@
         "VLO"
       ],
       "sentiment": {
-        "positive": 7,
-        "negative": 3,
+        "positive": 8,
+        "negative": 2,
         "mixed": 4
-      }
-    },
-    {
-      "name": "ETF / 수급",
-      "score": 0.952,
-      "heat": 18,
-      "tickers": [
-        "000660.KS",
-        "475300.KS"
-      ],
-      "sentiment": {
-        "positive": 0,
-        "negative": 0,
-        "mixed": 0
       }
     },
     {
       "name": "자동차 / 전동화",
       "score": 0.911,
-      "heat": 17,
+      "heat": 15,
       "tickers": [
         "FICO"
       ],
       "sentiment": {
         "positive": 3,
         "negative": 2,
+        "mixed": 0
+      }
+    },
+    {
+      "name": "ETF / 수급",
+      "score": 0.495,
+      "heat": 8,
+      "tickers": [
+        "475300.KS"
+      ],
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
         "mixed": 0
       }
     }
@@ -241,12 +241,12 @@
             "summary": "GEN heads into Q4 results with strong growth forecasts, AI-driven product momentum and rising cybersecurity demand, but margin pressure and weak sentiment loom.",
             "kind": "news",
             "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/gen-digital-report-q4-earnings-154500551.html",
-            "body": "Gen Digital GEN is scheduled to report fourth-quarter fiscal 2026 results on May 7, after market close.\nGEN expects non-GAAP revenues in the band of $1.24-$1.26 billion for the quarter. The Zacks Consensus Estimate for revenues is pegged at $1.24 billion, indicating 22.7% year-over-year growth.\nFor the fiscal fourth quarter, Gen Digital expects non-GAAP earnings in the range of 64-66 cents per share. The consensus mark for the same is pegged at 65 cents per share, suggesting a year-over-year rise of 10.2%. The estimate has remained unchanged over the past 60 days.\nGEN's earnings beat the Zacks Consensus Estimate in each of the trailing four quarters, the average surprise being 2.9%.\nGen Digital Inc. Price and EPS Surprise\nGen Digital Inc. price-eps-surprise | Gen Digital Inc. Quote\nFactors to Note\nGen Digital is expected to gain from sustained demand for cybersecurity, identity protection and financial safety solutions due to the rapid rise in cyber threats, particularly AI-enabled scams. The emergence of cyber safety and financial wellness is also a tailwind for Gen Digital in the to-be-reported quarter.\nTraction in Gen Digital's unified AI-driven platform, combining data from security, identity and financial behavior and innovation in higher-tier subscriptions like Norton 360 and strong momentum in MoneyLion, will further reinforce monetization tailwinds in the fourth quarter of fiscal 2026.\nMomentum in the quarter is likely to have been supported by the AI-powered Genie Scam Protection feature, Norton Deepfake Detection and Norton Neo. An increase in client bookings, supported by strong retention, international expansion and strategic partnerships, is likely to have aided top-line growth in the fiscal third quarter.\nRobust demand for identity theft protection solutions, dark web monitoring, social media monitoring, stolen wallet assistant and ID restoration is expected to have been positive for the quarter under review. However, Gen Digital is also facing some near-term headwinds. Weak consumer sentiment could impact discretionary spending on subscriptions.\nGEN's continuous investment in AI, R&D and infrastructure to stay ahead, pressuring margins. The integration of new businesses like MoneyLion introduces execution risks, especially in aligning customer experience and realizing cross-selling synergies. However, GEN's efforts to innovate make it a strong long-term investment choice.\nEarnings Whispers for GEN Stock\nOur proven model predicts an earnings beat for GEN this earnings season. The combination of a positive Earnings ESP and a Zacks Rank #1 (Strong Buy), 2 (Buy) or 3 (Hold) increases the chances of an earnings beat, which is the case here.",
+            "body": "",
             "language": "",
-            "author": "Zacks Equity Research",
+            "author": "",
             "site_name": "",
-            "content_hash": "cfcfc0ff0ba7e04b3dcc0dff8e1bbe03a099054fa5926ec83e05f6f127f5ed07",
-            "extraction_status": "ok"
+            "content_hash": "4f956a375ec91282e1367626116087f38b96fb9f2e642f29a2f9fedb866477dc",
+            "extraction_status": "not_attempted"
           },
           {
             "title": "Why Gen Digital (GEN) is Poised to Beat Earnings Estimates Again",
@@ -353,16 +353,6 @@
             ],
             "counter_evidence": [
               {
-                "url": "https://finance.yahoo.com/markets/stocks/articles/gen-digital-report-q4-earnings-154500551.html",
-                "title": "Gen Digital to Report Q4 Earnings: What's in Store for the Stock?",
-                "source": "Zacks",
-                "published_at": "2026-05-04 15:45:00+00:00",
-                "quote": "GEN expects non-GAAP revenues in the band of $1.24-$1.26 billion for the quarter.",
-                "char_start": 104,
-                "char_end": 185,
-                "source_tier": "tier3"
-              },
-              {
                 "url": "https://finance.yahoo.com/markets/stocks/articles/gen-digital-q4-earnings-call-021328820.html",
                 "title": "Gen Digital Q4 Earnings Call Highlights",
                 "source": "MarketBeat",
@@ -447,13 +437,13 @@
                 "source_tier": "tier3"
               },
               {
-                "url": "https://finance.yahoo.com/markets/stocks/articles/gen-digital-report-q4-earnings-154500551.html",
-                "title": "Gen Digital to Report Q4 Earnings: What's in Store for the Stock?",
-                "source": "Zacks",
-                "published_at": "2026-05-04 15:45:00+00:00",
-                "quote": "GEN expects non-GAAP revenues in the band of $1.24-$1.26 billion for the quarter.",
-                "char_start": 104,
-                "char_end": 185,
+                "url": "https://finance.yahoo.com/markets/stocks/articles/gen-digital-q4-earnings-call-021328820.html",
+                "title": "Gen Digital Q4 Earnings Call Highlights",
+                "source": "MarketBeat",
+                "published_at": "2026-05-08 02:13:28+00:00",
+                "quote": "Gen Digital (NASDAQ:GEN) reported what executives described as its strongest fiscal year in a decade, driven by growth in both its core consumer cybersecurity business and an expanding portfolio of trust-based solutions that includes identity protection, financial wellness, and a growing marketplace",
+                "char_start": 0,
+                "char_end": 300,
                 "source_tier": "tier3"
               }
             ],
@@ -519,7 +509,7 @@
             "affected_driver": "Revenue / margin / guidance",
             "direction": "positive",
             "horizon": "20d",
-            "materiality_score": 1.0,
+            "materiality_score": 0.9,
             "novelty_score": 1.0,
             "priced_in_risk": "medium",
             "evidence_sources": [
@@ -559,47 +549,22 @@
               "Store",
               "Stock"
             ],
-            "metrics": [
-              {
-                "name": "revenue",
-                "value": "$1.26 billion",
-                "unit": "billion",
-                "context": "-GAAP revenues in the band of $1.24-$1.26 billion for the quarter. The Zacks Consensu"
-              },
-              {
-                "name": "revenue",
-                "value": "$1.24 billion",
-                "unit": "billion",
-                "context": "Estimate for revenues is pegged at $1.24 billion, indicating 22.7% year-over-year gr"
-              },
-              {
-                "name": "metric",
-                "value": "10.2%",
-                "unit": "%",
-                "context": "suggesting a year-over-year rise of 10.2%. The estimate has remained unchange"
-              },
-              {
-                "name": "eps",
-                "value": "2.9%",
-                "unit": "%",
-                "context": "quarters, the average surprise being 2.9%. Gen Digital Inc. Price and EPS Sur"
-              }
-            ],
+            "metrics": [],
             "evidence_spans": [
               {
                 "url": "https://finance.yahoo.com/markets/stocks/articles/gen-digital-report-q4-earnings-154500551.html",
                 "title": "Gen Digital to Report Q4 Earnings: What's in Store for the Stock?",
                 "source": "Zacks",
                 "published_at": "2026-05-04 15:45:00+00:00",
-                "quote": "The Zacks Consensus Estimate for revenues is pegged at $1.24 billion, indicating 22.7% year-over-year growth.",
-                "char_start": 186,
-                "char_end": 295,
+                "quote": "GEN heads into Q4 results with strong growth forecasts, AI-driven product momentum and rising cybersecurity demand, but margin pressure and weak sentiment loom.",
+                "char_start": 0,
+                "char_end": 160,
                 "source_tier": "tier3"
               }
             ],
             "source_quality_score": 0.68,
             "market_reaction_score": 0.48,
-            "score": 0.77,
+            "score": 0.73,
             "published_at": "2026-05-04 15:45:00+00:00"
           },
           {
@@ -627,13 +592,13 @@
                 "source_tier": "tier3"
               },
               {
-                "url": "https://finance.yahoo.com/markets/stocks/articles/gen-digital-report-q4-earnings-154500551.html",
-                "title": "Gen Digital to Report Q4 Earnings: What's in Store for the Stock?",
-                "source": "Zacks",
-                "published_at": "2026-05-04 15:45:00+00:00",
-                "quote": "GEN expects non-GAAP revenues in the band of $1.24-$1.26 billion for the quarter.",
-                "char_start": 104,
-                "char_end": 185,
+                "url": "https://finance.yahoo.com/markets/stocks/articles/gen-digital-q4-earnings-call-021328820.html",
+                "title": "Gen Digital Q4 Earnings Call Highlights",
+                "source": "MarketBeat",
+                "published_at": "2026-05-08 02:13:28+00:00",
+                "quote": "Gen Digital (NASDAQ:GEN) reported what executives described as its strongest fiscal year in a decade, driven by growth in both its core consumer cybersecurity business and an expanding portfolio of trust-based solutions that includes identity protection, financial wellness, and a growing marketplace",
+                "char_start": 0,
+                "char_end": 300,
                 "source_tier": "tier3"
               }
             ],
@@ -814,13 +779,13 @@
                 "source_tier": "tier3"
               },
               {
-                "url": "https://finance.yahoo.com/markets/stocks/articles/gen-digital-report-q4-earnings-154500551.html",
-                "title": "Gen Digital to Report Q4 Earnings: What's in Store for the Stock?",
-                "source": "Zacks",
-                "published_at": "2026-05-04 15:45:00+00:00",
-                "quote": "GEN expects non-GAAP revenues in the band of $1.24-$1.26 billion for the quarter.",
-                "char_start": 104,
-                "char_end": 185,
+                "url": "https://finance.yahoo.com/markets/stocks/articles/gen-digital-q4-earnings-call-021328820.html",
+                "title": "Gen Digital Q4 Earnings Call Highlights",
+                "source": "MarketBeat",
+                "published_at": "2026-05-08 02:13:28+00:00",
+                "quote": "Gen Digital (NASDAQ:GEN) reported what executives described as its strongest fiscal year in a decade, driven by growth in both its core consumer cybersecurity business and an expanding portfolio of trust-based solutions that includes identity protection, financial wellness, and a growing marketplace",
+                "char_start": 0,
+                "char_end": 300,
                 "source_tier": "tier3"
               }
             ],
@@ -879,13 +844,13 @@
                 "source_tier": "tier3"
               },
               {
-                "url": "https://finance.yahoo.com/markets/stocks/articles/gen-digital-report-q4-earnings-154500551.html",
-                "title": "Gen Digital to Report Q4 Earnings: What's in Store for the Stock?",
-                "source": "Zacks",
-                "published_at": "2026-05-04 15:45:00+00:00",
-                "quote": "GEN expects non-GAAP revenues in the band of $1.24-$1.26 billion for the quarter.",
-                "char_start": 104,
-                "char_end": 185,
+                "url": "https://finance.yahoo.com/markets/stocks/articles/gen-digital-q4-earnings-call-021328820.html",
+                "title": "Gen Digital Q4 Earnings Call Highlights",
+                "source": "MarketBeat",
+                "published_at": "2026-05-08 02:13:28+00:00",
+                "quote": "Gen Digital (NASDAQ:GEN) reported what executives described as its strongest fiscal year in a decade, driven by growth in both its core consumer cybersecurity business and an expanding portfolio of trust-based solutions that includes identity protection, financial wellness, and a growing marketplace",
+                "char_start": 0,
+                "char_end": 300,
                 "source_tier": "tier3"
               }
             ],
@@ -3011,7 +2976,7 @@
             "author": "",
             "site_name": "",
             "content_hash": "e009f36ab9439e87cabf928f6c31294dee71ad4d7e9df1355a258177fb225d01",
-            "extraction_status": "failed:HTTPError"
+            "extraction_status": "not_attempted"
           },
           {
             "title": "Top Stock Reports for Microsoft, Exxon Mobil & Dell",
@@ -7747,8 +7712,8 @@
       },
       "news": {
         "read": "핵심 촉매를 제목 기준 직접 관련 뉴스로 재선별했다. 현재 표시 이슈는 'Valero Energy (VLO) Advances While Market Declines: Some Information for Investors'입니다.",
-        "positive": 1,
-        "negative": 1,
+        "positive": 2,
+        "negative": 0,
         "mixed": 1,
         "headlines": [
           {
@@ -7757,7 +7722,7 @@
             "source": "Zacks"
           },
           {
-            "stance": "negative",
+            "stance": "positive",
             "title": "Here's How Much a $1000 Investment in Valero Energy Made 10 Years Ago Would Be Worth Today",
             "source": "Zacks"
           },
@@ -7847,9 +7812,9 @@
       },
       "news": {
         "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'Should Conflicting Analyst Signals on AppLovin’s AI Ad Platform Require Action From AppLovin (APP) Investors?'이며, 차트 신호와 함께 감시할 만하다.",
-        "positive": 3,
+        "positive": 2,
         "negative": 0,
-        "mixed": 3,
+        "mixed": 4,
         "headlines": [
           {
             "stance": "positive",
@@ -7862,7 +7827,7 @@
             "source": "Simply Wall St."
           },
           {
-            "stance": "positive",
+            "stance": "mixed",
             "title": "Why AppLovin (APP) Stock Is Trading Up Today",
             "source": "StockStory"
           },
@@ -8183,12 +8148,12 @@
       },
       "news": {
         "read": "긍정 catalyst가 확인된다. 핵심 이슈는 'Duolingo, Inc. (DUOL) is Attracting Investor Attention: Here is What You Should Know'이며, 차트 신호와 함께 감시할 만하다.",
-        "positive": 2,
-        "negative": 1,
+        "positive": 3,
+        "negative": 0,
         "mixed": 5,
         "headlines": [
           {
-            "stance": "negative",
+            "stance": "positive",
             "title": "Duolingo, Inc. (DUOL) Ascends But Remains Behind Market: Some Facts to Note",
             "source": "Zacks"
           },
@@ -10895,6 +10860,101 @@
     },
     {
       "rank": 10,
+      "ticker": "000660.KS",
+      "name": "SK하이닉스",
+      "market": "KR",
+      "sources": [
+        "kr_kospi_marketcap"
+      ],
+      "score": 0.798,
+      "agentView": "news_first_watch",
+      "stance": "뉴스 우선 감시",
+      "price": {
+        "close": 2560000.0,
+        "dayChange": null,
+        "recentReturn20d": 0.114
+      },
+      "technical": {
+        "structure": "uptrend / constructive pullback",
+        "momentum": "positive but not extreme",
+        "volume": "normal participation",
+        "support": 1174600.0,
+        "resistance": 2987000.0
+      },
+      "setup": {
+        "type": "trend_pullback",
+        "action": "pullback_watch",
+        "label": "눌림 감시",
+        "score": 0.71,
+        "confidence": 0.825,
+        "entry": {
+          "low": 2343303.57,
+          "high": 2618053.57
+        },
+        "stopLoss": 1156981.0,
+        "target1": 5366038.0,
+        "target2": 6769057.0,
+        "riskReward": 2.0,
+        "thesis": "상승 추세 안의 눌림목 셋업",
+        "invalidation": "1156981.0 이탈 시 셋업 무효",
+        "signals": [
+          "20/50/100일선 정배열",
+          "20일선 근처 건설적 눌림",
+          "RSI가 과열 전 구간"
+        ],
+        "warnings": []
+      },
+      "marketReaction": {
+        "abnormalReturn1d": -0.03396,
+        "abnormalReturn5d": -0.02327,
+        "abnormalReturn20d": 0.08475,
+        "volumeZscore": -0.68322,
+        "volumeRatio": 0.77736,
+        "gapReturn": 0.00566,
+        "reactionScore": 0.231
+      },
+      "news": {
+        "read": "핵심 촉매를 제목 기준 직접 관련 뉴스로 재선별했다. 현재 표시 이슈는 'SK하이닉스 美 상장 앞두고…\"주가 오르면 SK스퀘어 가치도 뛴다\"'입니다.",
+        "positive": 1,
+        "negative": 0,
+        "mixed": 1,
+        "headlines": [
+          {
+            "stance": "positive",
+            "title": "SK하이닉스 美 상장 앞두고…\"주가 오르면 SK스퀘어 가치도 뛴다\"",
+            "source": "Naver Search News"
+          },
+          {
+            "stance": "mixed",
+            "title": "SK하이닉스 미국 ADR 상장 임박…SK스퀘어 재평가 기대",
+            "source": "Naver Search News"
+          }
+        ],
+        "rawItems": [],
+        "relevance": {
+          "level": "direct",
+          "label": "직접 관련",
+          "score": 1.0,
+          "note": "핵심 촉매 안에서 기업명 또는 티커가 직접 확인됨"
+        }
+      },
+      "catalyst": {
+        "count": 0,
+        "score": 0.45,
+        "qualityScore": 0.45,
+        "claim": "SK하이닉스 美 상장 앞두고…\"주가 오르면 SK스퀘어 가치도 뛴다\"",
+        "type": "company_news",
+        "events": []
+      },
+      "risk": {
+        "chasePenalty": 0.0,
+        "reason": "뉴스 catalyst와 차트 구조를 함께 감시",
+        "relevanceHaircut": 0.0
+      },
+      "series": []
+    },
+    {
+      "rank": 11,
       "ticker": "INTC",
       "name": "Intel Corporation",
       "market": "US",
@@ -10949,16 +11009,11 @@
         "reactionScore": 0.539
       },
       "news": {
-        "read": "핵심 촉매를 제목 기준 직접 관련 뉴스로 재선별했다. 현재 표시 이슈는 'Intel Just Hit a 52-Week High: Buy, Sell or Hold At $140?'입니다.",
+        "read": "핵심 촉매를 제목 기준 직접 관련 뉴스로 재선별했다. 현재 표시 이슈는 'Intel (INTC) Stock Looks Undervalued Despite Its 5.1x One Year Run'입니다.",
         "positive": 2,
         "negative": 1,
         "mixed": 1,
         "headlines": [
-          {
-            "stance": "positive",
-            "title": "Intel Just Hit a 52-Week High: Buy, Sell or Hold At $140?",
-            "source": "24/7 Wall St."
-          },
           {
             "stance": "positive",
             "title": "Intel (INTC) Stock Looks Undervalued Despite Its 5.1x One Year Run",
@@ -10973,6 +11028,11 @@
             "stance": "mixed",
             "title": "Stocks making big moves yesterday: Cogent, Vishay Intertechnology, AeroVironment, Intel, and Coty",
             "source": "StockStory"
+          },
+          {
+            "stance": "positive",
+            "title": "Meta AI Cloud Push Sends Nvidia, AMD, Intel, Micron Stocks Sinking",
+            "source": "GuruFocus.com"
           }
         ],
         "rawItems": [],
@@ -10987,7 +11047,7 @@
         "count": 0,
         "score": 0.45,
         "qualityScore": 0.45,
-        "claim": "Intel Just Hit a 52-Week High: Buy, Sell or Hold At $140?",
+        "claim": "Intel (INTC) Stock Looks Undervalued Despite Its 5.1x One Year Run",
         "type": "company_news",
         "events": []
       },
@@ -10995,90 +11055,6 @@
         "chasePenalty": 0.0,
         "reason": "뉴스 catalyst와 차트 구조를 함께 감시",
         "relevanceHaircut": 0.0
-      },
-      "series": []
-    },
-    {
-      "rank": 11,
-      "ticker": "000660.KS",
-      "name": "SK하이닉스",
-      "market": "KR",
-      "sources": [
-        "kr_kospi_marketcap"
-      ],
-      "score": 0.618,
-      "agentView": "news_first_watch",
-      "stance": "뉴스 우선 감시",
-      "price": {
-        "close": 2560000.0,
-        "dayChange": null,
-        "recentReturn20d": 0.114
-      },
-      "technical": {
-        "structure": "uptrend / constructive pullback",
-        "momentum": "positive but not extreme",
-        "volume": "normal participation",
-        "support": 1174600.0,
-        "resistance": 2987000.0
-      },
-      "setup": {
-        "type": "trend_pullback",
-        "action": "pullback_watch",
-        "label": "눌림 감시",
-        "score": 0.71,
-        "confidence": 0.825,
-        "entry": {
-          "low": 2343303.57,
-          "high": 2618053.57
-        },
-        "stopLoss": 1156981.0,
-        "target1": 5366038.0,
-        "target2": 6769057.0,
-        "riskReward": 2.0,
-        "thesis": "상승 추세 안의 눌림목 셋업",
-        "invalidation": "1156981.0 이탈 시 셋업 무효",
-        "signals": [
-          "20/50/100일선 정배열",
-          "20일선 근처 건설적 눌림",
-          "RSI가 과열 전 구간"
-        ],
-        "warnings": []
-      },
-      "marketReaction": {
-        "abnormalReturn1d": -0.03396,
-        "abnormalReturn5d": -0.02327,
-        "abnormalReturn20d": 0.08475,
-        "volumeZscore": -0.68322,
-        "volumeRatio": 0.77736,
-        "gapReturn": 0.00566,
-        "reactionScore": 0.231
-      },
-      "news": {
-        "read": "기업명/티커가 제목에 직접 확인되는 촉매가 없어 차트와 수급 중심의 감시 후보로만 봅니다.",
-        "positive": 0,
-        "negative": 0,
-        "mixed": 0,
-        "headlines": [],
-        "rawItems": [],
-        "relevance": {
-          "level": "weak",
-          "label": "관련성 약함",
-          "score": 0.35,
-          "note": "후보명과 기사 주체가 어긋날 수 있어 원문 확인 필요"
-        }
-      },
-      "catalyst": {
-        "count": 0,
-        "score": 0.0,
-        "qualityScore": 0.0,
-        "claim": "",
-        "type": "earnings",
-        "events": []
-      },
-      "risk": {
-        "chasePenalty": 0.0,
-        "reason": "뉴스 catalyst와 차트 구조를 함께 감시",
-        "relevanceHaircut": 0.65
       },
       "series": []
     },
